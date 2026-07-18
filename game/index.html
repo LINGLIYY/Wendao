@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>修仙・问道</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div id="game-title">修仙・问道</div>
+      <div id="toolbar">
+        <button id="btn-char" class="mobile-only">人物</button>
+        <button id="btn-side" class="mobile-only">背包/日志</button>
+        <button id="btn-save">存档</button>
+        <button id="btn-load">读档</button>
+        <button id="btn-restart">重开</button>
+      </div>
+    </header>
+
+    <div id="layout">
+      <!-- 左栏：人物面板（桌面端常显） -->
+      <aside id="char-panel" class="hidden"></aside>
+
+      <!-- 中栏：主剧情区 -->
+      <main id="main-col">
+        <div id="scene-title"></div>
+        <div id="scene-text"></div>
+        <div id="choices"></div>
+      </main>
+
+      <!-- 右栏：背包 + 事件日志（桌面端常显） -->
+      <aside id="side-right" class="hidden">
+        <div id="inventory-panel"></div>
+        <div id="log-panel"></div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="save-panel" class="hidden"></div>
+  <input type="file" id="import-file" accept="application/json,.json" style="display: none" />
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- 数据层（纯数据，写剧情只改这里） -->
+  <script src="data/config.js"></script>
+  <script src="data/items.js"></script>
+  <script src="data/gongfa.js"></script>
+  <script src="data/enemies.js"></script>
+  <script src="data/events.js"></script>
+  <script src="data/scenes.js"></script>
+  <!-- 逻辑层（引擎写完基本不动） -->
+  <script src="js/state.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
