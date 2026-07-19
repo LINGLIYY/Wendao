@@ -1,0 +1,65 @@
+{
+  "qingyun_mountains": {
+    "id": "qingyun_mountains",
+    "name": "青云山脉",
+    "desc": "云雾缭绕的灵山福地，青云宗在此立派千年。山下村落世代受宗门庇佑",
+    "sectId": "qingyun_zong",
+    "startScenes": {
+      "修仙世家": "start_xiujia",
+      "猎户之子": "start_liehu",
+      "农家子弟": "start_nongjia",
+      "流浪孤儿": "start_liulang"
+    },
+    "eventTags": [
+      "sect_back_mountain",
+      "sect_village"
+    ],
+    "adjacent": [
+      "linjiang_town"
+    ],
+    "weight": 40
+  },
+  "linjiang_town": {
+    "id": "linjiang_town",
+    "name": "临江城",
+    "desc": "灰青城墙下的坊市枢纽，散修云集，鱼龙混杂。丹药、功法、消息皆可在此寻得",
+    "sectId": null,
+    "startScenes": {
+      "修仙世家": "start_xiujia",
+      "猎户之子": "start_liehu",
+      "农家子弟": "start_nongjia",
+      "流浪孤儿": "start_liulang"
+    },
+    "eventTags": [
+      "town_market",
+      "town_wilds",
+      "散修"
+    ],
+    "adjacent": [
+      "qingyun_mountains",
+      "sanxiu_ling"
+    ],
+    "weight": 35
+  },
+  "sanxiu_ling": {
+    "id": "sanxiu_ling",
+    "name": "散修岭",
+    "desc": "荒林野岭，灵气稀薄却矿藏丰富。赤煞教盘踞于此，以武力统治一方",
+    "sectId": "chisha_jiao",
+    "startScenes": {
+      "修仙世家": "start_xiujia",
+      "猎户之子": "start_liehu",
+      "农家子弟": "start_nongjia",
+      "流浪孤儿": "start_liulang"
+    },
+    "eventTags": [
+      "wilds_cave",
+      "wilds_beast",
+      "散修"
+    ],
+    "adjacent": [
+      "linjiang_town"
+    ],
+    "weight": 25
+  }
+}

@@ -1,0 +1,775 @@
+{
+  "wild_dog": {
+    "name": "野犬",
+    "realm": "凡兽",
+    "气血": 12,
+    "攻击": 6,
+    "防御": 2,
+    "reward": {
+      "attrs": {
+        "勇气": 1
+      }
+    },
+    "rewardText": "【历经搏杀：勇气 +1】",
+    "realmIdx": 0,
+    "wuxing": []
+  },
+  "gray_wolf": {
+    "name": "灰毛妖狼",
+    "realm": "练气一层・妖兽",
+    "气血": 22,
+    "攻击": 9,
+    "防御": 4,
+    "reward": {
+      "addItems": [
+        "lingcao"
+      ]
+    },
+    "rewardText": "【在狼窝旁发现一株疗伤草】",
+    "realmIdx": 1,
+    "wuxing": [
+      "木"
+    ]
+  },
+  "black_snake": {
+    "name": "黑纹妖蛇",
+    "realm": "练气三层・妖兽",
+    "气血": 30,
+    "攻击": 12,
+    "防御": 5,
+    "reward": {
+      "attrs": {
+        "灵力": 3
+      },
+      "addItems": [
+        "lingcao"
+      ]
+    },
+    "rewardText": "【吸纳蛇丹残余灵气：灵力 +3，获得疗伤草】",
+    "realmIdx": 1,
+    "wuxing": [
+      "水"
+    ]
+  },
+  "mountain_civet": {
+    "name": "山狸",
+    "realm": "凡兽",
+    "气血": 9,
+    "攻击": 4,
+    "防御": 2,
+    "reward": {
+      "addItems": [
+        "shougu"
+      ]
+    },
+    "rewardText": "【山狸窜逃不及，落下一枚完好的兽骨】",
+    "realmIdx": 0,
+    "wuxing": [
+      "金"
+    ]
+  },
+  "wild_boar": {
+    "name": "野猪",
+    "realm": "凡兽",
+    "气血": 13,
+    "攻击": 5,
+    "防御": 3,
+    "reward": {
+      "addItems": [
+        "pimao"
+      ]
+    },
+    "rewardText": "【剥下一张厚实的野猪皮】",
+    "realmIdx": 0,
+    "wuxing": [
+      "土"
+    ]
+  },
+  "hungry_wolf_chief": {
+    "name": "饿狼头领",
+    "realm": "凡兽",
+    "气血": 14,
+    "攻击": 6,
+    "防御": 4,
+    "reward": {
+      "attrs": {
+        "勇气": 1
+      },
+      "addItems": [
+        "pimao",
+        "shougu"
+      ]
+    },
+    "rewardText": "【头狼伏诛，群狼作鸟兽散：勇气 +1，收获兽皮与兽骨】",
+    "realmIdx": 0,
+    "wuxing": [
+      "木"
+    ]
+  },
+  "red_eye_rat": {
+    "name": "赤目鼠妖",
+    "realm": "练气一层・妖兽",
+    "气血": 18,
+    "攻击": 7,
+    "防御": 3,
+    "reward": {
+      "addItems": [
+        "yaodan_di"
+      ]
+    },
+    "rewardText": "【从鼠妖腹中剖出一枚低阶妖丹】",
+    "realmIdx": 1,
+    "wuxing": [
+      "火"
+    ]
+  },
+  "vine_demon": {
+    "name": "藤蔓妖",
+    "realm": "练气二层・妖植",
+    "气血": 26,
+    "攻击": 6,
+    "防御": 6,
+    "reward": {
+      "addItems": [
+        "lingcao",
+        "juhuacao"
+      ]
+    },
+    "rewardText": "【藤蔓枯萎处，露出被它缠住的疗伤草与聚花草】",
+    "realmIdx": 1,
+    "wuxing": [
+      "木"
+    ]
+  },
+  "striped_tiger": {
+    "name": "斑纹妖虎",
+    "realm": "练气四层・妖兽",
+    "气血": 28,
+    "攻击": 9,
+    "防御": 6,
+    "reward": {
+      "attrs": {
+        "勇气": 1
+      },
+      "addItems": [
+        "pimao",
+        "yaodan_di"
+      ]
+    },
+    "rewardText": "【一张完好虎皮到手：勇气 +1，另得低阶妖丹一枚】",
+    "realmIdx": 1,
+    "wuxing": [
+      "金"
+    ]
+  },
+  "wolf_king": {
+    "name": "狼王",
+    "realm": "练气五层・妖兽",
+    "气血": 30,
+    "攻击": 10,
+    "防御": 8,
+    "reward": {
+      "attrs": {
+        "勇气": 2
+      },
+      "addItems": [
+        "yaodan_di",
+        "shougu"
+      ]
+    },
+    "rewardText": "【狼王断喉，狼群哀嚎退散：勇气 +2，拾得低阶妖丹与兽骨】",
+    "realmIdx": 1,
+    "wuxing": [
+      "木"
+    ]
+  },
+  "stone_lizard": {
+    "name": "石甲蜥",
+    "realm": "筑基・妖兽",
+    "气血": 55,
+    "攻击": 14,
+    "防御": 16,
+    "reward": {
+      "addItems": [
+        "yaogu",
+        "tie_xuanjing"
+      ]
+    },
+    "rewardText": "【石甲层层剥落，内里竟裹着一块乌沉沉的玄精铁】",
+    "realmIdx": 2,
+    "wuxing": [
+      "土"
+    ]
+  },
+  "dark_pool_python": {
+    "name": "幽潭水蟒",
+    "realm": "筑基・妖兽",
+    "气血": 58,
+    "攻击": 18,
+    "防御": 9,
+    "reward": {
+      "attrs": {
+        "灵力": 2
+      },
+      "addItems": [
+        "yadan"
+      ]
+    },
+    "rewardText": "【蟒腹中的妖兽内丹莹莹生辉，水气灵机丝丝入体：灵力 +2】",
+    "realmIdx": 2,
+    "wuxing": [
+      "水"
+    ]
+  },
+  "iron_back_bear": {
+    "name": "铁背妖熊",
+    "realm": "筑基・妖兽",
+    "气血": 65,
+    "攻击": 16,
+    "防御": 12,
+    "reward": {
+      "attrs": {
+        "气血": 2
+      },
+      "addItems": [
+        "yaogu"
+      ]
+    },
+    "rewardText": "【一碗滚热熊血下肚，气血 +2；拆下一根乌黑妖骨】",
+    "realmIdx": 2,
+    "wuxing": [
+      "土"
+    ]
+  },
+  "black_wind_wolf_king": {
+    "name": "黑风妖狼王",
+    "realm": "筑基后期・妖兽",
+    "气血": 70,
+    "攻击": 21,
+    "防御": 14,
+    "reward": {
+      "attrs": {
+        "灵力": 3
+      },
+      "addItems": [
+        "yadan",
+        "shouhun"
+      ]
+    },
+    "rewardText": "【黑风散尽：灵力 +3，拾得妖兽内丹与一片兽魂碎片】",
+    "realmIdx": 2,
+    "wuxing": [
+      "水"
+    ]
+  },
+  "flame_leopard": {
+    "name": "赤炎妖豹",
+    "realm": "金丹・妖兽",
+    "气血": 140,
+    "攻击": 38,
+    "防御": 22,
+    "reward": {
+      "attrs": {
+        "灵力": 3
+      },
+      "addItems": [
+        "yaodan_zhong"
+      ]
+    },
+    "rewardText": "【赤炎归寂，豹丹犹温：灵力 +3，获得中阶妖丹】",
+    "realmIdx": 3,
+    "wuxing": [
+      "火"
+    ]
+  },
+  "ancient_tree_demon": {
+    "name": "千年树妖",
+    "realm": "金丹・木妖",
+    "气血": 165,
+    "攻击": 33,
+    "防御": 30,
+    "reward": {
+      "attrs": {
+        "气血": 5
+      },
+      "addItems": [
+        "qiannianlingshen"
+      ]
+    },
+    "rewardText": "【树心深处盘着一株千年灵参，木灵之气润养周身：气血 +5】",
+    "realmIdx": 3,
+    "wuxing": [
+      "木"
+    ]
+  },
+  "ghost_general": {
+    "name": "幽冥鬼将",
+    "realm": "金丹・鬼物",
+    "气血": 175,
+    "攻击": 50,
+    "防御": 28,
+    "reward": {
+      "attrs": {
+        "灵力": 5
+      },
+      "addItems": [
+        "yaodan_zhong",
+        "shouhun"
+      ]
+    },
+    "rewardText": "【鬼将溃散前发出一声不甘长啸：灵力 +5，拾得中阶妖丹与兽魂碎片】",
+    "realmIdx": 3,
+    "wuxing": [
+      "土"
+    ]
+  },
+  "mystic_turtle": {
+    "name": "万载玄龟",
+    "realm": "元婴・妖兽",
+    "气血": 460,
+    "攻击": 105,
+    "防御": 76,
+    "reward": {
+      "attrs": {
+        "气血": 10,
+        "悟性": 1
+      },
+      "addItems": [
+        "yaodan_zhong",
+        "tiancai"
+      ]
+    },
+    "rewardText": "【玄龟甲纹间流转着一段上古道韵：气血 +10，悟性 +1，获得中阶妖丹与天材地宝】",
+    "realmIdx": 4,
+    "wuxing": [
+      "水"
+    ]
+  },
+  "thunder_roc": {
+    "name": "九天雷鹏",
+    "realm": "元婴・妖兽",
+    "气血": 520,
+    "攻击": 115,
+    "防御": 85,
+    "reward": {
+      "attrs": {
+        "悟性": 2,
+        "神识": 2
+      },
+      "addItems": [
+        "yaodan_zhong",
+        "tiancai"
+      ]
+    },
+    "rewardText": "【雷鹏陨落处紫电不息，一缕雷劫真意入体：悟性 +2，神识 +2】",
+    "realmIdx": 4,
+    "wuxing": [
+      "金",
+      "火"
+    ]
+  },
+  "blood_crow_king": {
+    "name": "血鸦老祖",
+    "realm": "元婴・妖修",
+    "气血": 480,
+    "攻击": 130,
+    "防御": 72,
+    "reward": {
+      "attrs": {
+        "气血": 8
+      },
+      "addItems": [
+        "yaodan_zhong"
+      ]
+    },
+    "rewardText": "【血鸦老祖散作漫天血羽，一枚猩红妖丹落入掌心：气血 +8】",
+    "realmIdx": 4,
+    "wuxing": [
+      "水"
+    ]
+  },
+  "nine_head_jiao": {
+    "name": "九头蛟",
+    "realm": "化神・妖兽",
+    "气血": 1600,
+    "攻击": 350,
+    "防御": 220,
+    "reward": {
+      "attrs": {
+        "灵力": 10,
+        "气血": 15
+      },
+      "addItems": [
+        "yaodan_zhong",
+        "qiannianlingshen"
+      ]
+    },
+    "rewardText": "【九头断而蛟丹现，一缕龙气渗入丹田：灵力 +10，气血 +15】",
+    "realmIdx": 5,
+    "wuxing": [
+      "水"
+    ]
+  },
+  "crimson_demon_lord": {
+    "name": "赤血魔君",
+    "realm": "化神・魔修残魂",
+    "气血": 1400,
+    "攻击": 400,
+    "防御": 180,
+    "reward": {
+      "attrs": {
+        "勇气": 3,
+        "攻击": 5
+      },
+      "addItems": [
+        "shouhun",
+        "gongfa_zhengjuan"
+      ]
+    },
+    "rewardText": "【魔君残魂哀嚎溃散，一抹战意烙入心脉：勇气 +3，攻击 +5】",
+    "realmIdx": 5,
+    "wuxing": [
+      "火"
+    ]
+  },
+  "thousand_year_vine": {
+    "name": "万载藤祖",
+    "realm": "化神・木妖",
+    "气血": 1750,
+    "攻击": 260,
+    "防御": 280,
+    "reward": {
+      "attrs": {
+        "气血": 20,
+        "根骨": 2
+      },
+      "addItems": [
+        "tianlingzhi",
+        "xuelinghua"
+      ]
+    },
+    "rewardText": "【藤祖断裂处渗出金色树汁，沐浴后根骨通透：气血 +20，根骨 +2】",
+    "realmIdx": 5,
+    "wuxing": [
+      "木"
+    ]
+  },
+  "frost_dragon_ghost": {
+    "name": "霜龙残魄",
+    "realm": "化神・龙族残魄",
+    "气血": 1500,
+    "攻击": 380,
+    "防御": 250,
+    "reward": {
+      "attrs": {
+        "灵力": 12,
+        "悟性": 2
+      },
+      "addItems": [
+        "yaodan_zhong",
+        "leihe_hun"
+      ]
+    },
+    "rewardText": "【霜龙残魄化作漫天冰晶，龙之真意印入元神：灵力 +12，悟性 +2】",
+    "realmIdx": 5,
+    "wuxing": [
+      "水",
+      "金"
+    ]
+  },
+  "void_serpent": {
+    "name": "虚空玄蟒",
+    "realm": "炼虚・异兽",
+    "气血": 4500,
+    "攻击": 900,
+    "防御": 600,
+    "reward": {
+      "attrs": {
+        "灵力": 20,
+        "神识": 3
+      },
+      "addItems": [
+        "yaodan_zhong",
+        "qiannianlingshen"
+      ]
+    },
+    "rewardText": "【玄蟒散作虚无，空间之秘刻入神识：灵力 +20，神识 +3】",
+    "realmIdx": 6,
+    "wuxing": [
+      "水"
+    ]
+  },
+  "demon_elder_ghost": {
+    "name": "天魔长老",
+    "realm": "炼虚・域外天魔",
+    "气血": 4000,
+    "攻击": 1050,
+    "防御": 550,
+    "reward": {
+      "attrs": {
+        "勇气": 4,
+        "魅力": 2
+      },
+      "addItems": [
+        "leihe_hun",
+        "gongfa_zhengjuan"
+      ]
+    },
+    "rewardText": "【天魔长老魔元爆裂，域外之力反哺己身：勇气 +4，魅力 +2】",
+    "realmIdx": 6,
+    "wuxing": [
+      "火",
+      "水"
+    ]
+  },
+  "mountain_god_old": {
+    "name": "山神遗骸",
+    "realm": "炼虚・精怪",
+    "气血": 5000,
+    "攻击": 750,
+    "防御": 800,
+    "reward": {
+      "attrs": {
+        "气血": 30,
+        "防御": 8
+      },
+      "addItems": [
+        "xianguo",
+        "wanlingcao"
+      ]
+    },
+    "rewardText": "【山神遗骸化作一拘厚土，大地之力涌入百骸：气血 +30，防御 +8】",
+    "realmIdx": 6,
+    "wuxing": [
+      "土"
+    ]
+  },
+  "ancient_sword_soul": {
+    "name": "万剑残灵",
+    "realm": "炼虚・古器残灵",
+    "气血": 3800,
+    "攻击": 1100,
+    "防御": 500,
+    "reward": {
+      "attrs": {
+        "攻击": 10,
+        "悟性": 3
+      },
+      "addItems": [
+        "yaodan_zhong"
+      ]
+    },
+    "rewardText": "【万剑残灵化作一道剑意刻入眉心：攻击 +10，悟性 +3】",
+    "realmIdx": 6,
+    "wuxing": [
+      "金"
+    ]
+  },
+  "nether_world_phoenix": {
+    "name": "黄泉冥凤",
+    "realm": "合体・冥兽",
+    "气血": 12000,
+    "攻击": 2500,
+    "防御": 1700,
+    "reward": {
+      "attrs": {
+        "灵力": 30,
+        "魅力": 4
+      },
+      "addItems": [
+        "yaodan_gao",
+        "leihe_hun"
+      ]
+    },
+    "rewardText": "【冥凤化作灰烬又自灰烬重生，生死轮转之悟直抵元神：灵力 +30，魅力 +4】",
+    "realmIdx": 7,
+    "wuxing": [
+      "火",
+      "水"
+    ]
+  },
+  "star_devouring_beast": {
+    "name": "噬星兽",
+    "realm": "合体・虚空异兽",
+    "气血": 14000,
+    "攻击": 2100,
+    "防御": 2000,
+    "reward": {
+      "attrs": {
+        "气血": 40,
+        "防御": 10
+      },
+      "addItems": [
+        "tiancai",
+        "qiannianlingshen"
+      ]
+    },
+    "rewardText": "【噬星兽腹中一颗未消化的星辰晶核滚落：气血 +40，防御 +10】",
+    "realmIdx": 7,
+    "wuxing": [
+      "土"
+    ]
+  },
+  "heavenly_demon_general": {
+    "name": "天魔大将",
+    "realm": "合体・域外天魔",
+    "气血": 11000,
+    "攻击": 2800,
+    "防御": 1500,
+    "reward": {
+      "attrs": {
+        "攻击": 12,
+        "勇气": 5
+      },
+      "addItems": [
+        "gongfa_zhengjuan",
+        "leihe_hun"
+      ]
+    },
+    "rewardText": "【天魔大将铠甲崩碎，一缕天魔真血渗入经脉：攻击 +12，勇气 +5】",
+    "realmIdx": 7,
+    "wuxing": [
+      "火"
+    ]
+  },
+  "true_dragon_phantom": {
+    "name": "真龙幻影",
+    "realm": "大乘・龙族幻影",
+    "气血": 35000,
+    "攻击": 7000,
+    "防御": 5000,
+    "reward": {
+      "attrs": {
+        "灵力": 50,
+        "悟性": 5
+      },
+      "addItems": [
+        "yaodan_gao",
+        "tiancai"
+      ]
+    },
+    "rewardText": "【真龙幻影散去，龙族本源之力涌入紫府：灵力 +50，悟性 +5】",
+    "realmIdx": 8,
+    "wuxing": [
+      "金",
+      "水"
+    ]
+  },
+  "ancient_god_remnant": {
+    "name": "远古神明残念",
+    "realm": "大乘・古神残念",
+    "气血": 40000,
+    "攻击": 6000,
+    "防御": 6000,
+    "reward": {
+      "attrs": {
+        "气血": 60,
+        "神识": 6
+      },
+      "addItems": [
+        "tiancai",
+        "wanlingcao"
+      ]
+    },
+    "rewardText": "【古神残念散归天地，一缕创世余辉落入眉心：气血 +60，神识 +6】",
+    "realmIdx": 8,
+    "wuxing": [
+      "土",
+      "金"
+    ]
+  },
+  "demon_emperor_shadow": {
+    "name": "天魔皇之影",
+    "realm": "大乘・域外天魔",
+    "气血": 28000,
+    "攻击": 8000,
+    "防御": 4000,
+    "reward": {
+      "attrs": {
+        "攻击": 18,
+        "勇气": 6
+      },
+      "addItems": [
+        "yaodan_gao",
+        "leihe_hun"
+      ]
+    },
+    "rewardText": "【魔皇之影崩解，万魔之力反噬入体化为已用：攻击 +18，勇气 +6】",
+    "realmIdx": 8,
+    "wuxing": [
+      "火",
+      "水"
+    ]
+  },
+  "heavenly_tribulation_incarnation": {
+    "name": "天劫化身",
+    "realm": "渡劫・天劫",
+    "气血": 80000,
+    "攻击": 14000,
+    "防御": 10000,
+    "reward": {
+      "attrs": {
+        "灵力": 80,
+        "悟性": 8,
+        "神识": 5
+      },
+      "addItems": [
+        "tiancai"
+      ]
+    },
+    "rewardText": "【天劫化身碎裂，大道法则碎片如雨洒落：灵力 +80，悟性 +8，神识 +5】",
+    "realmIdx": 9,
+    "wuxing": [
+      "金",
+      "火",
+      "水"
+    ]
+  },
+  "primordial_chaos_beast": {
+    "name": "混沌元兽",
+    "realm": "渡劫・混沌异兽",
+    "气血": 100000,
+    "攻击": 11000,
+    "防御": 15000,
+    "reward": {
+      "attrs": {
+        "气血": 100,
+        "根骨": 8
+      },
+      "addItems": [
+        "yaodan_gao",
+        "xianguo"
+      ]
+    },
+    "rewardText": "【混沌元兽化作混沌之气，元始之息洗涤全身：气血 +100，根骨 +8】",
+    "realmIdx": 9,
+    "wuxing": [
+      "木",
+      "土"
+    ]
+  },
+  "void_god_manifestation": {
+    "name": "虚空神显化",
+    "realm": "渡劫・古神显化",
+    "气血": 70000,
+    "攻击": 18000,
+    "防御": 8000,
+    "reward": {
+      "attrs": {
+        "攻击": 25,
+        "勇气": 10,
+        "魅力": 5
+      },
+      "addItems": [
+        "tiancai",
+        "leihe_hun"
+      ]
+    },
+    "rewardText": "【虚空神显化被击散，神力碎片融入四肢百骸：攻击 +25，勇气 +10，魅力 +5】",
+    "realmIdx": 9,
+    "wuxing": [
+      "金",
+      "火"
+    ]
+  }
+}

@@ -1,0 +1,1124 @@
+{
+  "yinqijue": {
+    "name": "《引气诀》",
+    "type": "功法书",
+    "rarity": "凡品",
+    "desc": "{sect}入门吐纳法门，凡人修习百日可引气入体，踏入练气。",
+    "use": {
+      "learnGongfa": [
+        "gf_yinqi"
+      ]
+    },
+    "consumable": true
+  },
+  "juqidan": {
+    "name": "聚气丹",
+    "type": "丹药",
+    "rarity": "凡品",
+    "desc": "以数种低阶灵草炼成，可助无灵根者短暂感应天地灵气。",
+    "use": {
+      "attrs": {
+        "灵力": 3
+      }
+    },
+    "consumable": true
+  },
+  "ganliang": {
+    "name": "干粮",
+    "type": "食物",
+    "rarity": "凡品",
+    "desc": "母亲连夜烙的面饼，还带着一点余温。",
+    "use": {
+      "attrs": {
+        "气血": 5
+      }
+    },
+    "consumable": true
+  },
+  "lingcao": {
+    "name": "疗伤草",
+    "type": "丹药",
+    "rarity": "凡品",
+    "desc": "山野间自生的灵草，捣碎敷服可活血生肌。",
+    "use": {
+      "attrs": {
+        "气血": 10
+      }
+    },
+    "consumable": true
+  },
+  "tiejian": {
+    "name": "铁剑",
+    "type": "装备",
+    "rarity": "凡品",
+    "slot": "武器",
+    "stats": {
+      "攻击": 3
+    },
+    "desc": "爹年轻时打猎用的铁剑，剑刃上还留着几处豁口。"
+  },
+  "buyi": {
+    "name": "粗布衣",
+    "type": "装备",
+    "rarity": "凡品",
+    "slot": "防具",
+    "stats": {
+      "防御": 1
+    },
+    "desc": "娘亲缝的粗布衣，针脚细密。"
+  },
+  "hushenfu": {
+    "name": "护身符",
+    "type": "装备",
+    "rarity": "灵品",
+    "slot": "饰品",
+    "stats": {
+      "气血": 5
+    },
+    "desc": "不知名老者所刻的木符，隐有暖意流转。"
+  },
+  "fuzhou_qingzhu": {
+    "name": "青竹剑符",
+    "type": "法器",
+    "rarity": "凡品",
+    "desc": "以青竹为骨、朱砂为引的剑符，激发时化作一道竹青剑气。",
+    "stats": {
+      "攻击": 1
+    },
+    "battle": {
+      "trigger": 0.35,
+      "damage": [
+        3,
+        6
+      ],
+      "text": "青竹剑符化作剑气激射而出"
+    },
+    "wuxing": [
+      "木"
+    ]
+  },
+  "zhu_yingyue": {
+    "name": "映月珠",
+    "type": "法器",
+    "rarity": "灵品",
+    "desc": "深潭底采出的圆珠，月夜微光流转，滋养气血。",
+    "stats": {
+      "气血": 6
+    },
+    "battle": {
+      "trigger": 0.3,
+      "heal": [
+        3,
+        5
+      ],
+      "text": "映月珠洒下柔和月华"
+    },
+    "wuxing": [
+      "水"
+    ]
+  },
+  "ling_tiesuo": {
+    "name": "缚灵索",
+    "type": "法器",
+    "rarity": "灵品",
+    "desc": "浸过缚灵咒的精铁锁链，可短暂困住敌人。",
+    "stats": {
+      "防御": 1
+    },
+    "battle": {
+      "trigger": 0.25,
+      "stun": true,
+      "text": "缚灵索暴起缠住敌人"
+    },
+    "wuxing": [
+      "木"
+    ]
+  },
+  "zhong_zhenyue": {
+    "name": "镇岳小钟",
+    "type": "法器",
+    "rarity": "玄品",
+    "desc": "掌心大小的铜钟，钟声可震荡神魂，传说是镇岳古钟的仿制品。",
+    "stats": {
+      "攻击": 2,
+      "防御": 1
+    },
+    "battle": {
+      "trigger": 0.3,
+      "damage": [
+        5,
+        9
+      ],
+      "stunChance": 0.5,
+      "text": "镇岳小钟嗡然一震"
+    },
+    "wuxing": [
+      "金"
+    ]
+  },
+  "jian_qingfeng": {
+    "name": "青锋剑",
+    "type": "装备",
+    "rarity": "凡品",
+    "slot": "武器",
+    "stats": {
+      "攻击": 4
+    },
+    "desc": "坊市里最常见的制式长剑，出鞘时隐有一声清啸。"
+  },
+  "dao_liefeng": {
+    "name": "猎风刀",
+    "type": "装备",
+    "rarity": "凡品",
+    "slot": "武器",
+    "stats": {
+      "攻击": 2,
+      "勇气": 1
+    },
+    "desc": "猎户惯用的厚背弯刀，劈藤斩兽最是顺手。"
+  },
+  "jian_hanyue": {
+    "name": "寒月剑",
+    "type": "装备",
+    "rarity": "灵品",
+    "slot": "武器",
+    "stats": {
+      "攻击": 7
+    },
+    "desc": "剑身如一泓秋水，月下挥动时寒光连成一道弧。"
+  },
+  "bian_qingjiao": {
+    "name": "青蛟鞭",
+    "type": "装备",
+    "rarity": "灵品",
+    "slot": "武器",
+    "stats": {
+      "攻击": 6,
+      "灵力": 2
+    },
+    "desc": "以青蛟脊筋炼成的长鞭，抖开时隐隐传出蛟吟。"
+  },
+  "ji_pojun": {
+    "name": "破军戟",
+    "type": "装备",
+    "rarity": "玄品",
+    "slot": "武器",
+    "stats": {
+      "攻击": 13,
+      "勇气": 2
+    },
+    "desc": "戟刃暗红斑驳，据说曾随军凿穿过一次妖潮。"
+  },
+  "jian_taixu": {
+    "name": "太虚残剑",
+    "type": "装备",
+    "rarity": "仙品",
+    "slot": "武器",
+    "stats": {
+      "攻击": 19,
+      "灵力": 5
+    },
+    "desc": "残缺古剑，剑身空明近乎无物，一剑挥出万籁俱寂。"
+  },
+  "jia_ruanpi": {
+    "name": "软皮甲",
+    "type": "装备",
+    "rarity": "凡品",
+    "slot": "防具",
+    "stats": {
+      "防御": 2
+    },
+    "desc": "鞣制兽皮缝成的轻甲，贴身而不碍拳脚。"
+  },
+  "pao_qingbu": {
+    "name": "青布道袍",
+    "type": "装备",
+    "rarity": "凡品",
+    "slot": "防具",
+    "stats": {
+      "防御": 1,
+      "灵力": 1
+    },
+    "desc": "浆洗得发白的道袍，袖口还绣着一朵云纹。"
+  },
+  "jia_xuangui": {
+    "name": "玄龟软甲",
+    "type": "装备",
+    "rarity": "灵品",
+    "slot": "防具",
+    "stats": {
+      "防御": 6,
+      "气血": 5
+    },
+    "desc": "以玄龟腹甲串成，入手沉甸甸，穿在身上却轻。"
+  },
+  "yi_yunwen": {
+    "name": "云纹法衣",
+    "type": "装备",
+    "rarity": "灵品",
+    "slot": "防具",
+    "stats": {
+      "防御": 5,
+      "灵力": 3
+    },
+    "desc": "织入灵蚕丝的法衣，行走时衣上云纹缓缓流动。"
+  },
+  "kai_shanwen": {
+    "name": "山纹玄甲",
+    "type": "装备",
+    "rarity": "玄品",
+    "slot": "防具",
+    "stats": {
+      "防御": 12,
+      "气血": 8
+    },
+    "desc": "甲面天然生着山岳纹路，扛得住妖兽全力一扑。"
+  },
+  "jie_pingan": {
+    "name": "平安绳结",
+    "type": "装备",
+    "rarity": "凡品",
+    "slot": "饰品",
+    "stats": {
+      "气血": 3
+    },
+    "desc": "村口老婆婆编的红绳结，据说沾了些香火气。"
+  },
+  "pei_ningshen": {
+    "name": "凝神玉佩",
+    "type": "装备",
+    "rarity": "灵品",
+    "slot": "饰品",
+    "stats": {
+      "悟性": 2,
+      "灵力": 3
+    },
+    "desc": "触手生凉的古玉，静坐时佩之杂念自消。"
+  },
+  "huan_hupo": {
+    "name": "虎魄骨环",
+    "type": "装备",
+    "rarity": "灵品",
+    "slot": "饰品",
+    "stats": {
+      "勇气": 3,
+      "气血": 4
+    },
+    "desc": "以山君腕骨磨成的臂环，佩上便觉胆气自壮。"
+  },
+  "zhui_wudao": {
+    "name": "悟道石坠",
+    "type": "装备",
+    "rarity": "玄品",
+    "slot": "饰品",
+    "stats": {
+      "悟性": 4,
+      "灵力": 6
+    },
+    "desc": "一枚被前辈高人贴身揣了百年的顽石，隐隐透出道韵。"
+  },
+  "lian_xingsui": {
+    "name": "星髓链",
+    "type": "装备",
+    "rarity": "仙品",
+    "slot": "饰品",
+    "stats": {
+      "气血": 20,
+      "悟性": 5,
+      "勇气": 5
+    },
+    "desc": "串着七粒星髓的细链，入夜后随天上星辰一同明灭。"
+  },
+  "hulu_qingmu": {
+    "name": "青木葫芦",
+    "type": "装备",
+    "rarity": "灵品",
+    "slot": "法宝",
+    "stats": {
+      "气血": 10,
+      "灵力": 5
+    },
+    "desc": "灵植青木所结的葫芦，内里藏着一口生生不息的木灵气。",
+    "wuxing": [
+      "木"
+    ]
+  },
+  "fan_lihuo": {
+    "name": "离火幡",
+    "type": "装备",
+    "rarity": "玄品",
+    "slot": "法宝",
+    "stats": {
+      "攻击": 8,
+      "灵力": 8
+    },
+    "desc": "幡面绣满离火纹，一经展开半空都泛起焦灼气息。",
+    "wuxing": [
+      "火"
+    ]
+  },
+  "yin_xuanwu": {
+    "name": "玄武印",
+    "type": "装备",
+    "rarity": "玄品",
+    "slot": "法宝",
+    "stats": {
+      "防御": 8,
+      "气血": 15
+    },
+    "desc": "巴掌大的黑石印，托在掌心便觉身后如负山岳。",
+    "wuxing": [
+      "土"
+    ]
+  },
+  "pan_zhoutian": {
+    "name": "周天星盘",
+    "type": "装备",
+    "rarity": "仙品",
+    "slot": "法宝",
+    "stats": {
+      "攻击": 12,
+      "防御": 8,
+      "灵力": 15,
+      "悟性": 3
+    },
+    "desc": "盘面刻满周天星轨，缓缓转动时可窥得一线天机。",
+    "wuxing": [
+      "金",
+      "木",
+      "水",
+      "火",
+      "土"
+    ]
+  },
+  "ci_huojili": {
+    "name": "火蒺藜",
+    "type": "法器",
+    "rarity": "凡品",
+    "desc": "以硫磺灵砂填制的刺球，遇敌自燃，炸起一蓬火星。",
+    "stats": {
+      "攻击": 1
+    },
+    "battle": {
+      "trigger": 0.3,
+      "damage": [
+        2,
+        5
+      ],
+      "text": "火蒺藜炸开一蓬灼目火星"
+    },
+    "wuxing": [
+      "火"
+    ]
+  },
+  "pai_huichun": {
+    "name": "回春木牌",
+    "type": "法器",
+    "rarity": "凡品",
+    "desc": "老药农以百年药树心材刻的木牌，常年萦绕一缕药香。",
+    "stats": {
+      "气血": 3
+    },
+    "battle": {
+      "trigger": 0.3,
+      "heal": [
+        2,
+        4
+      ],
+      "text": "回春木牌溢出一缕温润青气"
+    },
+    "wuxing": [
+      "木"
+    ]
+  },
+  "fu_jinglei": {
+    "name": "惊雷符",
+    "type": "法器",
+    "rarity": "灵品",
+    "desc": "符面以雷砂绘就，静时微麻，动时惊雷。",
+    "stats": {
+      "攻击": 2
+    },
+    "battle": {
+      "trigger": 0.3,
+      "damage": [
+        5,
+        8
+      ],
+      "text": "惊雷符炸响一道雪亮雷光"
+    },
+    "wuxing": [
+      "金"
+    ]
+  },
+  "ling_qingxin": {
+    "name": "清心铃",
+    "type": "法器",
+    "rarity": "灵品",
+    "desc": "铃身无舌却自鸣，一声入耳，伤痛都淡了三分。",
+    "stats": {
+      "灵力": 3
+    },
+    "battle": {
+      "trigger": 0.25,
+      "heal": [
+        4,
+        7
+      ],
+      "text": "清心铃摇出一串涤尘清音"
+    },
+    "wuxing": [
+      "水"
+    ]
+  },
+  "xiang_mixin": {
+    "name": "迷心香",
+    "type": "法器",
+    "rarity": "灵品",
+    "desc": "香雾一起，纵是凶兽也要恍神片刻。",
+    "stats": {
+      "悟性": 1
+    },
+    "battle": {
+      "trigger": 0.2,
+      "stun": true,
+      "text": "迷心香散出一缕惑神烟雾"
+    },
+    "wuxing": [
+      "水"
+    ]
+  },
+  "suo_zidian": {
+    "name": "紫电梭",
+    "type": "法器",
+    "rarity": "玄品",
+    "desc": "梭身缠着不散的紫电，出手时快得只余一道残影。",
+    "stats": {
+      "攻击": 3
+    },
+    "battle": {
+      "trigger": 0.3,
+      "damage": [
+        8,
+        13
+      ],
+      "text": "紫电梭撕裂空气激射而至"
+    },
+    "wuxing": [
+      "金"
+    ]
+  },
+  "zhu_jiuyang": {
+    "name": "九阳珠",
+    "type": "法器",
+    "rarity": "玄品",
+    "desc": "珠内封着九缕正阳之气，寒毒暗伤皆可化去。",
+    "stats": {
+      "气血": 8,
+      "防御": 2
+    },
+    "battle": {
+      "trigger": 0.3,
+      "heal": [
+        6,
+        10
+      ],
+      "text": "九阳珠洒下暖融融的阳和之气"
+    },
+    "wuxing": [
+      "火"
+    ]
+  },
+  "jian_zhanling": {
+    "name": "斩灵飞剑",
+    "type": "法器",
+    "rarity": "仙品",
+    "desc": "剑成之日曾自行出匣三千里，斩落的邪灵不知凡几。",
+    "stats": {
+      "攻击": 5,
+      "灵力": 3
+    },
+    "battle": {
+      "trigger": 0.35,
+      "damage": [
+        12,
+        20
+      ],
+      "stunChance": 0.3,
+      "text": "斩灵飞剑破空一斩"
+    },
+    "wuxing": [
+      "金"
+    ]
+  },
+  "dan_huiqi": {
+    "name": "回气散",
+    "type": "丹药",
+    "rarity": "凡品",
+    "desc": "跌打郎中都会配的粗浅药散，喘几口气便能缓过劲来。",
+    "use": {
+      "attrs": {
+        "气血": 6
+      }
+    },
+    "consumable": true
+  },
+  "wan_ninglu": {
+    "name": "凝露丸",
+    "type": "丹药",
+    "rarity": "凡品",
+    "desc": "以晨露灵气凝成的小丸，含在舌下丝丝清凉入体。",
+    "use": {
+      "attrs": {
+        "灵力": 2
+      }
+    },
+    "consumable": true
+  },
+  "dan_qingchen": {
+    "name": "清尘丹",
+    "type": "丹药",
+    "rarity": "凡品",
+    "desc": "洗去一身尘劳的常备丹药，行脚散修几乎人手一瓶。",
+    "use": {
+      "attrs": {
+        "气血": 4,
+        "灵力": 1
+      }
+    },
+    "consumable": true
+  },
+  "dan_ningshen": {
+    "name": "凝神丹",
+    "type": "丹药",
+    "rarity": "灵品",
+    "desc": "入口神台一清，打坐时灵气竟自来相就。",
+    "use": {
+      "attrs": {
+        "灵力": 6,
+        "悟性": 1
+      }
+    },
+    "consumable": true
+  },
+  "gao_yusui": {
+    "name": "玉髓膏",
+    "type": "丹药",
+    "rarity": "灵品",
+    "desc": "玉白色药膏，敷上伤口便觉血肉在悄悄生长。",
+    "use": {
+      "attrs": {
+        "气血": 25
+      }
+    },
+    "consumable": true
+  },
+  "dan_xiaohuan": {
+    "name": "小还丹",
+    "type": "丹药",
+    "rarity": "灵品",
+    "desc": "丹如朱果，一粒下腹，气血灵力齐齐回涌。",
+    "use": {
+      "attrs": {
+        "气血": 15,
+        "灵力": 3
+      }
+    },
+    "consumable": true
+  },
+  "dan_zifu": {
+    "name": "紫府丹",
+    "type": "丹药",
+    "rarity": "玄品",
+    "desc": "服之如紫气灌顶，最宜关口滞涩时冲开经脉。",
+    "use": {
+      "attrs": {
+        "灵力": 15,
+        "悟性": 2
+      }
+    },
+    "consumable": true
+  },
+  "dan_dahuan": {
+    "name": "大还丹",
+    "type": "丹药",
+    "rarity": "玄品",
+    "desc": "重伤垂死之人灌下一粒，也能从鬼门关前爬回来。",
+    "use": {
+      "attrs": {
+        "气血": 50,
+        "灵力": 8
+      }
+    },
+    "consumable": true
+  },
+  "shu_duanti": {
+    "name": "《锻体拳谱》",
+    "type": "功法书",
+    "rarity": "凡品",
+    "desc": "泛黄拳谱画着一百零八式桩功，页角都被翻得起了毛边。",
+    "use": {
+      "learnGongfa": [
+        "gf_duanti"
+      ]
+    },
+    "consumable": true
+  },
+  "shu_liuyun": {
+    "name": "《流云剑诀》",
+    "type": "功法书",
+    "rarity": "灵品",
+    "desc": "薄薄一册，开篇只有一句：剑如流云，去留无意。",
+    "use": {
+      "learnGongfa": [
+        "gf_liuyun"
+      ]
+    },
+    "consumable": true
+  },
+  "shu_zixiao": {
+    "name": "《紫霄真解》",
+    "type": "功法书",
+    "rarity": "玄品",
+    "desc": "紫皮书册通页无字，灵力灌入方才显出篇章。",
+    "use": {
+      "learnGongfa": [
+        "gf_zixiao"
+      ]
+    },
+    "consumable": true
+  },
+  "shu_taixu": {
+    "name": "《太虚御道经》",
+    "type": "功法书",
+    "rarity": "仙品",
+    "desc": "残破经卷仅余上篇，展开时字字如星浮于纸面。",
+    "use": {
+      "learnGongfa": [
+        "gf_taixu"
+      ]
+    },
+    "consumable": true
+  },
+  "cao_hanxiang": {
+    "name": "寒香草",
+    "type": "材料",
+    "rarity": "凡品",
+    "desc": "背阴崖下才寻得到的小草，凑近便觉寒香沁鼻。"
+  },
+  "shen_ziwen": {
+    "name": "紫纹参",
+    "type": "材料",
+    "rarity": "灵品",
+    "desc": "参体缠着天然紫纹，须子一颤像是随时要遁土而走。"
+  },
+  "teng_longxue": {
+    "name": "龙血藤",
+    "type": "材料",
+    "rarity": "玄品",
+    "desc": "斩断处渗出殷红汁液，腥气里裹着一股灼人的暖意。"
+  },
+  "tie_xuanjing": {
+    "name": "玄精铁",
+    "type": "材料",
+    "rarity": "灵品",
+    "desc": "乌沉沉一块铁料，掂在手里比同样大小的石头重上三倍。"
+  },
+  "sha_zijin": {
+    "name": "紫金砂",
+    "type": "材料",
+    "rarity": "玄品",
+    "desc": "细如面粉的紫金粉末，是炼制上品法器的主料。"
+  },
+  "shougu": {
+    "name": "兽骨",
+    "type": "材料",
+    "rarity": "凡品",
+    "desc": "妖兽遗落之物，坊市中常有修士收购。"
+  },
+  "pimao": {
+    "name": "兽皮",
+    "type": "材料",
+    "rarity": "凡品",
+    "desc": "妖兽遗落之物，坊市中常有修士收购。"
+  },
+  "yaodan_di": {
+    "name": "低阶妖丹",
+    "type": "材料",
+    "rarity": "凡品",
+    "desc": "妖兽遗落之物，坊市中常有修士收购。"
+  },
+  "gongfa_canjuan": {
+    "name": "功法残卷",
+    "type": "典籍",
+    "rarity": "凡品",
+    "desc": "残缺的功法书页，或可参悟一二。"
+  },
+  "yaogu": {
+    "name": "妖骨",
+    "type": "材料",
+    "rarity": "灵品",
+    "desc": "妖兽遗落之物，坊市中常有修士收购。"
+  },
+  "yadan": {
+    "name": "妖兽内丹",
+    "type": "材料",
+    "rarity": "灵品",
+    "desc": "妖兽遗落之物，坊市中常有修士收购。"
+  },
+  "shouhun": {
+    "name": "兽魂碎片",
+    "type": "材料",
+    "rarity": "灵品",
+    "desc": "妖兽遗落之物，坊市中常有修士收购。"
+  },
+  "yaodan_zhong": {
+    "name": "中阶妖丹",
+    "type": "材料",
+    "rarity": "玄品",
+    "desc": "妖兽遗落之物，坊市中常有修士收购。"
+  },
+  "gongfa_zhengjuan": {
+    "name": "完整功法",
+    "type": "材料",
+    "rarity": "玄品",
+    "desc": "妖兽遗落之物，坊市中常有修士收购。"
+  },
+  "tiancai": {
+    "name": "天材地宝",
+    "type": "材料",
+    "rarity": "玄品",
+    "desc": "妖兽遗落之物，坊市中常有修士收购。"
+  },
+  "juhuacao": {
+    "name": "聚花草",
+    "type": "药材",
+    "rarity": "凡品",
+    "desc": "山野灵植，药性温和，是炼丹的常见原料。"
+  },
+  "ningqicao": {
+    "name": "凝气草",
+    "type": "药材",
+    "rarity": "凡品",
+    "desc": "山野灵植，药性温和，是炼丹的常见原料。"
+  },
+  "yilinghua": {
+    "name": "益灵花",
+    "type": "药材",
+    "rarity": "灵品",
+    "desc": "山野灵植，药性温和，是炼丹的常见原料。"
+  },
+  "tianlingzhi": {
+    "name": "天灵芝",
+    "type": "药材",
+    "rarity": "灵品",
+    "desc": "山野灵植，药性温和，是炼丹的常见原料。"
+  },
+  "xuelinghua": {
+    "name": "血灵花",
+    "type": "药材",
+    "rarity": "玄品",
+    "desc": "山野灵植，药性温和，是炼丹的常见原料。"
+  },
+  "wanlingcao": {
+    "name": "万灵草",
+    "type": "药材",
+    "rarity": "玄品",
+    "desc": "山野灵植，药性温和，是炼丹的常见原料。"
+  },
+  "xianguo": {
+    "name": "千年仙果",
+    "type": "药材",
+    "rarity": "玄品",
+    "desc": "山野灵植，药性温和，是炼丹的常见原料。"
+  },
+  "qiannianlingshen": {
+    "name": "千年灵参",
+    "type": "药材",
+    "rarity": "玄品",
+    "desc": "山野灵植，药性温和，是炼丹的常见原料。"
+  },
+  "fan_tie": {
+    "name": "凡铁矿石",
+    "type": "矿石",
+    "rarity": "凡品",
+    "desc": "蕴有微量灵气的矿料，可供炼器之用。"
+  },
+  "xiayin_kuang": {
+    "name": "霞隐矿",
+    "type": "矿石",
+    "rarity": "凡品",
+    "desc": "蕴有微量灵气的矿料，可供炼器之用。"
+  },
+  "lingshi_kuang": {
+    "name": "灵石矿",
+    "type": "矿石",
+    "rarity": "凡品",
+    "desc": "蕴有微量灵气的矿料，可供炼器之用。"
+  },
+  "jingsha_tie": {
+    "name": "精砂铁",
+    "type": "矿石",
+    "rarity": "灵品",
+    "desc": "蕴有微量灵气的矿料，可供炼器之用。"
+  },
+  "hanzhi_kuang": {
+    "name": "寒芷矿",
+    "type": "矿石",
+    "rarity": "灵品",
+    "desc": "蕴有微量灵气的矿料，可供炼器之用。"
+  },
+  "lingyun": {
+    "name": "灵气结晶",
+    "type": "矿石",
+    "rarity": "灵品",
+    "desc": "蕴有微量灵气的矿料，可供炼器之用。"
+  },
+  "qingyun_shipian": {
+    "name": "青云石碎片",
+    "type": "矿石",
+    "rarity": "玄品",
+    "desc": "蕴有微量灵气的矿料，可供炼器之用。"
+  },
+  "leihe_hun": {
+    "name": "雷劫残魂",
+    "type": "材料",
+    "rarity": "玄品",
+    "desc": "妖兽遗落之物，坊市中常有修士收购。"
+  },
+  "shu_changchun": {
+    "name": "《长春功》",
+    "type": "功法书",
+    "rarity": "凡品",
+    "desc": "藏经阁誊录的养生吐纳功，字迹端正，页脚盖着{sect}的朱印。",
+    "use": {
+      "learnGongfa": [
+        "gf_changchun"
+      ]
+    },
+    "consumable": true
+  },
+  "shu_tiegu": {
+    "name": "《铁骨功》",
+    "type": "功法书",
+    "rarity": "灵品",
+    "desc": "厚厚一册体术图谱，字里行间墨迹力透纸背，观之便觉筋骨发紧。",
+    "use": {
+      "learnGongfa": [
+        "gf_tiegu"
+      ]
+    },
+    "consumable": true
+  },
+  "shu_bibo": {
+    "name": "《碧波心经》",
+    "type": "功法书",
+    "rarity": "灵品",
+    "desc": "青绢封皮的心法真本，翻动书页时隐有水波纹路在字里行间流转。",
+    "use": {
+      "learnGongfa": [
+        "gf_bibo"
+      ]
+    },
+    "consumable": true
+  },
+  "shu_hanguang": {
+    "name": "《寒光剑典》",
+    "type": "功法书",
+    "rarity": "玄品",
+    "desc": "玄铁书匣封存的剑典，开匣一瞬寒气扑面，纸上剑意几欲离篇而出。",
+    "use": {
+      "learnGongfa": [
+        "gf_hanguang"
+      ]
+    },
+    "consumable": true
+  },
+  "shu_bihuozhang": {
+    "name": "《劈火掌法》",
+    "type": "功法书",
+    "rarity": "凡品",
+    "desc": "以掌为炉、灵力为薪的入门掌法，坊市地摊上花几枚铜板就能买到的手抄本。",
+    "use": {
+      "learnGongfa": [
+        "sk_bihuozhang"
+      ]
+    },
+    "consumable": true
+  },
+  "shu_qingfeng": {
+    "name": "《清风剑法》",
+    "type": "功法书",
+    "rarity": "灵品",
+    "desc": "青绢封皮的剑法真本，翻开书页便有清风拂面，字里行间隐有剑意流转。",
+    "use": {
+      "learnGongfa": [
+        "sk_qingfeng"
+      ]
+    },
+    "consumable": true
+  },
+  "shu_xuanlei": {
+    "name": "《玄雷指诀》",
+    "type": "功法书",
+    "rarity": "玄品",
+    "desc": "玄铁匣封存的指诀秘籍，匣缝中时有细碎电弧跳跃，触之指尖发麻。",
+    "use": {
+      "learnGongfa": [
+        "sk_xuanlei"
+      ]
+    },
+    "consumable": true
+  },
+  "shu_taiji": {
+    "name": "《太极剑意》",
+    "type": "功法书",
+    "rarity": "仙品",
+    "desc": "残破古卷仅余半部，展卷时阴阳二气自行流转，剑意扑面而来令人不敢直视。",
+    "use": {
+      "learnGongfa": [
+        "sk_taiji"
+      ]
+    },
+    "consumable": true
+  },
+  "dan_hujiedan": {
+    "name": "护劫丹",
+    "type": "丹药",
+    "rarity": "玄品",
+    "desc": "专为渡劫炼制的灵丹，服下可在天劫中护住心脉元神，大幅提升渡劫把握。",
+    "use": {
+      "attrs": {
+        "气血": 30,
+        "灵力": 15
+      }
+    },
+    "consumable": true
+  },
+  "yaodan_gao": {
+    "id": "yaodan_gao",
+    "name": "????",
+    "type": "??",
+    "rarity": "??",
+    "desc": "?????????????????????????????",
+    "value": 500
+  },
+  "dan_jinchuang": {
+    "id": "dan_jinchuang",
+    "name": "金疮药",
+    "type": "丹药",
+    "rarity": "凡品",
+    "desc": "寻常药铺都有的刀伤药，药粉洒上便觉伤口发痒生肌。",
+    "use": {
+      "attrs": {
+        "气血": 8
+      }
+    },
+    "consumable": true
+  },
+  "dan_baiyu": {
+    "id": "dan_baiyu",
+    "name": "白玉生肌丹",
+    "type": "丹药",
+    "rarity": "灵品",
+    "desc": "丹色如羊脂白玉，入口化津，重伤之人服下也能吊住三日性命。",
+    "use": {
+      "attrs": {
+        "气血": 22
+      }
+    },
+    "consumable": true
+  },
+  "dan_jianxin": {
+    "id": "dan_jianxin",
+    "name": "剑心丹",
+    "type": "丹药",
+    "rarity": "灵品",
+    "desc": "丹内封着一缕剑修残念，服下可窥剑道一斑，灵力亦有所长。",
+    "use": {
+      "learnGongfa": [
+        "sk_qingfeng"
+      ],
+      "attrs": {
+        "灵力": 3,
+        "悟性": 1
+      }
+    },
+    "consumable": true
+  },
+  "dan_chiyang": {
+    "id": "dan_chiyang",
+    "name": "赤阳丹",
+    "type": "丹药",
+    "rarity": "玄品",
+    "desc": "赤红如火的烈丹，吞下便觉丹田燃起一团罡气，掌力自生。",
+    "use": {
+      "learnGongfa": [
+        "sk_bihuozhang"
+      ],
+      "attrs": {
+        "气血": 8,
+        "勇气": 2
+      }
+    },
+    "consumable": true
+  },
+  "dan_qili": {
+    "id": "dan_qili",
+    "name": "气力散",
+    "type": "丹药",
+    "rarity": "凡品",
+    "desc": "提神醒脑的粗浅药散，服下胆气自壮，一时力大无穷不知疲倦。",
+    "use": {
+      "attrs": {
+        "攻击": 3,
+        "勇气": 2
+      }
+    },
+    "consumable": true
+  },
+  "dan_juling": {
+    "id": "dan_juling",
+    "name": "聚灵丹",
+    "type": "丹药",
+    "rarity": "灵品",
+    "desc": "服下后天地灵气如百川归海般涌来，时效虽短却精进神速。",
+    "use": {
+      "attrs": {
+        "灵力": 10,
+        "悟性": 2
+      }
+    },
+    "consumable": true
+  },
+  "dan_bingxin": {
+    "id": "dan_bingxin",
+    "name": "冰心丹",
+    "type": "丹药",
+    "rarity": "灵品",
+    "desc": "服下如饮冰泉，刹那间万念澄澈，敌人的破绽看得一清二楚。",
+    "use": {
+      "attrs": {
+        "神识": 4,
+        "防御": 3,
+        "灵力": 5
+      }
+    },
+    "consumable": true
+  },
+  "dan_xuepo": {
+    "id": "dan_xuepo",
+    "name": "血魄丹",
+    "type": "丹药",
+    "rarity": "玄品",
+    "desc": "以妖兽精血炼成的禁丹，服下气血翻涌如沸，战力暴涨一刻。",
+    "use": {
+      "attrs": {
+        "攻击": 8,
+        "勇气": 5,
+        "气血": 8
+      }
+    },
+    "consumable": true
+  }
+}

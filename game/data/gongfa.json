@@ -1,0 +1,421 @@
+{
+  "gf_yinqi": {
+    "name": "引气诀",
+    "grade": "凡阶",
+    "kind": "心法",
+    "passive": {
+      "灵力": 2
+    },
+    "cultivateRate": 1,
+    "desc": "{sect}入门心法，导引天地灵气入体，稳固根基。",
+    "wuxing": [],
+    "requireRealm": 0
+  },
+  "gf_changchun": {
+    "name": "长春功",
+    "grade": "凡阶",
+    "kind": "心法",
+    "passive": {
+      "气血": 5,
+      "灵力": 1
+    },
+    "cultivateRate": 1.05,
+    "desc": "乡野道人传下的养生吐纳功，练不出神通，胜在气息绵长。",
+    "wuxing": [
+      "水"
+    ],
+    "requireRealm": 0
+  },
+  "gf_duanti": {
+    "name": "锻体拳",
+    "grade": "凡阶",
+    "kind": "术法",
+    "passive": {
+      "气血": 8,
+      "攻击": 1,
+      "防御": 1
+    },
+    "cultivateRate": 1.0,
+    "desc": "一百零八式桩功拳法，练到深处筋骨铮铮如铁。",
+    "wuxing": [
+      "土"
+    ],
+    "requireRealm": 0,
+    "battle": {
+      "qiCost": 0,
+      "damage": {
+        "attackRatio": 0.8
+      },
+      "affix": "吸血"
+    }
+  },
+  "gf_liuyun": {
+    "name": "流云剑诀",
+    "grade": "灵阶",
+    "kind": "术法",
+    "passive": {
+      "攻击": 4,
+      "悟性": 1
+    },
+    "cultivateRate": 1.3,
+    "desc": "剑势如流云舒卷，看似轻缓，落剑时快不可言。",
+    "wuxing": [
+      "金"
+    ],
+    "requireRealm": 1,
+    "battle": {
+      "qiCost": 8,
+      "damage": {
+        "attackRatio": 1.5
+      },
+      "affix": "连击"
+    }
+  },
+  "gf_bibo": {
+    "name": "碧波心经",
+    "grade": "灵阶",
+    "kind": "心法",
+    "passive": {
+      "灵力": 6,
+      "气血": 5
+    },
+    "cultivateRate": 1.35,
+    "desc": "运功时灵力如碧波层层推涌，绵绵不绝，生生不息。",
+    "wuxing": [
+      "水"
+    ],
+    "requireRealm": 1
+  },
+  "gf_tiegu": {
+    "name": "铁骨功",
+    "grade": "灵阶",
+    "kind": "术法",
+    "passive": {
+      "防御": 4,
+      "气血": 10
+    },
+    "cultivateRate": 1.25,
+    "desc": "以气血反复淬炼骨膜，硬受一记妖爪也只是闷哼一声。",
+    "wuxing": [
+      "土"
+    ],
+    "requireRealm": 2,
+    "battle": {
+      "qiCost": 0,
+      "damage": {
+        "attackRatio": 1.0
+      },
+      "affix": "破甲"
+    }
+  },
+  "gf_zixiao": {
+    "name": "紫霄真解",
+    "grade": "玄阶",
+    "kind": "心法",
+    "passive": {
+      "灵力": 12,
+      "悟性": 2
+    },
+    "cultivateRate": 1.7,
+    "desc": "相传录自紫霄宫残碑，行功时有紫气自百会穴垂落。",
+    "wuxing": [
+      "火"
+    ],
+    "requireRealm": 2
+  },
+  "gf_hanguang": {
+    "name": "寒光剑典",
+    "grade": "玄阶",
+    "kind": "术法",
+    "passive": {
+      "攻击": 8,
+      "灵力": 5
+    },
+    "cultivateRate": 1.6,
+    "desc": "通篇只论一个快字，剑出时天地间唯余一线寒光。",
+    "wuxing": [
+      "金"
+    ],
+    "requireRealm": 3,
+    "battle": {
+      "qiCost": 15,
+      "damage": {
+        "attackRatio": 2.0
+      },
+      "affix": "霜冻"
+    }
+  },
+  "gf_taixu": {
+    "name": "太虚御道经",
+    "grade": "仙阶",
+    "kind": "心法",
+    "passive": {
+      "灵力": 25,
+      "悟性": 4,
+      "气血": 20
+    },
+    "cultivateRate": 2.2,
+    "desc": "仙人遗篇仅存上卷，以身合虚、御道而行，字字如星悬于纸上。",
+    "wuxing": [
+      "金",
+      "木",
+      "水",
+      "火",
+      "土"
+    ],
+    "requireRealm": 3
+  },
+  "sk_bihuozhang": {
+    "name": "劈火掌",
+    "grade": "凡阶",
+    "kind": "术法",
+    "requireRealm": 1,
+    "passive": {
+      "攻击": 2
+    },
+    "cultivateRate": 1.1,
+    "desc": "以掌为炉、灵力为薪，催发出一股灼热掌风，练至深处可隔空灼人经脉。",
+    "wuxing": [
+      "火"
+    ],
+    "battle": {
+      "qiCost": 3,
+      "damage": {
+        "attackRatio": 1.1
+      },
+      "affix": "灼烧"
+    }
+  },
+  "sk_qingfeng": {
+    "name": "清风剑法",
+    "grade": "灵阶",
+    "kind": "术法",
+    "requireRealm": 2,
+    "passive": {
+      "攻击": 4,
+      "灵力": 2
+    },
+    "cultivateRate": 1.35,
+    "desc": "剑势清灵飘逸，如清风拂过竹林，看似不着力，实则剑剑直指要害。",
+    "wuxing": [
+      "金"
+    ],
+    "battle": {
+      "qiCost": 10,
+      "damage": {
+        "attackRatio": 1.6
+      },
+      "affix": null
+    }
+  },
+  "sk_xuanlei": {
+    "name": "玄雷指",
+    "grade": "玄阶",
+    "kind": "术法",
+    "requireRealm": 3,
+    "passive": {
+      "攻击": 7,
+      "灵力": 5
+    },
+    "cultivateRate": 1.7,
+    "desc": "指尖凝聚玄雷之气，一指点出如天雷破空，中者经脉俱麻、寒意透骨。",
+    "wuxing": [
+      "金"
+    ],
+    "battle": {
+      "qiCost": 20,
+      "damage": {
+        "attackRatio": 2.2
+      },
+      "affix": "霜冻"
+    }
+  },
+  "sk_taiji": {
+    "name": "太极剑意",
+    "grade": "仙阶",
+    "kind": "术法",
+    "requireRealm": 4,
+    "passive": {
+      "攻击": 15,
+      "灵力": 10,
+      "悟性": 2
+    },
+    "cultivateRate": 2.2,
+    "desc": "太极生两仪，剑意化阴阳。一剑之中阴阳相生，剑势连绵无穷无尽。",
+    "wuxing": [
+      "金",
+      "水"
+    ],
+    "battle": {
+      "qiCost": 30,
+      "damage": {
+        "attackRatio": 3.0
+      },
+      "affix": "连击"
+    }
+  },
+  "gf_chiyang": {
+    "name": "赤阳真解",
+    "grade": "玄阶",
+    "kind": "心法",
+    "passive": {
+      "灵力": 16,
+      "气血": 10,
+      "悟性": 2
+    },
+    "cultivateRate": 1.7,
+    "desc": "以心火为引、赤阳为源，运功时周身如浴朝阳，灵力流转快愈常人数倍。",
+    "wuxing": [
+      "火"
+    ],
+    "requireRealm": 3
+  },
+  "gf_biyou": {
+    "name": "碧游心诀",
+    "grade": "玄阶",
+    "kind": "心法",
+    "passive": {
+      "灵力": 22,
+      "气血": 15,
+      "魅力": 3
+    },
+    "cultivateRate": 1.8,
+    "desc": "碧游仙子所创，行功时灵力如碧波三叠，层层递进，尤擅温养经脉。",
+    "wuxing": [
+      "水"
+    ],
+    "requireRealm": 4
+  },
+  "sk_lihuo": {
+    "name": "离火剑",
+    "grade": "玄阶",
+    "kind": "术法",
+    "requireRealm": 3,
+    "passive": {
+      "攻击": 9,
+      "灵力": 6
+    },
+    "cultivateRate": 1.65,
+    "desc": "剑锋裹离火而行，一剑劈下焰浪翻涌，草木金石触之即燃。",
+    "wuxing": [
+      "火"
+    ],
+    "battle": {
+      "qiCost": 18,
+      "damage": {
+        "attackRatio": 2.1
+      },
+      "affix": "灼烧"
+    }
+  },
+  "sk_yuanshen": {
+    "name": "元神秘术",
+    "grade": "玄阶",
+    "kind": "术法",
+    "requireRealm": 4,
+    "passive": {
+      "攻击": 12,
+      "灵力": 8,
+      "神识": 2
+    },
+    "cultivateRate": 1.75,
+    "desc": "以神识凝聚元神虚影，化为无形锋刃直斩敌魂，中者神志涣散如受刀剐。",
+    "wuxing": [
+      "木"
+    ],
+    "battle": {
+      "qiCost": 25,
+      "damage": {
+        "attackRatio": 2.5
+      },
+      "affix": "流血"
+    }
+  },
+  "gf_hunyuan": {
+    "name": "混元一气经",
+    "grade": "仙阶",
+    "kind": "心法",
+    "passive": {
+      "灵力": 35,
+      "气血": 30,
+      "悟性": 5,
+      "防御": 8
+    },
+    "cultivateRate": 2.4,
+    "desc": "混元者，气之始也。以一气御五行，阴阳自调、周天自转，乃元婴境至高心法之一。",
+    "wuxing": [
+      "金",
+      "木",
+      "水",
+      "火",
+      "土"
+    ],
+    "requireRealm": 4
+  },
+  "gf_jiutian": {
+    "name": "九天玄女经",
+    "grade": "仙阶",
+    "kind": "心法",
+    "passive": {
+      "灵力": 50,
+      "气血": 45,
+      "悟性": 7,
+      "神识": 5
+    },
+    "cultivateRate": 2.7,
+    "desc": "传言九天玄女降世时亲授，修至深处可感应星河运转，神识笼罩百里方圆。",
+    "wuxing": [
+      "金",
+      "水",
+      "火"
+    ],
+    "requireRealm": 5
+  },
+  "sk_wanxiang": {
+    "name": "万象天引",
+    "grade": "仙阶",
+    "kind": "术法",
+    "requireRealm": 4,
+    "passive": {
+      "攻击": 18,
+      "灵力": 12
+    },
+    "cultivateRate": 2.3,
+    "desc": "牵引天地万象之力汇于一掌，掌出时风云失色、雷霆随行，威势骇人。",
+    "wuxing": [
+      "金",
+      "土"
+    ],
+    "battle": {
+      "qiCost": 38,
+      "damage": {
+        "attackRatio": 3.3
+      },
+      "affix": "连击"
+    }
+  },
+  "sk_jianyu": {
+    "name": "剑域",
+    "grade": "仙阶",
+    "kind": "术法",
+    "requireRealm": 5,
+    "passive": {
+      "攻击": 25,
+      "灵力": 15,
+      "悟性": 3
+    },
+    "cultivateRate": 2.5,
+    "desc": "以剑意为根基展开一方剑气领域，域内万剑齐发如暴雨倾盆，避无可避。",
+    "wuxing": [
+      "金",
+      "木"
+    ],
+    "battle": {
+      "qiCost": 50,
+      "damage": {
+        "attackRatio": 4.0
+      },
+      "affix": "破甲"
+    }
+  }
+}

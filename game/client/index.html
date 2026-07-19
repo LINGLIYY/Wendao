@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>修仙・问道</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+
+<a href="#main-col" class="skip-link">跳到主内容</a>
+
+<header id="top-bar"><div id="game-title">修仙・問道</div><div id="toolbar">
+  <button id="btn-save" onclick="UI.saveGame()" aria-label="存档">存档</button>
+  <button id="btn-load" onclick="UI.loadGame()" aria-label="读档">读档</button>
+</div></header>
+
+<div id="app">
+  <div id="game-area">
+    <nav id="tab-bar">
+      <button class="tab-btn active" data-tab="create" id="tab-create-btn" onclick="UI.switchTab('create')" aria-label="创建角色" role="tab" aria-selected="true">创角</button>
+      <button class="tab-btn" data-tab="play" onclick="UI.switchTab('play')" aria-label="修行" role="tab" aria-selected="false">修行</button>
+      <button class="tab-btn" data-tab="char" onclick="UI.switchTab('char')" aria-label="人物属性" role="tab" aria-selected="false">人物</button>
+      <button class="tab-btn" data-tab="bag" onclick="UI.switchTab('bag')" aria-label="背包物品" role="tab" aria-selected="false">背包</button>
+      <button class="tab-btn" data-tab="sect" style="display:none" onclick="UI.switchTab('sect')" aria-label="宗门" role="tab" aria-selected="false">宗门</button>
+      <button class="tab-btn" data-tab="gongfa" onclick="UI.switchTab('gongfa')" aria-label="功法管理" role="tab" aria-selected="false">功法</button>
+      <button class="tab-btn" data-tab="log" onclick="UI.switchTab('log')" aria-label="事件日志" role="tab" aria-selected="false">日志</button>
+    </nav>
+    <div id="tab-play" class="tab-page">
+      <div id="layout">
+        <aside id="char-panel"></aside>
+        <main id="main-col">
+          <div id="scene-title" aria-live="polite"></div>
+          <div id="scene-text" aria-live="polite"></div>
+          <div id="choices"></div>
+        </main>
+      </div>
+    </div>
+    <div id="tab-create" class="tab-page"></div>
+    <div id="tab-char" class="tab-page" style="display:none"></div>
+    <div id="tab-bag" class="tab-page" style="display:none"></div>
+    <div id="tab-sect" class="tab-page" style="display:none"></div>
+    <div id="tab-gongfa" class="tab-page" style="display:none"></div>
+    <div id="tab-log" class="tab-page" style="display:none"></div>
+  </div>
+</div>
+
+<div id="modal-overlay" hidden onclick="this.hidden=true">
+  <div class="modal-box" id="modal-content" onclick="event.stopPropagation()"></div>
+</div>
+<div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script src="js/ui.js"></script>
+</body></html>

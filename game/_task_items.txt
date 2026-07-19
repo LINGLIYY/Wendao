@@ -1,0 +1,55 @@
+﻿<role>
+你是游戏数据生成器。只输出结果，不输出推理过程。
+</role>
+
+<workspace>
+C:\知识库\AI\Ai修仙小游戏\game
+</workspace>
+
+<required_reads>
+1. CLAUDE.md — 项目铁律（必须最先读）
+2. data/items.json — 现有 92 种物品的完整格式
+</required_reads>
+
+<format_reference>
+从 items.json 取 1 条食物和 1 条丹药格式：
+
+"ganliang": {
+    "id": "ganliang", "name": "干粮",
+    "type": "食物", "rarity": "普通",
+    "desc": "一块能填饱肚子的粗粮饼", "value": 2
+},
+
+"dan_huiqi": {
+    "id": "dan_huiqi", "name": "回气散",
+    "type": "丹药", "rarity": "普通",
+    "use": {"attrs": {"灵力": 3}}, "consumable": true,
+    "desc": "入门级回复丹药，微补灵力"
+}
+</format_reference>
+
+<task>
+生成 8 种新物品，增加 type 多样性：
+- 食物类：2 种（含 1 种低级 + 1 种中级效果）
+- 典籍类：2 种（consumable=true，use.learnGongfa 或 use.attrs 均可）
+- 丹药类：2 种（稀有品质，扩展中端丹药种类）
+- 材料类：2 种（传说品质，用于高境界炼制）
+
+目标：每种 type 至少有 3 个条目。
+</task>
+
+<constraints>
+1. 用 Python json.dump 写入 data/items_new.json，禁止手写含中文的 JSON
+2. 新 item id 不得与 items.json 中已有 id 冲突
+3. rarity 只有四种：普通/稀有/传说/史诗
+4. 所有枚举值不得自创
+5. consumable 物品必须有 use 字段
+</constraints>
+
+<checkpoint>
+读完 items.json 后先说 "READY: 当前各 type 数量统计，目标补到至少 3 种/type"
+</checkpoint>
+
+<output>
+完成后说 "DONE: N items written" 并输出表格汇总
+</output>

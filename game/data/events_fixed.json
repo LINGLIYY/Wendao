@@ -1,0 +1,659 @@
+{
+  "mile_zhuji_zhaojian": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain",
+      "宗门任务"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 2
+      },
+      "flags": [
+        "宗门弟子"
+      ],
+      "attrs": {
+        "声望": {
+          "lte": 0
+        }
+      }
+    },
+    "title": "里程碑・长老召见",
+    "text": "你刚要动身，一名执事弟子匆匆赶来拦住去路：「{name}师弟？玄机长老有请，速去大殿！」\n\n大殿之上，玄机长老细细打量你片刻，抚须而笑：「筑基了。好，很好。本宗一脉，又添一根栋梁。」\n\n他抬手示意，侍立弟子捧上一只木盘——一枚凝神玉佩，一瓶小还丹。\n\n「这是宗门给筑基弟子的例赐。另有一桩正事要交托于你——{banditLair}匪患愈演愈烈，你得空便来领命。」",
+    "choices": [
+      {
+        "text": "郑重受赐，躬身领命",
+        "effect": {
+          "attrs": {
+            "声望": 3,
+            "贡献": 10
+          },
+          "addItems": [
+            "pei_ningshen",
+            "dan_xiaohuan"
+          ],
+          "setFlags": [
+            "长老赐命"
+          ]
+        },
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_jindan_dadian": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain",
+      "宗门任务"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 3
+      },
+      "flags": [
+        "宗门弟子"
+      ],
+      "attrs": {
+        "声望": {
+          "gte": 1,
+          "lte": 7
+        }
+      }
+    },
+    "title": "里程碑・金丹大典",
+    "text": "你金丹初成的气息瞒不过山上诸位长老。这一日钟鸣九响，{sect}为你开了近百年来头一场金丹小典。\n\n掌门真人亲临，目光在你身上停了良久：「{origin}出身，一步一步走到金丹——大道酬勤，此之谓也。」\n\n「自今日起，你为本宗真传，山门气运与你同担。」侍者奉上贺仪：一柄紫电梭，一粒大还丹。",
+    "choices": [
+      {
+        "text": "受赐谢恩，自此位列真传",
+        "effect": {
+          "attrs": {
+            "声望": 7,
+            "贡献": 20
+          },
+          "addItems": [
+            "suo_zidian",
+            "dan_dahuan"
+          ],
+          "setFlags": [
+            "真传弟子"
+          ]
+        },
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_zhuji_shilian": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain",
+      "宗门任务"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 2
+      },
+      "flags": [
+        "宗门弟子"
+      ],
+      "attrs": {
+        "声望": {
+          "lte": 3
+        }
+      }
+    },
+    "title": "里程碑·筑基试炼",
+    "text": "玄机长老召你入殿：「{name}，你筑基已稳，该经一番真正的历练了。」\n\n「{banditLair}近来妖气冲天，一头黑风妖狼王盘踞岭上，已伤了好几位巡山弟子。宗门此番不派援手——取回那妖狼内丹，便是你的筑基试炼。」\n\n长老从袖中取出一道符纸递给你：「若是撑不住，捏碎此符可传回山门。不过——试炼也就算败了。」",
+    "choices": [
+      {
+        "text": "正面迎战黑风妖狼王",
+        "battle": {
+          "enemy": "black_wind_wolf_king",
+          "win": "mile_zhuji_shilian_win",
+          "lose": "sect_hub"
+        }
+      },
+      {
+        "text": "设伏智取（需悟性≥10）",
+        "cond": {
+          "attrs": {
+            "悟性": {
+              "gte": 10
+            }
+          }
+        },
+        "roll": {
+          "chance": 0.8,
+          "success": "mile_zhuji_shilian_win",
+          "fail": "mile_zhuji_shilian_fail"
+        },
+        "effect": {
+          "day": 1
+        }
+      },
+      {
+        "text": "今日准备不足，改日再来",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_zhuji_shilian_win": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·筑基试炼·功成",
+    "text": "黑风妖狼王发出一声不甘的长嚎，庞大的身躯轰然倒地。你从其丹田剖出一枚乌光流转的妖丹，余温犹在掌心发烫。\n\n回转宗门，玄机长老接过妖丹时眼中精光一闪：「好！我{sect}又得一可造之材！」\n\n当着满殿弟子的面，长老亲手为你佩上一枚凝神玉佩，又在宗门名册上重重记下一笔。\n\n【声望 +5・贡献 +20・获得妖兽内丹、凝神玉佩】",
+    "onEnter": {
+      "attrs": {
+        "声望": 5,
+        "贡献": 20
+      },
+      "addItems": [
+        "yadan",
+        "pei_ningshen"
+      ],
+      "setFlags": [
+        "试炼通过"
+      ]
+    },
+    "choices": [
+      {
+        "text": "躬身谢恩，退出大殿",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_zhuji_shilian_fail": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·筑基试炼·暂退",
+    "text": "你设下的陷阱被妖狼王识破——它一爪拍断了你藏身的树干，若非闪得快，那一爪就落在了你身上。\n\n灰头土脸地退回宗门，执事弟子倒没说什么，只是眼神里分明写着「早说了没那么容易」。\n\n【试炼未完成，下次再来】",
+    "onEnter": {
+      "attrs": {
+        "气血": -5
+      }
+    },
+    "choices": [
+      {
+        "text": "养好伤再来",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_jindan_mijing": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain",
+      "宗门任务"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 3
+      },
+      "flags": [
+        "宗门弟子"
+      ],
+      "attrs": {
+        "声望": {
+          "gte": 4,
+          "lte": 12
+        }
+      }
+    },
+    "title": "里程碑·金丹秘境",
+    "text": "后山禁地深处，一道尘封百年的石门轰然洞开——上古金丹修士遗留的洞府秘境，终于被宗门阵法感应到了。\n\n掌门真人的声音自高空传下：「金丹秘境初启，洞府禁制未消——只容金丹弟子入内。{name}，你可愿一探？」\n\n门内透出的灵光，浓郁得几乎凝成实质。百年未启的秘境……其中机缘，不可想象。",
+    "choices": [
+      {
+        "text": "破阵直入，迎战守卫",
+        "battle": {
+          "enemy": "ghost_general",
+          "win": "mile_jindan_mijing_win",
+          "lose": "sect_hub"
+        }
+      },
+      {
+        "text": "参悟阵纹，不战而解（需悟性≥14）",
+        "cond": {
+          "attrs": {
+            "悟性": {
+              "gte": 14
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "悟性": 2
+          }
+        },
+        "next": "mile_jindan_mijing_win_no_battle"
+      },
+      {
+        "text": "不入秘境深处，在外围收集灵材",
+        "next": "mile_jindan_mijing_outer"
+      }
+    ]
+  },
+  "mile_jindan_mijing_win": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·金丹秘境·遗宝",
+    "text": "幽冥鬼将化作一缕黑烟散尽，洞府内里豁然开朗。石案上静静躺着一卷剑典、一瓶紫府丹，还有一块乌沉沉的玄精铁——都是那位金丹前辈的毕生所藏。\n\n壁上另有数行遗刻：「吾道成于斯，亦殁于斯。后来者得吾所遗，当继吾志。」\n\n【声望 +5・获得寒光剑典、紫府丹、玄精铁】",
+    "onEnter": {
+      "attrs": {
+        "声望": 5
+      },
+      "addItems": [
+        "shu_hanguang",
+        "dan_zifu",
+        "tie_xuanjing"
+      ]
+    },
+    "choices": [
+      {
+        "text": "对遗刻一礼，退出洞府",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_jindan_mijing_win_no_battle": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·金丹秘境·悟道",
+    "text": "你盘坐阵前，以神识拆解那层层叠叠的阵纹。三日三夜不眠不休——第四日破晓，最后一道阵纹在识海中轰然贯通！\n\n洞府禁制自行消散，灵光如潮涌出。你未动一剑便走了进来，石案上的遗宝静静地等着你。\n\n壁上遗刻闪烁：「能悟吾阵者，当得吾道。」\n\n【声望 +5・悟性 +2・获得寒光剑典、紫府丹、玄精铁】",
+    "onEnter": {
+      "attrs": {
+        "声望": 5,
+        "悟性": 2
+      },
+      "addItems": [
+        "shu_hanguang",
+        "dan_zifu",
+        "tie_xuanjing"
+      ]
+    },
+    "choices": [
+      {
+        "text": "郑重收下遗宝，退出洞府",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_jindan_mijing_outer": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·金丹秘境·外围",
+    "text": "你不贪深处重宝，只在洞府外围的灵药圃中仔细搜罗。百年无人踏足，灵草疯长成片——你采到一株足有千年道行的灵参，又在碎石堆里翻出一块玄精铁。\n\n虽未得那位前辈的功法传承，这些材料也足够让你不虚此行。\n\n【声望 +3・获得千年灵参、玄精铁】",
+    "onEnter": {
+      "attrs": {
+        "声望": 3
+      },
+      "addItems": [
+        "qiannianlingshen",
+        "tie_xuanjing"
+      ]
+    },
+    "choices": [
+      {
+        "text": "满载而归",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_yuanying_tianjie": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain",
+      "宗门任务"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 4
+      },
+      "flags": [
+        "宗门弟子"
+      ],
+      "attrs": {
+        "声望": {
+          "gte": 8,
+          "lte": 19
+        }
+      }
+    },
+    "title": "里程碑·元婴天劫",
+    "text": "你元婴初成的那一刻，九天之上雷云骤聚，滚滚闷雷如山岳压顶。方圆百里的飞禽走兽匍匐在地，连{sect}的护山大阵都微微震颤。\n\n掌门真人的声音穿透雷云：「{name}！元婴天劫，外人不得干预——是生是死，全看你自己了！」\n\n第一道劫雷已经劈落，耀眼的电光照亮了半边天空。",
+    "choices": [
+      {
+        "text": "以肉身硬抗天劫（需气血≥180，四成把握）",
+        "cond": {
+          "attrs": {
+            "气血": {
+              "gte": 180
+            }
+          }
+        },
+        "roll": {
+          "chance": 0.4,
+          "success": "mile_yuanying_tianjie_win",
+          "fail": "mile_yuanying_tianjie_fail"
+        }
+      },
+      {
+        "text": "布下防御阵法削弱劫雷（需神识≥18，七成把握）",
+        "cond": {
+          "attrs": {
+            "神识": {
+              "gte": 18
+            }
+          }
+        },
+        "roll": {
+          "chance": 0.7,
+          "success": "mile_yuanying_tianjie_win",
+          "fail": "mile_yuanying_tianjie_fail"
+        }
+      },
+      {
+        "text": "服下护劫丹渡劫（需持有护劫丹，八成半把握）",
+        "cond": {
+          "items": [
+            "dan_hujiedan"
+          ]
+        },
+        "effect": {
+          "removeItems": [
+            "dan_hujiedan"
+          ]
+        },
+        "roll": {
+          "chance": 0.85,
+          "success": "mile_yuanying_tianjie_win",
+          "fail": "mile_yuanying_tianjie_fail"
+        }
+      },
+      {
+        "text": "暂避锋芒，压制修为（延缓渡劫）",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_yuanying_tianjie_win": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·元婴天劫·功成",
+    "text": "最后一道劫雷劈落——你的元婴在雷火中淬炼成形，周身灵光骤然暴涨百倍！雷云不甘地翻涌片刻，终于渐渐散去，天光从云隙间洒下，映得你浑身金光灿灿。\n\n掌门真人第一个落下云头，目光灼灼：「渡过元婴天劫，便是我{sect}的太上长老了。」\n\n满山弟子齐声恭贺，声震云霄。\n\n【声望 +7・全属性大涨】",
+    "onEnter": {
+      "attrs": {
+        "声望": 7,
+        "气血": 50,
+        "灵力": 30,
+        "攻击": 15,
+        "防御": 10,
+        "悟性": 3,
+        "神识": 5
+      },
+      "setFlags": [
+        "元婴渡过"
+      ]
+    },
+    "choices": [
+      {
+        "text": "立于云端，俯瞰山河",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_yuanying_tianjie_fail": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·元婴天劫·失败",
+    "text": "一道紫黑色的劫雷撕裂了你的护体灵光，重重轰在元婴之上！你喷出一口精血，元婴剧震，险些当场溃散。\n\n掌门真人及时出手，以大法力将你从劫云下抢了出来。你浑身焦黑地倒在殿中，经脉寸断，修为跌回金丹后期。\n\n「能活着回来已是万幸。」掌门叹了口气，「天劫无情——养好伤，来日再试吧。」\n\n【气血重伤・修为受损】",
+    "onEnter": {
+      "attrs": {
+        "气血": -80,
+        "灵力": -20
+      },
+      "setFlags": [
+        "天劫受伤"
+      ]
+    },
+    "choices": [
+      {
+        "text": "含恨闭关养伤",
+        "next": "sect_hub"
+      },
+      {
+        "text": "渡劫失败，魂飞魄散（结局）",
+        "next": "ending_dunjie"
+      }
+    ]
+  },
+  "mile_shanggu_yiji": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain",
+      "宗门任务"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 5
+      },
+      "flags": [
+        "宗门弟子"
+      ],
+      "attrs": {
+        "声望": {
+          "gte": 12,
+          "lte": 26
+        }
+      }
+    },
+    "title": "里程碑·上古遗迹",
+    "text": "九天之上忽有星辉垂落——一道巨大的上古传送阵在虚空中缓缓浮现，阵纹古老得连掌门真人都认不全。\n\n「这是……渡劫期大能的埋骨之地！」掌门的声音里第一次带上了敬畏，「{name}，你能走到这一步，已有资格踏足这上古遗迹了。」\n\n传送阵的另一端，隐隐传出远古妖兽的咆哮。那是渡劫期大能临终设下的考验——只有通过者，才能触碰他留下的道统。",
+    "choices": [
+      {
+        "text": "深入核心，连战三场（赤炎妖豹→千年树妖→万载玄龟）",
+        "next": "mile_shanggu_yiji_battle1"
+      },
+      {
+        "text": "走偏殿，寻求功法与丹药",
+        "next": "mile_shanggu_yiji_piandian"
+      },
+      {
+        "text": "在外围参悟遗迹道韵",
+        "effect": {
+          "attrs": {
+            "机缘": 5,
+            "悟性": 3
+          }
+        },
+        "next": "mile_shanggu_yiji_outer"
+      }
+    ]
+  },
+  "mile_shanggu_yiji_battle1": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·上古遗迹·第一战",
+    "text": "遗迹深处火光冲天——一头赤炎妖豹从熔岩裂缝中跃出，身周烈焰将空气灼得扭曲。它低伏着身子，金红色的兽瞳锁定了你。\n\n【赤炎妖豹：金丹・妖兽】——遗迹第一关守卫",
+    "choices": [
+      {
+        "text": "迎战赤炎妖豹！",
+        "battle": {
+          "enemy": "flame_leopard",
+          "win": "mile_shanggu_yiji_battle2",
+          "lose": "sect_hub"
+        }
+      }
+    ]
+  },
+  "mile_shanggu_yiji_battle2": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·上古遗迹·第二战",
+    "text": "赤炎妖豹化为灰烬，前方密林中却传来沉重的脚步声。一株千年树妖睁开木纹之眼，满地根须如蟒蛇般翻涌——它已在此地扎根千年，视所有闯入者为养料。\n\n【千年树妖：金丹・木妖】——遗迹第二关守卫",
+    "choices": [
+      {
+        "text": "迎战千年树妖！",
+        "battle": {
+          "enemy": "ancient_tree_demon",
+          "win": "mile_shanggu_yiji_battle3",
+          "lose": "sect_hub"
+        }
+      }
+    ]
+  },
+  "mile_shanggu_yiji_battle3": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·上古遗迹·第三战",
+    "text": "遗迹最深处，一潭死水微微荡漾。水面之下，一头庞大得不可思议的玄龟缓缓浮起——万年道行，甲纹间流淌着上古的道韵。它睁开了眼，目光比整座遗迹还要古老。\n\n【万载玄龟：元婴・妖兽】——遗迹最终守卫",
+    "choices": [
+      {
+        "text": "迎战万载玄龟！",
+        "battle": {
+          "enemy": "mystic_turtle",
+          "win": "mile_shanggu_yiji_win",
+          "lose": "sect_hub"
+        }
+      }
+    ]
+  },
+  "mile_shanggu_yiji_win": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·上古遗迹·道统",
+    "text": "万载玄龟沉入潭底，一道金光从遗迹深处冲天而起——渡劫期大能临终封存的完整道统，终于向你敞开。\n\n无数道法奥义涌入识海，丹田中的灵力如江河决堤般暴涨。你盘坐于遗迹中心，周身灵光万丈，气息节节攀升。\n\n三日之后，你睁开眼——举手投足间，天地灵气如臂使指。\n\n【声望 +10・获得太虚御道经、大还丹、完整功法】",
+    "onEnter": {
+      "attrs": {
+        "声望": 10,
+        "灵力": 50,
+        "悟性": 5,
+        "神识": 5
+      },
+      "addItems": [
+        "shu_taixu",
+        "dan_dahuan",
+        "gongfa_zhengjuan"
+      ],
+      "setFlags": [
+        "上古道统"
+      ]
+    },
+    "choices": [
+      {
+        "text": "振衣而起，踏出遗迹",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_shanggu_yiji_piandian": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·上古遗迹·偏殿",
+    "text": "偏殿中石架排列如阵，架上玉简虽半数风化，仍有几卷完好。丹房里更有数瓶封存完好的丹药——那位渡劫期大能，生前似乎在此准备了许久。\n\n你没有贪恋深处的道统传承，但偏殿所获，已胜过寻常修士一生的积累。\n\n【声望 +5・获得紫霄真解、大还丹、天材地宝】",
+    "onEnter": {
+      "attrs": {
+        "声望": 5
+      },
+      "addItems": [
+        "shu_zixiao",
+        "dan_dahuan",
+        "tiancai"
+      ]
+    },
+    "choices": [
+      {
+        "text": "见好就收，退出遗迹",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_shanggu_yiji_outer": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·上古遗迹·参悟",
+    "text": "你不入险境，只在遗迹外围的星辉之下盘膝而坐。渡劫期大能布下的外围阵纹中，暗藏了他毕生的道韵——你以神识细细感应，只觉天机一线，贯通了之前百思不解的修行关隘。\n\n三日参悟，胜过三十年苦修。\n\n【机缘 +5・悟性 +3】",
+    "onEnter": {
+      "attrs": {
+        "机缘": 5,
+        "悟性": 3
+      }
+    },
+    "choices": [
+      {
+        "text": "心满意足，返回宗门",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "mile_posui_xukong": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain",
+      "宗门任务"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 6
+      },
+      "attrs": {
+        "声望": {
+          "gte": 25
+        }
+      }
+    },
+    "title": "里程碑·破碎虚空",
+    "text": "你道成之日，天地交感。虚空中裂开一道金光璀璨的门扉，门内传出若有若无的仙乐——那是飞升仙界的召唤。\n\n满山弟子伏地叩拜，连掌门真人也面色复杂地仰望着那道天门：「{name}，飞升通道万年一开。踏入此门，便是仙界中人——但凡间一切，将与你再无瓜葛。」\n\n你低头看了一眼脚下的{sect}——这里有你百年的修行、无数并肩的同门。\n\n是去是留？",
+    "choices": [
+      {
+        "text": "踏入门扉，飞升仙界（破碎虚空结局）",
+        "next": "ending_feisheng",
+        "effect": {
+          "setFlags": [
+            "飞升结局"
+          ]
+        }
+      },
+      {
+        "text": "留守凡间，继续修行（解锁隐藏内容）",
+        "next": "mile_posui_xukong_stay",
+        "effect": {
+          "attrs": {
+            "声望": 10
+          },
+          "setFlags": [
+            "留守凡间"
+          ]
+        }
+      },
+      {
+        "text": "自封修为，重新历练（轮回）",
+        "restart": true,
+        "effect": {
+          "attrs": {
+            "声望": 5
+          }
+        }
+      }
+    ]
+  },
+  "mile_posui_xukong_stay": {
+    "rarity": "传说",
+    "tags": [],
+    "title": "里程碑·留守凡间",
+    "text": "你在天门前停住了脚步。掌门真人怔了怔，随即抚掌大笑：「好！好！仙界虽好，凡间也未必没有通天的路。」\n\n天门缓缓闭合，但天穹之上隐约又多了一层——那是大乘之上的境界，凡间修士从未触及的领域。\n\n从此凡间多了一位留守的真仙，{sect}成了天下第一宗门。而你的修行，才刚刚进入凡人未曾窥见的全新境界。\n\n【声望 +10・解锁大乘之上隐藏修行路线】",
+    "onEnter": {
+      "attrs": {
+        "声望": 10
+      },
+      "setFlags": [
+        "留守凡间",
+        "凡间真仙"
+      ]
+    },
+    "choices": [
+      {
+        "text": "转身，踏上新的修行之路",
+        "next": "sect_hub"
+      }
+    ]
+  }
+}

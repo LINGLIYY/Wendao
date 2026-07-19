@@ -1,0 +1,122 @@
+{
+  "qingyun_zong": {
+    "id": "qingyun_zong",
+    "name": "青云宗",
+    "alignment": "正道",
+    "desc": "传承千年的剑修大派，立于九霄峰上，以剑道闻名天下",
+    "entry_cond": {
+      "flags": [
+        "仙师之诺"
+      ],
+      "attrs": {
+        "悟性": {
+          "gte": 5
+        }
+      }
+    },
+    "specialty": {
+      "cultBonus": 1.1,
+      "battleBonus": 1.0,
+      "craftBonus": {
+        "炼丹": 0.1,
+        "炼器": 0.0
+      }
+    },
+    "economy": {
+      "contribRate": 0.8,
+      "starterStones": 10
+    },
+    "hub": "sect_hub",
+    "gongfaTree": [
+      "yinqijue",
+      "shu_changchun",
+      "shu_tiegu",
+      "shu_hanguang"
+    ],
+    "culture": {
+      "mountain": "九霄峰",
+      "discipleTitle": "弟子",
+      "color": "#7ec9a0"
+    }
+  },
+  "chisha_jiao": {
+    "id": "chisha_jiao",
+    "name": "赤煞教",
+    "alignment": "魔道",
+    "desc": "藏于散修岭深处的魔道教派，以战养战，修习速成之法。教众崇尚力量，不拘礼法",
+    "entry_cond": {
+      "flags": [
+        "散修之路"
+      ],
+      "attrs": {
+        "勇气": {
+          "gte": 5
+        }
+      }
+    },
+    "specialty": {
+      "cultBonus": 0.9,
+      "battleBonus": 1.15,
+      "craftBonus": {
+        "炼丹": 0.0,
+        "炼器": 0.15
+      }
+    },
+    "economy": {
+      "contribRate": 1.2,
+      "starterStones": 5
+    },
+    "hub": "sect_hub",
+    "gongfaTree": [
+      "yinqijue",
+      "shu_shixue",
+      "shu_tiegu",
+      "shu_shaqi"
+    ],
+    "culture": {
+      "mountain": "赤煞崖",
+      "discipleTitle": "教众",
+      "color": "#c96a5e"
+    }
+  },
+  "danxia_men": {
+    "id": "danxia_men",
+    "name": "丹霞门",
+    "alignment": "中立",
+    "desc": "以丹道立派的中立宗门，不参与正魔之争，门下弟子以炼丹制药闻名",
+    "entry_cond": {
+      "flags": [
+        "仙师之诺"
+      ],
+      "attrs": {
+        "机缘": {
+          "gte": 3
+        }
+      }
+    },
+    "specialty": {
+      "cultBonus": 1.0,
+      "battleBonus": 1.0,
+      "craftBonus": {
+        "炼丹": 0.2,
+        "炼器": 0.05
+      }
+    },
+    "economy": {
+      "contribRate": 1.0,
+      "starterStones": 15
+    },
+    "hub": "sect_hub",
+    "gongfaTree": [
+      "yinqijue",
+      "shu_bibo",
+      "shu_changchun",
+      "shu_danxia"
+    ],
+    "culture": {
+      "mountain": "丹霞峰",
+      "discipleTitle": "门人",
+      "color": "#e8c97a"
+    }
+  }
+}

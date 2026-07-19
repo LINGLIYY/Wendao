@@ -1,0 +1,161 @@
+{
+  "linggen": [
+    {
+      "id": "天灵根",
+      "rate": 0.05,
+      "cultRate": 2,
+      "breakBonus": 0.15,
+      "wuxing": [
+        "金"
+      ],
+      "wuxingDesc": "金灵根锐不可当，神识超凡，善御剑诀。"
+    },
+    {
+      "id": "地灵根",
+      "rate": 0.1,
+      "cultRate": 1.5,
+      "breakBonus": 0.1,
+      "wuxing": [
+        "金",
+        "木"
+      ],
+      "wuxingDesc": "金木双生，根骨与神识兼修，攻守有度。"
+    },
+    {
+      "id": "真灵根",
+      "rate": 0.3,
+      "cultRate": 1.2,
+      "breakBonus": 0.05,
+      "wuxing": [
+        "水",
+        "火",
+        "土"
+      ],
+      "wuxingDesc": "三才俱全，悟性根骨机缘并重，中正平和。"
+    },
+    {
+      "id": "伪灵根",
+      "rate": 0.4,
+      "cultRate": 0.8,
+      "breakBonus": 0,
+      "wuxing": [
+        "木",
+        "水",
+        "火",
+        "土"
+      ],
+      "wuxingDesc": "四象驳杂，虽修行缓慢，然元婴之后五行同修反成大器。"
+    },
+    {
+      "id": "凡体",
+      "rate": 0.15,
+      "cultRate": 0.5,
+      "breakBonus": -0.05,
+      "wuxing": [
+        "木",
+        "水",
+        "火",
+        "土",
+        "金"
+      ],
+      "wuxingDesc": "五行俱全，初时寸步难行，然大道至简，返璞归真之日便是通玄之时。"
+    }
+  ],
+  "constitution": [
+    {
+      "id": "无",
+      "rate": 0.8,
+      "passive": null
+    },
+    {
+      "id": "灵体",
+      "rate": 0.1,
+      "passive": "cult_extra:1,break_bonus:0.10"
+    },
+    {
+      "id": "武骨",
+      "rate": 0.07,
+      "passive": "hp_bonus:10,atk_bonus:3,regen:1"
+    },
+    {
+      "id": "道胎",
+      "rate": 0.03,
+      "passive": "limit_break:1,cult_extra:0.5"
+    }
+  ],
+  "origin": [
+    {
+      "id": "修仙世家",
+      "rate": 0.05,
+      "desc": "家中长辈皆是修士，自幼耳濡目染",
+      "items": [
+        "yinqijue"
+      ],
+      "initAttrs": {
+        "悟性": 2
+      },
+      "initStones": 10
+    },
+    {
+      "id": "猎户之子",
+      "rate": 0.2,
+      "desc": "自幼随父打猎，练就一副好身手",
+      "items": [
+        "tiejian"
+      ],
+      "initAttrs": {
+        "勇气": 2,
+        "攻击": 1
+      }
+    },
+    {
+      "id": "农家子弟",
+      "rate": 0.5,
+      "desc": "生于田垄之间，质朴而坚忍",
+      "items": [
+        "ganliang",
+        "buyi"
+      ],
+      "initAttrs": {
+        "气血": 5
+      }
+    },
+    {
+      "id": "流浪孤儿",
+      "rate": 0.25,
+      "desc": "无父无母，靠一双手活到今天",
+      "items": [],
+      "initAttrs": {
+        "悟性": 1,
+        "勇气": 1,
+        "气血": -3
+      }
+    }
+  ],
+  "names": {
+    "given": [
+      "林",
+      "叶",
+      "萧",
+      "云",
+      "苏",
+      "沈",
+      "陆",
+      "楚",
+      "秦",
+      "白"
+    ],
+    "family": [
+      "尘",
+      "逸",
+      "风",
+      "寒",
+      "玄",
+      "羽",
+      "霄",
+      "渊",
+      "清",
+      "墨"
+    ]
+  }
+}

@@ -1,0 +1,1102 @@
+{
+  "combat_wild_common": {
+    "label": "对战凡兽",
+    "type": "combat",
+    "rarity": "普通",
+    "guaranteed": {
+      "灵石": [
+        3,
+        8
+      ]
+    },
+    "rolls": {
+      "count": [
+        1,
+        2
+      ],
+      "rate": 0.55
+    },
+    "pool": [
+      {
+        "id": "shougu",
+        "name": "兽骨",
+        "weight": 45,
+        "cat": "材料"
+      },
+      {
+        "id": "pimao",
+        "name": "兽皮",
+        "weight": 40,
+        "cat": "材料"
+      },
+      {
+        "id": "yaodan_di",
+        "name": "低阶妖丹",
+        "weight": 10,
+        "cat": "材料"
+      },
+      {
+        "id": "gongfa_canjuan",
+        "name": "功法残卷",
+        "weight": 5,
+        "cat": "特殊"
+      },
+      {
+        "id": "fuzhou_qingzhu",
+        "name": "青竹剑符",
+        "weight": 6
+      },
+      {
+        "id": "ci_huojili",
+        "name": "火蒺藜",
+        "weight": 7
+      },
+      {
+        "id": "pai_huichun",
+        "name": "回春木牌",
+        "weight": 6
+      }
+    ]
+  },
+  "combat_wild_rare": {
+    "label": "对战妖兽",
+    "type": "combat",
+    "rarity": "稀有",
+    "guaranteed": {
+      "灵石": [
+        10,
+        25
+      ]
+    },
+    "rolls": {
+      "count": [
+        1,
+        3
+      ],
+      "rate": 0.65
+    },
+    "pool": [
+      {
+        "id": "yaodan_di",
+        "name": "低阶妖丹",
+        "weight": 40,
+        "cat": "材料"
+      },
+      {
+        "id": "yaogu",
+        "name": "妖骨",
+        "weight": 30,
+        "cat": "材料"
+      },
+      {
+        "id": "yadan",
+        "name": "妖兽内丹",
+        "weight": 15,
+        "cat": "材料"
+      },
+      {
+        "id": "gongfa_canjuan",
+        "name": "功法残卷",
+        "weight": 10,
+        "cat": "特殊"
+      },
+      {
+        "id": "shouhun",
+        "name": "兽魂碎片",
+        "weight": 5,
+        "cat": "特殊"
+      },
+      {
+        "id": "ling_tiesuo",
+        "name": "缚灵索",
+        "weight": 6
+      },
+      {
+        "id": "zhu_yingyue",
+        "name": "映月珠",
+        "weight": 4
+      },
+      {
+        "id": "fu_jinglei",
+        "name": "惊雷符",
+        "weight": 6
+      },
+      {
+        "id": "ling_qingxin",
+        "name": "清心铃",
+        "weight": 5
+      },
+      {
+        "id": "xiang_mixin",
+        "name": "迷心香",
+        "weight": 4
+      },
+      {
+        "id": "huan_hupo",
+        "name": "虎魄骨环",
+        "weight": 4
+      }
+    ]
+  },
+  "combat_wild_legend": {
+    "label": "对战大成妖兽",
+    "type": "combat",
+    "rarity": "传说",
+    "guaranteed": {
+      "灵石": [
+        50,
+        100
+      ]
+    },
+    "rolls": {
+      "count": [
+        2,
+        4
+      ],
+      "rate": 0.75
+    },
+    "pool": [
+      {
+        "id": "yaodan_zhong",
+        "name": "中阶妖丹",
+        "weight": 35,
+        "cat": "材料"
+      },
+      {
+        "id": "yadan",
+        "name": "妖兽内丹",
+        "weight": 25,
+        "cat": "材料"
+      },
+      {
+        "id": "shouhun",
+        "name": "兽魂碎片",
+        "weight": 20,
+        "cat": "特殊"
+      },
+      {
+        "id": "gongfa_zhengjuan",
+        "name": "完整功法",
+        "weight": 10,
+        "cat": "功法"
+      },
+      {
+        "id": "tiancai",
+        "name": "天材地宝",
+        "weight": 10,
+        "cat": "特殊"
+      },
+      {
+        "id": "zhong_zhenyue",
+        "name": "镇岳小钟",
+        "weight": 5
+      },
+      {
+        "id": "suo_zidian",
+        "name": "紫电梭",
+        "weight": 5
+      },
+      {
+        "id": "zhu_jiuyang",
+        "name": "九阳珠",
+        "weight": 4
+      },
+      {
+        "id": "teng_longxue",
+        "name": "龙血藤",
+        "weight": 6
+      },
+      {
+        "id": "bian_qingjiao",
+        "name": "青蛟鞭",
+        "weight": 4
+      },
+      {
+        "id": "ji_pojun",
+        "name": "破军戟",
+        "weight": 3
+      }
+    ]
+  },
+  "herb_common": {
+    "label": "野外采药",
+    "type": "herb",
+    "rarity": "普通",
+    "guaranteed": {
+      "灵石": [
+        1,
+        3
+      ],
+      "草药": [
+        1,
+        1
+      ]
+    },
+    "rolls": {
+      "count": [
+        0,
+        1
+      ],
+      "rate": 0.5
+    },
+    "pool": [
+      {
+        "id": "lingcao",
+        "name": "疗伤草",
+        "weight": 70,
+        "cat": "药材"
+      },
+      {
+        "id": "juhuacao",
+        "name": "聚花草",
+        "weight": 25,
+        "cat": "药材"
+      },
+      {
+        "id": "ningqicao",
+        "name": "凝气草",
+        "weight": 5,
+        "cat": "药材"
+      },
+      {
+        "id": "cao_hanxiang",
+        "name": "寒香草",
+        "weight": 20
+      },
+      {
+        "id": "dan_qingchen",
+        "name": "清尘丹",
+        "weight": 6
+      }
+    ]
+  },
+  "herb_rare": {
+    "label": "深山采药",
+    "type": "herb",
+    "rarity": "稀有",
+    "guaranteed": {
+      "灵石": [
+        3,
+        8
+      ],
+      "草药": [
+        1,
+        1
+      ]
+    },
+    "rolls": {
+      "count": [
+        1,
+        2
+      ],
+      "rate": 0.6
+    },
+    "pool": [
+      {
+        "id": "ningqicao",
+        "name": "凝气草",
+        "weight": 45,
+        "cat": "药材"
+      },
+      {
+        "id": "juhuacao",
+        "name": "聚花草",
+        "weight": 30,
+        "cat": "药材"
+      },
+      {
+        "id": "yilinghua",
+        "name": "益灵花",
+        "weight": 15,
+        "cat": "药材"
+      },
+      {
+        "id": "tianlingzhi",
+        "name": "天灵芝",
+        "weight": 10,
+        "cat": "药材"
+      },
+      {
+        "id": "shen_ziwen",
+        "name": "紫纹参",
+        "weight": 15
+      },
+      {
+        "id": "dan_ningshen",
+        "name": "凝神丹",
+        "weight": 6
+      },
+      {
+        "id": "gao_yusui",
+        "name": "玉髓膏",
+        "weight": 5
+      }
+    ]
+  },
+  "herb_legend": {
+    "label": "洞天药园",
+    "type": "herb",
+    "rarity": "传说",
+    "guaranteed": {
+      "灵石": [
+        10,
+        30
+      ],
+      "草药": [
+        1,
+        2
+      ]
+    },
+    "rolls": {
+      "count": [
+        2,
+        3
+      ],
+      "rate": 0.7
+    },
+    "pool": [
+      {
+        "id": "tianlingzhi",
+        "name": "天灵芝",
+        "weight": 30,
+        "cat": "药材"
+      },
+      {
+        "id": "xuelinghua",
+        "name": "血灵花",
+        "weight": 25,
+        "cat": "药材"
+      },
+      {
+        "id": "wanlingcao",
+        "name": "万灵草",
+        "weight": 20,
+        "cat": "药材"
+      },
+      {
+        "id": "xianguo",
+        "name": "千年仙果",
+        "weight": 15,
+        "cat": "药材"
+      },
+      {
+        "id": "qiannianlingshen",
+        "name": "千年灵参",
+        "weight": 10,
+        "cat": "药材"
+      },
+      {
+        "id": "teng_longxue",
+        "name": "龙血藤",
+        "weight": 12
+      },
+      {
+        "id": "dan_zifu",
+        "name": "紫府丹",
+        "weight": 5
+      },
+      {
+        "id": "dan_dahuan",
+        "name": "大还丹",
+        "weight": 4
+      },
+      {
+        "id": "hulu_qingmu",
+        "name": "青木葫芦",
+        "weight": 3
+      }
+    ]
+  },
+  "mining_common": {
+    "label": "山野采矿",
+    "type": "mining",
+    "rarity": "普通",
+    "guaranteed": {
+      "灵石": [
+        1,
+        5
+      ],
+      "矿石": [
+        1,
+        1
+      ]
+    },
+    "rolls": {
+      "count": [
+        0,
+        1
+      ],
+      "rate": 0.45
+    },
+    "pool": [
+      {
+        "id": "fan_tie",
+        "name": "凡铁矿石",
+        "weight": 60,
+        "cat": "矿石"
+      },
+      {
+        "id": "xiayin_kuang",
+        "name": "霞隐矿",
+        "weight": 30,
+        "cat": "矿石"
+      },
+      {
+        "id": "lingshi_kuang",
+        "name": "灵石矿",
+        "weight": 10,
+        "cat": "矿石"
+      },
+      {
+        "id": "tie_xuanjing",
+        "name": "玄精铁",
+        "weight": 4
+      },
+      {
+        "id": "dao_liefeng",
+        "name": "猎风刀",
+        "weight": 6
+      }
+    ]
+  },
+  "mining_rare": {
+    "label": "秘境矿脉",
+    "type": "mining",
+    "rarity": "稀有",
+    "guaranteed": {
+      "灵石": [
+        5,
+        15
+      ],
+      "矿石": [
+        1,
+        2
+      ]
+    },
+    "rolls": {
+      "count": [
+        1,
+        2
+      ],
+      "rate": 0.55
+    },
+    "pool": [
+      {
+        "id": "xiayin_kuang",
+        "name": "霞隐矿",
+        "weight": 45,
+        "cat": "矿石"
+      },
+      {
+        "id": "jingsha_tie",
+        "name": "精砂铁",
+        "weight": 30,
+        "cat": "矿石"
+      },
+      {
+        "id": "lingshi_kuang",
+        "name": "灵石矿",
+        "weight": 15,
+        "cat": "矿石"
+      },
+      {
+        "id": "hanzhi_kuang",
+        "name": "寒芷矿",
+        "weight": 10,
+        "cat": "矿石"
+      },
+      {
+        "id": "tie_xuanjing",
+        "name": "玄精铁",
+        "weight": 12
+      },
+      {
+        "id": "sha_zijin",
+        "name": "紫金砂",
+        "weight": 8
+      },
+      {
+        "id": "jian_hanyue",
+        "name": "寒月剑",
+        "weight": 4
+      },
+      {
+        "id": "kai_shanwen",
+        "name": "山纹玄甲",
+        "weight": 2
+      }
+    ]
+  },
+  "vision_rare": {
+    "label": "灵气潮汐",
+    "type": "vision",
+    "rarity": "稀有",
+    "guaranteed": {
+      "灵力": [
+        5,
+        10
+      ]
+    },
+    "rolls": {
+      "count": [
+        0,
+        1
+      ],
+      "rate": 0.4
+    },
+    "pool": [
+      {
+        "id": "lingyun",
+        "name": "灵气结晶",
+        "weight": 50,
+        "cat": "材料"
+      },
+      {
+        "id": "gongfa_canjuan",
+        "name": "功法残卷",
+        "weight": 30,
+        "cat": "特殊"
+      },
+      {
+        "id": "tiancai",
+        "name": "天材异宝",
+        "weight": 20,
+        "cat": "特殊"
+      },
+      {
+        "id": "ling_tiesuo",
+        "name": "缚灵索",
+        "weight": 4
+      },
+      {
+        "id": "ji_pojun",
+        "name": "破军戟",
+        "weight": 3
+      },
+      {
+        "id": "zhui_wudao",
+        "name": "悟道石坠",
+        "weight": 3
+      },
+      {
+        "id": "fan_lihuo",
+        "name": "离火幡",
+        "weight": 2
+      },
+      {
+        "id": "shu_zixiao",
+        "name": "《紫霄真解》",
+        "weight": 3
+      },
+      {
+        "id": "dan_zifu",
+        "name": "紫府丹",
+        "weight": 4
+      }
+    ]
+  },
+  "vision_legend": {
+    "label": "天劫余韵",
+    "type": "vision",
+    "rarity": "传说",
+    "guaranteed": {
+      "灵力": [
+        10,
+        20
+      ],
+      "悟性": [
+        1,
+        1
+      ]
+    },
+    "rolls": {
+      "count": [
+        1,
+        2
+      ],
+      "rate": 0.6
+    },
+    "pool": [
+      {
+        "id": "qingyun_shipian",
+        "name": "青云石碎片",
+        "weight": 35,
+        "cat": "法宝材料"
+      },
+      {
+        "id": "gongfa_zhengjuan",
+        "name": "完整功法",
+        "weight": 25,
+        "cat": "功法"
+      },
+      {
+        "id": "tiancai",
+        "name": "天材异宝",
+        "weight": 25,
+        "cat": "特殊"
+      },
+      {
+        "id": "leihe_hun",
+        "name": "雷劫残魂",
+        "weight": 15,
+        "cat": "至宝"
+      },
+      {
+        "id": "zhong_zhenyue",
+        "name": "镇岳小钟",
+        "weight": 6
+      },
+      {
+        "id": "jian_taixu",
+        "name": "太虚残剑",
+        "weight": 2
+      },
+      {
+        "id": "lian_xingsui",
+        "name": "星髓链",
+        "weight": 3
+      },
+      {
+        "id": "pan_zhoutian",
+        "name": "周天星盘",
+        "weight": 2
+      },
+      {
+        "id": "yin_xuanwu",
+        "name": "玄武印",
+        "weight": 4
+      },
+      {
+        "id": "kai_shanwen",
+        "name": "山纹玄甲",
+        "weight": 4
+      },
+      {
+        "id": "jian_zhanling",
+        "name": "斩灵飞剑",
+        "weight": 3
+      },
+      {
+        "id": "shu_taixu",
+        "name": "《太虚御道经》",
+        "weight": 3
+      }
+    ]
+  },
+  "trade_common": {
+    "label": "散修交易",
+    "type": "trade",
+    "rarity": "普通",
+    "guaranteed": {
+      "灵石": [
+        8,
+        15
+      ]
+    },
+    "rolls": {
+      "count": [
+        0,
+        0
+      ],
+      "rate": 0
+    },
+    "pool": [
+      {
+        "id": "fuzhou_qingzhu",
+        "name": "青竹剑符",
+        "weight": 8
+      },
+      {
+        "id": "zhu_yingyue",
+        "name": "映月珠",
+        "weight": 4
+      },
+      {
+        "id": "jian_qingfeng",
+        "name": "青锋剑",
+        "weight": 8
+      },
+      {
+        "id": "dao_liefeng",
+        "name": "猎风刀",
+        "weight": 7
+      },
+      {
+        "id": "jia_ruanpi",
+        "name": "软皮甲",
+        "weight": 8
+      },
+      {
+        "id": "pao_qingbu",
+        "name": "青布道袍",
+        "weight": 7
+      },
+      {
+        "id": "jie_pingan",
+        "name": "平安绳结",
+        "weight": 6
+      },
+      {
+        "id": "shu_duanti",
+        "name": "《锻体拳谱》",
+        "weight": 6
+      },
+      {
+        "id": "dan_huiqi",
+        "name": "回气散",
+        "weight": 10
+      },
+      {
+        "id": "wan_ninglu",
+        "name": "凝露丸",
+        "weight": 9
+      },
+      {
+        "id": "dan_qingchen",
+        "name": "清尘丹",
+        "weight": 9
+      },
+      {
+        "id": "jia_xuangui",
+        "name": "玄龟软甲",
+        "weight": 3
+      },
+      {
+        "id": "yi_yunwen",
+        "name": "云纹法衣",
+        "weight": 3
+      },
+      {
+        "id": "pei_ningshen",
+        "name": "凝神玉佩",
+        "weight": 3
+      },
+      {
+        "id": "dan_ningshen",
+        "name": "凝神丹",
+        "weight": 5
+      },
+      {
+        "id": "dan_xiaohuan",
+        "name": "小还丹",
+        "weight": 4
+      },
+      {
+        "id": "shu_liuyun",
+        "name": "《流云剑诀》",
+        "weight": 3
+      }
+    ]
+  },
+  "mining_legend": {
+    "label": "仙脉遗迹",
+    "type": "mining",
+    "rarity": "传说",
+    "guaranteed": {
+      "灵石": [
+        20,
+        50
+      ],
+      "矿石": [
+        2,
+        4
+      ]
+    },
+    "rolls": {
+      "count": [
+        2,
+        4
+      ],
+      "rate": 0.7
+    },
+    "pool": [
+      {
+        "id": "hanzhi_kuang",
+        "name": "寒芷矿",
+        "weight": 30,
+        "cat": "矿石"
+      },
+      {
+        "id": "jingsha_tie",
+        "name": "精砂铁",
+        "weight": 25,
+        "cat": "矿石"
+      },
+      {
+        "id": "sha_zijin",
+        "name": "紫金砂",
+        "weight": 20,
+        "cat": "矿石"
+      },
+      {
+        "id": "qingyun_shipian",
+        "name": "青云石碎片",
+        "weight": 15,
+        "cat": "矿石"
+      },
+      {
+        "id": "tie_xuanjing",
+        "name": "玄精铁",
+        "weight": 10,
+        "cat": "矿石"
+      },
+      {
+        "id": "zhong_zhenyue",
+        "name": "镇岳小钟",
+        "weight": 4
+      },
+      {
+        "id": "jian_hanyue",
+        "name": "寒月剑",
+        "weight": 3
+      },
+      {
+        "id": "kai_shanwen",
+        "name": "山纹玄甲",
+        "weight": 3
+      },
+      {
+        "id": "dan_zifu",
+        "name": "紫府丹",
+        "weight": 2
+      },
+      {
+        "id": "hulu_qingmu",
+        "name": "青木葫芦",
+        "weight": 2
+      }
+    ]
+  },
+  "vision_common": {
+    "label": "灵气微澜",
+    "type": "vision",
+    "rarity": "普通",
+    "guaranteed": {
+      "灵力": [
+        2,
+        5
+      ]
+    },
+    "rolls": {
+      "count": [
+        0,
+        1
+      ],
+      "rate": 0.35
+    },
+    "pool": [
+      {
+        "id": "lingyun",
+        "name": "灵气结晶",
+        "weight": 55,
+        "cat": "材料"
+      },
+      {
+        "id": "gongfa_canjuan",
+        "name": "功法残卷",
+        "weight": 25,
+        "cat": "特殊"
+      },
+      {
+        "id": "fuzhou_qingzhu",
+        "name": "青竹剑符",
+        "weight": 8
+      },
+      {
+        "id": "ci_huojili",
+        "name": "火蒺藜",
+        "weight": 7
+      },
+      {
+        "id": "pai_huichun",
+        "name": "回春木牌",
+        "weight": 6
+      },
+      {
+        "id": "dan_qingchen",
+        "name": "清尘丹",
+        "weight": 6
+      },
+      {
+        "id": "wan_ninglu",
+        "name": "凝露丸",
+        "weight": 5
+      }
+    ]
+  },
+  "trade_rare": {
+    "label": "修士坊市",
+    "type": "trade",
+    "rarity": "稀有",
+    "guaranteed": {
+      "灵石": [
+        15,
+        30
+      ]
+    },
+    "rolls": {
+      "count": [
+        1,
+        2
+      ],
+      "rate": 0.65
+    },
+    "pool": [
+      {
+        "id": "dan_ningshen",
+        "name": "凝神丹",
+        "weight": 20
+      },
+      {
+        "id": "dan_xiaohuan",
+        "name": "小还丹",
+        "weight": 18
+      },
+      {
+        "id": "gao_yusui",
+        "name": "玉髓膏",
+        "weight": 15
+      },
+      {
+        "id": "jian_hanyue",
+        "name": "寒月剑",
+        "weight": 12
+      },
+      {
+        "id": "jia_xuangui",
+        "name": "玄龟软甲",
+        "weight": 12
+      },
+      {
+        "id": "yi_yunwen",
+        "name": "云纹法衣",
+        "weight": 12
+      },
+      {
+        "id": "pei_ningshen",
+        "name": "凝神玉佩",
+        "weight": 10
+      },
+      {
+        "id": "fu_jinglei",
+        "name": "惊雷符",
+        "weight": 8
+      },
+      {
+        "id": "ling_qingxin",
+        "name": "清心铃",
+        "weight": 8
+      },
+      {
+        "id": "huan_hupo",
+        "name": "虎魄骨环",
+        "weight": 7
+      },
+      {
+        "id": "shu_liuyun",
+        "name": "《流云剑诀》",
+        "weight": 5
+      },
+      {
+        "id": "shu_bibo",
+        "name": "《碧波心经》",
+        "weight": 3
+      }
+    ]
+  },
+  "trade_legend": {
+    "label": "拍卖大会",
+    "type": "trade",
+    "rarity": "传说",
+    "guaranteed": {
+      "灵石": [
+        30,
+        60
+      ]
+    },
+    "rolls": {
+      "count": [
+        1,
+        3
+      ],
+      "rate": 0.7
+    },
+    "pool": [
+      {
+        "id": "dan_zifu",
+        "name": "紫府丹",
+        "weight": 18
+      },
+      {
+        "id": "dan_dahuan",
+        "name": "大还丹",
+        "weight": 15
+      },
+      {
+        "id": "zhui_wudao",
+        "name": "悟道石坠",
+        "weight": 10
+      },
+      {
+        "id": "fan_lihuo",
+        "name": "离火幡",
+        "weight": 8
+      },
+      {
+        "id": "kai_shanwen",
+        "name": "山纹玄甲",
+        "weight": 8
+      },
+      {
+        "id": "zhong_zhenyue",
+        "name": "镇岳小钟",
+        "weight": 8
+      },
+      {
+        "id": "suo_zidian",
+        "name": "紫电梭",
+        "weight": 7
+      },
+      {
+        "id": "zhu_jiuyang",
+        "name": "九阳珠",
+        "weight": 6
+      },
+      {
+        "id": "bian_qingjiao",
+        "name": "青蛟鞭",
+        "weight": 6
+      },
+      {
+        "id": "ji_pojun",
+        "name": "破军戟",
+        "weight": 5
+      },
+      {
+        "id": "shu_zixiao",
+        "name": "《紫霄真解》",
+        "weight": 5
+      },
+      {
+        "id": "shu_hanguang",
+        "name": "《寒光剑典》",
+        "weight": 4
+      },
+      {
+        "id": "shu_xuanlei",
+        "name": "《玄雷指诀》",
+        "weight": 3
+      },
+      {
+        "id": "dan_hujiedan",
+        "name": "护劫丹",
+        "weight": 3
+      },
+      {
+        "id": "yin_xuanwu",
+        "name": "玄武印",
+        "weight": 3
+      }
+    ]
+  }
+}

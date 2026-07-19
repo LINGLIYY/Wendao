@@ -1,0 +1,28 @@
+{
+  "basic_attack": {
+    "id": "basic_attack",
+    "name": "攻击",
+    "category": "attack",
+    "qiCost": 0,
+    "damage": {
+      "attackRatio": 1,
+      "damageType": "physical"
+    },
+    "desc": "以手中兵刃或拳脚攻击敌人"
+  },
+  "defend": {
+    "id": "defend",
+    "name": "防御",
+    "category": "defense",
+    "qiCost": 0,
+    "desc": "凝神戒备，本回合受到伤害减半",
+    "defendRatio": 0.5
+  },
+  "flee": {
+    "id": "flee",
+    "name": "逃跑",
+    "category": "escape",
+    "qiCost": 0,
+    "desc": "脱离战斗（成功率受速度影响）"
+  }
+}

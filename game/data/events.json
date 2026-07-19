@@ -1,0 +1,4406 @@
+{
+  "ev_fs_wushi": {
+    "rarity": "普通",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市・寻常半日",
+    "text": "你在坊市里转了半日，除了被人潮挤掉一只鞋，一无所获。\n\n不过听摊贩们闲聊，最近似乎有位炼丹师在坊市高价收购灵草——这消息，说不定什么时候用得上。",
+    "choices": [
+      {
+        "text": "回到坊市街口",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_fs_xiaofan": {
+    "rarity": "普通",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市・胡饼摊",
+    "text": "“小哥！看你风尘仆仆，定是远道而来！”一个热情过头的小贩拦住了你，油乎乎的手里举着刚出炉的胡饼。\n\n“三文钱两块，走过路过不要错过！”",
+    "choices": [
+      {
+        "text": "买两块胡饼（获得干粮）",
+        "next": "town_market",
+        "effect": {
+          "addItems": [
+            "ganliang"
+          ]
+        }
+      },
+      {
+        "text": "摆手走开",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_fs_laozhe": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市・古旧地摊",
+    "text": "坊市最偏僻的角落里，一位老者守着一方褪色的旧布，布上只摆着一枚木符。\n\n你的目光刚落上去，老者便抬起头，浑浊的眼睛忽然亮了一下：“有缘人。此符随老朽三十年，今日看来，是要易主了。”\n\n【老者：境界不明】",
+    "choices": [
+      {
+        "text": "收下护身符，郑重道谢",
+        "next": "town_market",
+        "effect": {
+          "addItems": [
+            "hushenfu"
+          ]
+        }
+      },
+      {
+        "text": "心生警惕，只是看看便离开",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_fs_doufa": {
+    "rarity": "传说",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市・惊雷",
+    "text": "轰——！\n\n半空中骤然炸响一声惊雷，两道遁光在城外江面上轰然相撞，激起十丈高的水墙！坊市中修士纷纷驻足仰望，有人低呼：“是筑基期的斗法！”\n\n你屏住呼吸看完了全程。电光石火间灵力奔涌的轨迹，竟让你隐约摸到了一丝门道。\n\n【悟性 +1】",
+    "onEnter": {
+      "attrs": {
+        "悟性": 1
+      }
+    },
+    "choices": [
+      {
+        "text": "心潮澎湃地回到坊市",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_hl_dog": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林・恶犬拦路",
+    "text": "枯枝在脚下咔嚓作响。一条瘦骨嶙峋的野犬从灌木后蹿出，呲着黄牙，喉咙里滚出低沉的呜声。\n\n【野犬：凡兽】",
+    "choices": [
+      {
+        "text": "拔剑迎战！",
+        "battle": {
+          "enemy": "wild_dog",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "缓缓后退，绕道而行",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_hl_snake": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林・蛇影",
+    "text": "林间忽然一片死寂。一条碗口粗的黑纹妖蛇自树冠垂下，竖瞳锁定了你，信子嘶嘶作响——它盘踞之处，隐有灵气波动，似在护着什么。\n\n【黑纹妖蛇：练气三层・妖兽】",
+    "choices": [
+      {
+        "text": "富贵险中求，战！",
+        "battle": {
+          "enemy": "black_snake",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "境界悬殊，速速退走",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_hl_quiet": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林・无事",
+    "text": "你在荒林中转了半日，除了几只受惊的野兔，一无所获。\n\n不过临溪打了一套拳脚，倒也活络了筋骨。",
+    "onEnter": {
+      "attrs": {
+        "气血": 1
+      }
+    },
+    "choices": [
+      {
+        "text": "返回{town}",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_qs_wolf": {
+    "rarity": "普通",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山・狼嚎",
+    "text": "云雾深处传来一声狼嚎。转过山岩，一头灰毛妖狼正伏在兽径旁，绿油油的眼睛盯住了你。\n\n后山妖兽是宗门特意放养的磨刀石——要试试你的剑吗？\n\n【灰毛妖狼：练气一层・妖兽】",
+    "choices": [
+      {
+        "text": "正是练手的好机会，战！",
+        "battle": {
+          "enemy": "gray_wolf",
+          "win": "sect_hub",
+          "lose": "sect_hub"
+        }
+      },
+      {
+        "text": "今日状态不佳，退走",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_qs_herb": {
+    "rarity": "普通",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山・崖畔灵草",
+    "text": "你在一处背阴的崖畔发现几株疗伤草，叶脉间灵气流转，正是入药的好年份。\n\n【获得 疗伤草】",
+    "onEnter": {
+      "addItems": [
+        "lingcao"
+      ]
+    },
+    "choices": [
+      {
+        "text": "小心采下，收入行囊",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_qs_jianzhong": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山・剑冢残意",
+    "text": "你误入一片布满断剑的山谷。锈迹斑斑的剑身插满坡地，像一片沉默的墓碑。\n\n指尖抚过其中一柄断剑时，一缕苍凉剑意突然涌入识海——那是某位前辈陨落前的最后一剑。\n\n【悟性 +1】",
+    "onEnter": {
+      "attrs": {
+        "悟性": 1
+      }
+    },
+    "choices": [
+      {
+        "text": "对断剑长揖一礼，退出山谷",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_hl_shouzong": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林・兽踪杂沓",
+    "text": "雨后的泥地上兽迹杂沓——蹄印深陷的是野猪，梅花状的浅印是山狸。更深处忽然传来几声狼嚎，遥遥相和，听那声势，竟像是簇拥着一头领头的巨狼。\n\n【野猪／山狸：凡兽】【饿狼头领：凡兽】",
+    "choices": [
+      {
+        "text": "循蹄印猎野猪",
+        "battle": {
+          "enemy": "wild_boar",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "蹑足追山狸",
+        "battle": {
+          "enemy": "mountain_civet",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "直奔狼嚎处，斩其头领（凶险）",
+        "battle": {
+          "enemy": "hungry_wolf_chief",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "兽群出没，绕道而行",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_hl_youtan": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 2
+      }
+    },
+    "title": "荒林・幽潭黑影",
+    "text": "荒林深处藏着一汪墨绿幽潭，水面平滑如镜。你靠近的一瞬，一道碗口粗的黑影自水下无声掠过——是条修行有成的水蟒。而潭心最深处，似乎还沉伏着一头更加庞然的古物，呼吸间潭水微微起伏。\n\n【幽潭水蟒：筑基・妖兽】",
+    "choices": [
+      {
+        "text": "剑气拍水，引蟒出潭，战！",
+        "battle": {
+          "enemy": "dark_pool_python",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "以神识探入潭底，惊动沉眠的庞然古物（大凶）",
+        "cond": {
+          "realm": {
+            "gte": 4
+          }
+        },
+        "battle": {
+          "enemy": "mystic_turtle",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "潭水深不可测，退开",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_hl_gushu": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 3
+      }
+    },
+    "title": "荒林・古树苏醒",
+    "text": "荒林尽头立着一株数人合抱的古树，枝叶间灵光流转。你踏入树荫的刹那，满地虬结的根须猛然拱起，树干上裂开一双木纹之眼，缓缓转向你——千年道行，尽在这一瞥之中。\n\n【千年树妖：金丹・木妖】",
+    "choices": [
+      {
+        "text": "拔剑迎上，斩木取参！",
+        "battle": {
+          "enemy": "ancient_tree_demon",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "拱手一礼，退出树荫",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_hl_guzhanchang": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 3
+      }
+    },
+    "title": "荒林・古战场遗迹",
+    "text": "拨开齐腰的荒草，断戈残戟半埋黄土——竟是一处上古战场遗迹。阴风骤起，一员披甲怨影自尸骨间凝聚成形，杀气凛冽如实质；遗迹边缘，还有一头赤炎妖豹低伏逡巡，兽瞳映着幽幽鬼火。\n\n【幽冥鬼将：金丹・鬼物】【赤炎妖豹：金丹・妖兽】",
+    "choices": [
+      {
+        "text": "剑指怨影，迎战幽冥鬼将（凶险）",
+        "battle": {
+          "enemy": "ghost_general",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "先除外围的赤炎妖豹",
+        "battle": {
+          "enemy": "flame_leopard",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "阴气森然，速离此地",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_qs_yaorao": {
+    "rarity": "普通",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山・妖物作祟",
+    "text": "宗门药圃的篱笆外一阵窸窣。一只赤目鼠妖正抱着偷来的灵草啃得欢快，双目赤红如豆；不远处的篱桩上，几根藤蔓悄然蠕动缠卷——竟是株成了气候的藤蔓妖。\n\n【赤目鼠妖：练气一层・妖兽】【藤蔓妖：练气二层・妖植】",
+    "choices": [
+      {
+        "text": "拿下偷灵草的鼠妖",
+        "battle": {
+          "enemy": "red_eye_rat",
+          "win": "sect_hub",
+          "lose": "sect_hub"
+        }
+      },
+      {
+        "text": "斩除作祟的藤蔓妖",
+        "battle": {
+          "enemy": "vine_demon",
+          "win": "sect_hub",
+          "lose": "sect_hub"
+        }
+      },
+      {
+        "text": "交由巡山弟子处置，离开",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_qs_hulang": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 1
+      }
+    },
+    "title": "后山・虎狼之争",
+    "text": "山涧两侧杀气对峙：一头斑纹妖虎伏踞青石，尾梢缓缓摆动；对岸狼王昂首而立，身后狼群伏地低嚎。虎狼争地，一触即发——正是趁乱猎妖的好时机。\n\n【斑纹妖虎：练气四层・妖兽】【狼王：练气五层・妖兽】",
+    "choices": [
+      {
+        "text": "先发制人，猎那斑纹妖虎",
+        "battle": {
+          "enemy": "striped_tiger",
+          "win": "sect_hub",
+          "lose": "sect_hub"
+        }
+      },
+      {
+        "text": "擒贼擒王，直取狼王（凶险）",
+        "battle": {
+          "enemy": "wolf_king",
+          "win": "sect_hub",
+          "lose": "sect_hub"
+        }
+      },
+      {
+        "text": "虎狼相争，坐观其斗后离去",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_qs_zhengdi": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 2
+      }
+    },
+    "title": "后山深处・灵泉争地",
+    "text": "后山禁地边缘的灵泉旁，一头铁背妖熊人立而起，背上鬃毛根根如铁；泉眼另一侧，石甲蜥伏地不动，周身岩甲与山石几乎融为一体。两妖为争灵泉僵持多时，谁也不敢先动。\n\n【铁背妖熊：筑基・妖兽】【石甲蜥：筑基・妖兽】",
+    "choices": [
+      {
+        "text": "抢攻铁背妖熊",
+        "battle": {
+          "enemy": "iron_back_bear",
+          "win": "sect_hub",
+          "lose": "sect_hub"
+        }
+      },
+      {
+        "text": "破那一身石甲，猎石甲蜥",
+        "battle": {
+          "enemy": "stone_lizard",
+          "win": "sect_hub",
+          "lose": "sect_hub"
+        }
+      },
+      {
+        "text": "两妖相持，不便插手，退走",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_qs_heifeng": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 2
+      }
+    },
+    "title": "后山・黑风过岗",
+    "text": "一股腥膻黑风卷过山岗，草木尽伏。风头落处，一头通体墨黑的巨狼立于岩顶，双目如两点鬼火，四方群狼尽皆伏首哀鸣——正是害得后山妖兽迁徙的黑风妖狼王。\n\n它居高临下地俯视着你，喉间滚出闷雷般的低吼。\n\n【黑风妖狼王：筑基后期・妖兽】",
+    "choices": [
+      {
+        "text": "仗剑立于风中，与它一战！",
+        "battle": {
+          "enemy": "black_wind_wolf_king",
+          "win": "sect_hub",
+          "lose": "sect_hub"
+        }
+      },
+      {
+        "text": "妖风太盛，暂避锋芒",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "zm_renwu_saosao": {
+    "rarity": "普通",
+    "tags": [
+      "宗门任务"
+    ],
+    "title": "宗门任务・洒扫藏经阁",
+    "text": "你抽到的木牌上刻着「洒扫」二字——藏经阁一层三日一扫，今日轮值到你。\n\n看阁老执事把鸡毛掸子往你手里一塞：「书架从下往上扫，晾晒的书页不许乱动次序。扫得好坏，老夫眼里可揉不得沙子。」",
+    "choices": [
+      {
+        "text": "按部就班扫完便交差",
+        "effect": {
+          "attrs": {
+            "贡献": 4,
+            "灵力": 2
+          }
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "加倍用心，连高阁蛛网也拂净",
+        "roll": {
+          "chance": 0.5,
+          "success": "zm_saosao_hao",
+          "fail": "zm_saosao_ping"
+        }
+      }
+    ]
+  },
+  "zm_renwu_xunshan": {
+    "rarity": "普通",
+    "tags": [
+      "宗门任务"
+    ],
+    "title": "宗门任务・后山巡逻",
+    "text": "木牌背面烙着「巡守」印记。执事交代：沿后山界碑巡视一周，驱逐越界野兽，查探有无生人踪迹。\n\n「寻常巡逻走外圈便罢。」执事压低了声音，「近来兽踪有些乱，深处那几条僻径……去不去查，你自己掂量。」",
+    "choices": [
+      {
+        "text": "沿山界外圈例行巡视",
+        "effect": {
+          "attrs": {
+            "贡献": 4,
+            "灵力": 2
+          }
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "深入兽径僻处细查（或有遇袭之险）",
+        "roll": {
+          "chance": 0.5,
+          "success": "zm_xunshan_shen",
+          "fail": "zm_xunshan_yu"
+        }
+      }
+    ]
+  },
+  "zm_renwu_caiyao": {
+    "rarity": "普通",
+    "tags": [
+      "宗门任务"
+    ],
+    "title": "宗门任务・采集灵草",
+    "text": "药圃管事递来一只竹篓：「后山药圃外围的凝气草熟了，采满一篓回来交差。」\n\n「手脚放轻，断了根须药性就折半。背阴崖壁上另有些好苗子——嫌命长的才去爬。」",
+    "choices": [
+      {
+        "text": "在药圃外围稳稳采足份例",
+        "effect": {
+          "attrs": {
+            "贡献": 4,
+            "灵力": 2
+          },
+          "addItems": [
+            "ningqicao"
+          ]
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "攀上背阴崖壁多采一捧",
+        "roll": {
+          "chance": 0.6,
+          "success": "zm_caiyao_feng",
+          "fail": "zm_caiyao_die"
+        }
+      }
+    ]
+  },
+  "zm_renwu_husong": {
+    "rarity": "普通",
+    "tags": [
+      "宗门任务"
+    ],
+    "title": "宗门任务・护送物资",
+    "text": "任务堂点你随队押送一批丹材下山，送至山脚镇上的联络点。\n\n领队执事看了看天色：「沿官道走最稳当，两日一个来回。山间倒有条小道近便许多——就是路况说不准。」",
+    "choices": [
+      {
+        "text": "沿官道稳妥押送（多耗一日）",
+        "effect": {
+          "attrs": {
+            "贡献": 6,
+            "灵力": 2
+          },
+          "day": 1
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "抄山间小道抢时辰",
+        "roll": {
+          "chance": 0.5,
+          "success": "zm_husong_zao",
+          "fail": "zm_husong_lu"
+        }
+      }
+    ]
+  },
+  "zm_renwu_diandan": {
+    "rarity": "普通",
+    "tags": [
+      "宗门任务"
+    ],
+    "title": "宗门任务・清点丹房",
+    "text": "丹房月底盘点，司药师兄拉你进库房清点丹瓶药材：「一格一册，数目对上便画押。少一瓶，咱俩一起赔。」\n\n库房里药香浓郁，多吸一口都觉得神清气爽。",
+    "choices": [
+      {
+        "text": "一丝不苟清点入册",
+        "effect": {
+          "attrs": {
+            "贡献": 5,
+            "灵力": 2
+          }
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "点完顺手把药鼎擦拭一新（沾些丹房余气）",
+        "effect": {
+          "attrs": {
+            "贡献": 4,
+            "灵力": 4
+          }
+        },
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "zm_renwu_tingjiang": {
+    "rarity": "稀有",
+    "tags": [
+      "宗门任务"
+    ],
+    "title": "宗门任务・传功堂听讲",
+    "text": "今日传功堂开讲，任务堂点了一批弟子前去布置洒扫，事毕可留下听讲。\n\n讲经长老须发皆白，开口只讲最粗浅的吐纳入门，细听之下，字字却都藏着玄机。",
+    "choices": [
+      {
+        "text": "端坐末席，凝神听讲",
+        "effect": {
+          "attrs": {
+            "贡献": 3,
+            "悟性": 1,
+            "灵力": 2
+          }
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "课后追上长老求问疑难（需悟性 8）",
+        "cond": {
+          "attrs": {
+            "悟性": {
+              "gte": 8
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": 5,
+            "悟性": 1,
+            "灵力": 2
+          }
+        },
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "qy_zuidao": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市・醉道人",
+    "text": "酒肆檐下，一个衣衫邋遢的老道人抱着酒葫芦打盹。你经过时，他忽然眯眼打量你：「小娃娃，站住。」\n\n「{linggen}的底子……啧，有点意思。」他自顾自灌了口酒，「老道云游四方，别的没有，吐纳的窍要倒记得几条。要听么？」\n\n【醉道人：境界不明】",
+    "choices": [
+      {
+        "text": "执礼求教",
+        "effect": {
+          "attrs": {
+            "悟性": 1
+          }
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "只当醉话，笑着走开",
+        "next": "town_market"
+      }
+    ]
+  },
+  "qy_gubei": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "cond": {
+      "attrs": {
+        "悟性": {
+          "gte": 8
+        }
+      }
+    },
+    "title": "后山・雾中古碑",
+    "text": "浓雾深处立着半截古碑，碑身苔痕斑驳，其上刻文早已漫漶——寻常弟子路过，只当是块顽石。\n\n可你多看了两眼，那些残缺笔画竟在识海里隐隐游动，似有道韵流转。",
+    "choices": [
+      {
+        "text": "静坐碑前，以心印碑",
+        "effect": {
+          "attrs": {
+            "悟性": 1,
+            "灵力": 5
+          }
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "拓下碑文，留待日后参详",
+        "effect": {
+          "addItems": [
+            "gongfa_canjuan"
+          ]
+        },
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "qy_shanxiu": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林・血迹呼救",
+    "text": "林间小径上斑斑血迹，一个散修打扮的汉子倒在树下，胸口衣襟浸得暗红：「道友……救、救我一把……」\n\n荒林之中，善念与陷阱往往只隔一线。",
+    "choices": [
+      {
+        "text": "上前施救",
+        "roll": {
+          "chance": 0.6,
+          "success": "qy_shanxiu_en",
+          "fail": "qy_shanxiu_pian"
+        }
+      },
+      {
+        "text": "人心难测，绕道走开",
+        "next": "town_market"
+      }
+    ]
+  },
+  "qy_jianlou": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市・地摊灰木牌",
+    "text": "散摊角落里，一块灰扑扑的旧木牌混在铜钱古镜之间，牌面药香若有似无。摊主打着哈欠：「祖上留的物件，两把铜钱拿走。」\n\n你指尖搭上木牌，隐约触到一缕极淡的温润灵气——这摊主怕是不识货。",
+    "choices": [
+      {
+        "text": "不动声色，买下木牌",
+        "effect": {
+          "addItems": [
+            "pai_huichun"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "看不真切，作罢",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_zong_chenzhong": {
+    "rarity": "普通",
+    "tags": [
+      "宗门日常"
+    ],
+    "title": "宗门·晨钟悟道",
+    "text": "清晨第一缕天光越过山脊时，宗门大钟轰然响起，钟声悠远浑厚，激得满山云海翻涌不止。\n\n你站在居所外的崖边，钟声入耳，丹田中的灵力竟随之微微共鸣。是静心参悟这钟声中的道韵，还是趁此良机运转功法？",
+    "choices": [
+      {
+        "text": "闭目静坐，以心感悟钟声道韵",
+        "effect": {
+          "attrs": {
+            "悟性": 1
+          }
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "盘膝运功，借钟声催动灵力周天",
+        "effect": {
+          "attrs": {
+            "灵力": 3
+          }
+        },
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_zong_yaoyuan": {
+    "rarity": "普通",
+    "tags": [
+      "宗门日常"
+    ],
+    "title": "宗门·药园浇水",
+    "text": "药圃管事远远朝你招手：「来得正好！今日轮值的弟子告了病假，这半片药圃还没浇——帮把手，回头给你记上。」\n\n木桶在手，水光粼粼。浇水的活儿不累，但药圃管事特意交代——崖壁下那几丛最娇贵的灵草，得多浇半桶。",
+    "choices": [
+      {
+        "text": "仔细浇灌每一丛灵草",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_zong_yaoyuan_hao",
+          "fail": "ev_zong_yaoyuan_ping"
+        }
+      },
+      {
+        "text": "随便浇浇，应付了事",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_zong_cangjing": {
+    "rarity": "普通",
+    "tags": [
+      "宗门日常"
+    ],
+    "title": "宗门·打扫藏经阁",
+    "text": "看阁老执事把鸡毛掸子往你手里一塞：「顶层的书架积了灰，今日一并清理。丑话说在前头——架上的书册不许乱动，但掉出来的纸片碎页，你自己看着办。」\n\n藏经阁顶层人迹罕至，旧书脊之间说不定夹着前代弟子遗落的只言片语。",
+    "choices": [
+      {
+        "text": "仔细打扫，不留死角",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_zong_cangjing_hao",
+          "fail": "ev_zong_cangjing_ping"
+        }
+      },
+      {
+        "text": "大致扫扫便交差",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_zong_lundao": {
+    "rarity": "普通",
+    "tags": [
+      "宗门日常"
+    ],
+    "title": "宗门·同门论道",
+    "text": "午后无事，几个相熟的弟子聚在槐树下论道。从吐纳火候争到剑招起手式，越说越热闹，渐渐分成了两派，争得面红耳赤。\n\n有人朝你招手：「{name}！你来说说——这一式剑招的灵力，到底该走手少阳还是足太阴？」",
+    "choices": [
+      {
+        "text": "胸有成竹，说出自己的见解",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_zong_lundao_hao",
+          "fail": "ev_zong_lundao_ping"
+        }
+      },
+      {
+        "text": "旁听不语，只当看热闹",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_fs_jianlou": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·捡漏",
+    "text": "北街尽头的地摊上，一堆锈迹斑斑的旧铜器里夹着一枚不起眼的木牌。旁人走过看都不看，可你指尖扫过木牌时，分明触到了一缕极淡的灵气波动。\n\n摊主是个半大小子，正忙着吆喝旁边的旧书摊，全然没注意这木牌有何特别。",
+    "choices": [
+      {
+        "text": "不动声色，花几个铜板买下木牌",
+        "effect": {
+          "addItems": [
+            "pai_huichun"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "怕是假货，不买",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_fs_qiren": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·奇人",
+    "text": "人群中忽然一阵骚动。一个身着破旧道袍、蓬头垢面的怪人席地而坐，面前只用石子压着一张黄纸，上书四个大字——「测吉凶，一文钱」。\n\n有人嗤之以鼻，有人驻足围观。怪人也不理会，只是闭目养神，周身却有一丝若有若无的灵力波动——这人绝不简单。\n\n你走上前去，他忽然睁眼，目光在你身上一落：「{linggen}……嗯，尚可。」抬手在你眉心一点，一股清凉之意直透识海。\n\n【灵力 +5】",
+    "onEnter": {
+      "attrs": {
+        "灵力": 5
+      }
+    },
+    "choices": [
+      {
+        "text": "心头一震，拱手道谢",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_fs_paimai": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·地下拍卖",
+    "text": "你跟着人流挤进一间不起眼的铺子后堂——这里每月举行一次地下拍卖，不收灵石只认贡献，拍品来路五花八门，件件不菲。\n\n台上正亮出一只青木葫芦，灵气流转，起拍价就要五点贡献。台下几个散修已经举了牌。",
+    "choices": [
+      {
+        "text": "举牌出价（花费贡献 5）",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 5
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -5
+          }
+        },
+        "roll": {
+          "chance": 0.5,
+          "success": "fs_paimai_hao",
+          "fail": "fs_paimai_ping"
+        }
+      },
+      {
+        "text": "价太高了，只看不买",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_hl_lingqi": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·灵气浓郁处",
+    "text": "穿过一片枯藤缠绕的老林，空气忽然变得清润异常。前方是一处天然形成的洼地，地脉灵气自石缝间袅袅溢出，汇成一汪淡白色的薄雾——竟是难得的聚灵之地。\n\n四下无人，正是运功吐纳的好时机。",
+    "onEnter": {
+      "attrs": {
+        "灵力": 3
+      }
+    },
+    "choices": [
+      {
+        "text": "盘膝吸纳片刻，返回{town}",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_hl_dongfu": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·古修洞府",
+    "text": "藤蔓遮掩的山壁上，一道仅容一人通过的狭缝隐在乱石之后。你拨开枯藤钻了进去——竟是一处前人开辟的洞府。\n\n石壁上还残留着打坐的痕迹，石案上落满灰尘。不知是哪位散修在此隐居过——看痕迹，至少废弃了数十年。",
+    "choices": [
+      {
+        "text": "仔细搜索洞府每个角落",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_hl_dongfu_hao",
+          "fail": "ev_hl_dongfu_ping"
+        }
+      },
+      {
+        "text": "不敢擅动，退出去",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_hl_yaoshou": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·受伤妖兽",
+    "text": "灌木丛中传来微弱的哀鸣。拨开枝叶，一只幼小的灵狐蜷在血泊里，后腿被兽夹咬得深可见骨，乌溜溜的眼睛望着你，满是恐惧。\n\n是救它——还是杀了取材料？荒林之中，一念之间。",
+    "choices": [
+      {
+        "text": "于心不忍，为它敷药包扎",
+        "roll": {
+          "chance": 0.7,
+          "success": "ev_hl_yaoshou_jiu",
+          "fail": "ev_hl_yaoshou_sha"
+        }
+      },
+      {
+        "text": "弱肉强食，杀了取材料",
+        "next": "ev_hl_yaoshou_sha"
+      },
+      {
+        "text": "不忍下手也不愿多事，绕道走",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_zong_zhanglao_dianbo": {
+    "rarity": "稀有",
+    "tags": [
+      "宗门"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 2
+      }
+    },
+    "title": "宗门·长老指点",
+    "text": "你正在山道上走着，身后忽然传来一个苍老而威严的声音：「{name}，留步。」\n\n回头一看，竟是传功长老不知何时站在了你身后。他上下打量你，微微颔首：「{realm}的修为，根基扎得不错。不过——你运功时灵力从丹田走督脉，看似捷径，实则损耗了三成。」\n\n长老当场示范了一遍改良的行功路线。你心头大震——这一句话，抵得过自己摸索半年。\n\n【灵力 +10】",
+    "onEnter": {
+      "attrs": {
+        "灵力": 10
+      }
+    },
+    "choices": [
+      {
+        "text": "躬身行礼：「多谢长老指点！」",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_zong_shixiong_qiuzhu": {
+    "rarity": "稀有",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·师兄求助",
+    "text": "你正打算回居所，一个师兄匆匆跑来，满头大汗：「{name}！可算找着你了——我接了份差事，给丹房送一批急用的药材，一个人实在搬不过来。能不能搭把手？不白帮，回头请你喝酒！」\n\n看他的样子确实着急，额头上汗珠直往下淌。",
+    "choices": [
+      {
+        "text": "搭把手，帮他送药材",
+        "roll": {
+          "chance": 0.7,
+          "success": "ev_zong_shixiong_bang",
+          "fail": "ev_zong_shixiong_ju"
+        }
+      },
+      {
+        "text": "找个借口婉拒",
+        "next": "ev_zong_shixiong_ju"
+      }
+    ]
+  },
+  "ev_yaoyuan_lingcao": {
+    "rarity": "普通",
+    "tags": [
+      "药园"
+    ],
+    "title": "药园·采得良药",
+    "text": "苏婉领你到药圃深处，指了几丛灵草：「这些是凝气草，采的时候要连根轻拔，断一根须子药性就损一成。」\n\n你小心翼翼地照着做，忙了大半个时辰，竹篓渐渐装满。苏婉检查了一遍，满意地点头：「不错，比上次那个冒失鬼强多了。」\n\n她从筐里匀出几株多余的递给你：「拿着。帮了忙总不能让你空手回去。」\n\n【获得聚花草・凝气草】",
+    "onEnter": {
+      "addItems": [
+        "juhuacao",
+        "ningqicao"
+      ]
+    },
+    "choices": [
+      {
+        "text": "道谢收下，回去向师姐复命",
+        "next": "npc_shijie"
+      }
+    ]
+  },
+  "ev_yaoyuan_tianling": {
+    "rarity": "稀有",
+    "tags": [
+      "药园"
+    ],
+    "title": "药园·天灵芝",
+    "text": "苏婉带你绕到药圃最深处，那里搭着一方小小的灵光罩，罩下独独培着一株通体莹白的天灵芝——这是药圃里品级最高的灵植，平日除了司药长老，谁也不许碰。\n\n「长老这几天外出访友，叮嘱我照看。」苏婉小心地掀起灵光罩一角，「你帮我松松土，我去取灵液来浇。」\n\n松土时，你发现天灵芝根部旁生了一小株幼芝——苏婉回来一看，笑道：「这是分株，不算正式数目。归你了。」\n\n【获得天灵芝】",
+    "onEnter": {
+      "addItems": [
+        "tianlingzhi"
+      ]
+    },
+    "choices": [
+      {
+        "text": "郑重收好，向师姐道谢",
+        "next": "npc_shijie"
+      }
+    ]
+  },
+  "ev_yaoyuan_juhua": {
+    "rarity": "普通",
+    "tags": [
+      "药园"
+    ],
+    "title": "药园·聚花草丛",
+    "text": "苏婉派你去采药圃外围的聚花草。这些不起眼的小花是炼丹最基础的辅料，用量极大，每月都得补种。\n\n你埋头弯腰采了小半个时辰，竹篓装得满满当当。苏婉清点后给你多留了几株：「干得好，多出来的你留着，说不定什么时候用得上。」\n\n【获得聚花草】",
+    "onEnter": {
+      "addItems": [
+        "juhuacao"
+      ]
+    },
+    "choices": [
+      {
+        "text": "道谢收下",
+        "next": "npc_shijie"
+      }
+    ]
+  },
+  "ev_yaoyuan_xunshi": {
+    "rarity": "普通",
+    "tags": [
+      "药园"
+    ],
+    "title": "药园·寻常巡视",
+    "text": "苏婉带着你在药圃里转了一圈，指认了几味常用灵草的药性。虽无实物收获，但这些辨药知识来日或许用得上。\n\n「{name}，炼丹入门不难——难的是十年如一日地守炉看火。你要是真有兴趣，随时来丹房找我。」",
+    "choices": [
+      {
+        "text": "记在心里，向师姐道谢",
+        "next": "npc_shijie"
+      }
+    ]
+  },
+  "ev_sx_beizhuisha": {
+    "rarity": "稀有",
+    "tags": [
+      "散修"
+    ],
+    "title": "散修·被追杀",
+    "text": "你正走在荒僻山道上，前方忽然跌跌撞撞冲出来一个浑身是血的散修，后面紧追着三个面目凶恶的黑衣修士。\n\n「道友救命——」那散修看见你，像是抓住了救命稻草，「他们……他们要杀人夺宝！」\n\n为首的黑衣修士冷笑一声：「不相干的滚开，免得溅一身血。」",
+    "choices": [
+      {
+        "text": "拔剑相助，救人于危难",
+        "battle": {
+          "enemy": "gray_wolf",
+          "win": "ev_sx_beizhuisha_hao",
+          "lose": "sanxiu_fangshi_hub"
+        }
+      },
+      {
+        "text": "事不关己，闪身避祸",
+        "next": "sanxiu_fangshi_hub",
+        "effect": {
+          "attrs": {
+            "悟性": 1
+          }
+        }
+      }
+    ]
+  },
+  "ev_sx_beizhuisha_hao": {
+    "rarity": "稀有",
+    "tags": [],
+    "title": "散修·仗义出手",
+    "text": "你三拳两脚打发了那三个黑衣修士。他们丢下几句狠话便狼狈逃窜——散修欺软怕硬，碰上个硬茬子比兔子跑得还快。\n\n被救的散修感激涕零，从怀里摸出一枚凝神丹硬塞给你：「大恩大德无以为报，区区薄礼，道友一定收下！」\n\n【勇气 +1・获得凝神丹】",
+    "onEnter": {
+      "attrs": {
+        "勇气": 1
+      },
+      "addItems": [
+        "dan_ningshen"
+      ]
+    },
+    "choices": [
+      {
+        "text": "收下丹药，扶他起身",
+        "next": "sanxiu_fangshi_hub"
+      }
+    ]
+  },
+  "ev_sx_dongfu": {
+    "rarity": "稀有",
+    "tags": [
+      "散修荒林"
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 10
+        }
+      }
+    },
+    "title": "散修·发现散修洞府",
+    "text": "你在荒林深处攀上一处断崖，无意间拨开藤蔓——竟露出一个隐蔽的洞口。洞内石壁上刻满了运功路线图，石案上落满灰尘，但一本功法书被灵光罩完好地护着。\n\n看痕迹，至少数十年无人踏入——是哪位散修前辈的闭关之所。\n\n【机缘≥10触发——发现前人遗留的功法传承】",
+    "choices": [
+      {
+        "text": "仔细搜索洞府",
+        "effect": {
+          "addItems": [
+            "shu_bihuozhang"
+          ]
+        },
+        "next": "sanxiu_fangshi_hub"
+      },
+      {
+        "text": "只参悟壁上功法路线",
+        "effect": {
+          "attrs": {
+            "灵力": 5,
+            "悟性": 1
+          }
+        },
+        "next": "sanxiu_fangshi_hub"
+      }
+    ]
+  },
+  "ev_sx_pianju": {
+    "rarity": "普通",
+    "tags": [
+      "散修"
+    ],
+    "title": "散修·坊市骗局",
+    "text": "一个尖嘴猴腮的散修把你拉到墙角，神神秘秘地从怀里掏出一只瓷瓶：「道友，这可是金丹期妖兽的内丹，我只换三枚凝神丹——错过这个村可没这个店了！」\n\n你接过瓷瓶，瓶口透出的灵气……好像不太对劲。",
+    "choices": [
+      {
+        "text": "以神识细察真伪（需悟性≥8）",
+        "cond": {
+          "attrs": {
+            "悟性": {
+              "gte": 8
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "悟性": 1
+          }
+        },
+        "next": "sanxiu_fangshi_hub"
+      },
+      {
+        "text": "咬咬牙，换了",
+        "effect": {
+          "removeItems": [
+            "dan_ningshen"
+          ],
+          "addItems": [
+            "yaodan_di"
+          ]
+        },
+        "next": "sanxiu_fangshi_hub"
+      },
+      {
+        "text": "摆手不换，转身走人",
+        "next": "sanxiu_fangshi_hub"
+      }
+    ]
+  },
+  "ev_sx_jiaoyihui": {
+    "rarity": "稀有",
+    "tags": [
+      "散修"
+    ],
+    "cond": {
+      "flags": [
+        "散修集会线索"
+      ]
+    },
+    "title": "散修·地下交易会",
+    "text": "城西破庙里烛火昏暗，十几个散修围着几张破桌子低声交谈。有人在换丹药，有人在出示功法残页，墙角的蒙面散修甚至摆出了几件法器——虽然品相不高，但对散修来说已是难得的机缘。\n\n一个头上裹布的老散修朝你招手：「小道友，头一回来？规矩简单——以物易物，或者用贡献折价。宗门弟子不许进，你进来之前外面有人验过你身上的气息了。」",
+    "choices": [
+      {
+        "text": "用贡献换丹药（花费贡献 8）",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 8
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -8
+          },
+          "addItems": [
+            "dan_xiaohuan",
+            "dan_ningshen"
+          ]
+        },
+        "next": "sanxiu_fangshi_hub"
+      },
+      {
+        "text": "用贡献换法器材料（花费贡献 5）",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 5
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -5
+          },
+          "addItems": [
+            "fu_jinglei"
+          ]
+        },
+        "next": "sanxiu_fangshi_hub"
+      },
+      {
+        "text": "只看不买，涨涨见识",
+        "next": "sanxiu_fangshi_hub"
+      }
+    ]
+  },
+  "ev_sx_qiya": {
+    "rarity": "普通",
+    "tags": [
+      "散修"
+    ],
+    "title": "散修·宗门弟子欺压",
+    "text": "三个身穿{sect}外门服饰的弟子拦住了你的去路，领头那个斜着眼打量你：「散修？在{town}混饭吃，知不知道这一带的规矩？」\n\n他身后的师弟嘿嘿笑着补充：「师兄的意思是——散修在这一带摆摊走货，该给宗门交点抽头。」\n\n你握了握拳。散修没门没派，被人欺负是家常便饭——但咽不咽得下这口气，是你自己的事。",
+    "choices": [
+      {
+        "text": "据理力争，绝不低头",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_sx_qiya_sheng",
+          "fail": "ev_sx_qiya_bai"
+        }
+      },
+      {
+        "text": "忍气吞声，破财消灾（花费贡献 3）",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 3
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -3,
+            "勇气": -1
+          }
+        },
+        "next": "sanxiu_fangshi_hub"
+      },
+      {
+        "text": "亮出修为，让他们知难而退（需筑基以上）",
+        "cond": {
+          "realm": {
+            "gte": 2
+          }
+        },
+        "next": "ev_sx_qiya_sheng"
+      }
+    ]
+  },
+  "ev_sx_qiya_sheng": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "散修·不卑不亢",
+    "text": "那三个外门弟子本想仗着宗门名头耍威风，却没想到碰上了硬茬。你三言两语指出了他们「抽头」规矩的荒谬之处，围观的其他散修也纷纷附和。\n\n三人灰溜溜地走了。旁边一个老散修朝你竖起大拇指：「道友，给咱散修长脸了。」\n\n【勇气 +2・声望 +2】",
+    "onEnter": {
+      "attrs": {
+        "勇气": 2,
+        "声望": 2
+      }
+    },
+    "choices": [
+      {
+        "text": "拍拍袖子，继续前行",
+        "next": "sanxiu_fangshi_hub"
+      }
+    ]
+  },
+  "ev_sx_qiya_bai": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "散修·势不如人",
+    "text": "那三个宗门弟子毫不客气地把你推开，从你摊上顺走几样东西，大笑着扬长而去。围观的人面面相觑，没人敢出声。\n\n一个老散修叹了口气：「道友，散修就是这样——没宗门罩着，到哪儿都得低头。」\n\n【气血 -3・勇气 -1】",
+    "onEnter": {
+      "attrs": {
+        "气血": -3,
+        "勇气": -1
+      }
+    },
+    "choices": [
+      {
+        "text": "攥紧拳头，记在心里",
+        "next": "sanxiu_fangshi_hub"
+      }
+    ]
+  },
+  "ev_sx_gaoren": {
+    "rarity": "稀有",
+    "tags": [
+      "散修"
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    },
+    "title": "散修·偶遇高人",
+    "text": "茶棚角落里坐着一个不起眼的灰衣老者，桌上只放着一杯凉了的粗茶。但你从他身上感应到了一缕若有若无的灵压——这老者的修为，深不可测。\n\n他抬眼看了你一眼：「{linggen}……资质平平，道心尚可。坐。」\n\n三言两语之间，他随口点出你功法中的几处滞涩——每一句都切中要害，听得你冷汗涔涔。\n\n【机缘≥8触发——高人指点：灵力 +10，悟性 +2】",
+    "onEnter": {
+      "attrs": {
+        "灵力": 10,
+        "悟性": 2
+      }
+    },
+    "choices": [
+      {
+        "text": "起身长揖：「多谢前辈指点！」",
+        "next": "sanxiu_fangshi_hub"
+      }
+    ]
+  },
+  "ev_sx_heishi": {
+    "rarity": "稀有",
+    "tags": [
+      "散修悬赏"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 1
+      }
+    },
+    "title": "散修·黑市任务",
+    "text": "悬赏栏最角落贴着几张用暗红色墨水写的任务单——这些不是正经悬赏，而是散修之间流传的「黑市任务」。报酬高，风险也大，而且不受任何规矩保护。\n\n一张纸条上写着：「荒林北废弃矿坑，取灵石矿样本。矿坑深处有筑基期大蛇盘踞。事成报酬：凝神丹五枚，外加灵石矿脉分成的长期好处。」\n\n你伸手揭下了纸条——富贵险中求，散修从来不缺胆子。",
+    "choices": [
+      {
+        "text": "接下任务，前往废弃矿坑",
+        "battle": {
+          "enemy": "dark_pool_python",
+          "win": "ev_sx_heishi_win",
+          "lose": "sanxiu_fangshi_hub"
+        }
+      },
+      {
+        "text": "风险太大，把纸条贴回去",
+        "next": "sanxiu_fangshi_hub"
+      }
+    ]
+  },
+  "ev_sx_heishi_win": {
+    "rarity": "稀有",
+    "tags": [],
+    "title": "散修·黑市任务·功成",
+    "text": "你提着大蛇的妖丹从矿坑深处走出来，浑身是血但眼神发亮。矿坑深处果然有灵石矿脉——你敲下几块品相上佳的样本，足够交差了。\n\n回到坊市，悬赏人验过灵石样本后眼睛都直了：「道友你居然真的……好！这些是你的了！」\n\n五枚凝神丹，外加一枚灵石矿脉的长期收益令牌。以后每月都能从这条矿脉里分到一笔贡献。\n\n【贡献 +15・获得 凝神丹×2、灵石矿、妖兽内丹】",
+    "onEnter": {
+      "attrs": {
+        "贡献": 15
+      },
+      "addItems": [
+        "dan_ningshen",
+        "dan_ningshen",
+        "lingshi_kuang",
+        "yadan"
+      ]
+    },
+    "choices": [
+      {
+        "text": "收起报酬，返回坊市",
+        "next": "sanxiu_fangshi_hub"
+      }
+    ]
+  },
+  "ev_sx_lianmeng": {
+    "rarity": "传说",
+    "tags": [
+      "散修"
+    ],
+    "cond": {
+      "realm": {
+        "gte": 3
+      },
+      "flags": [
+        "散修之路"
+      ]
+    },
+    "title": "散修·联盟邀请",
+    "text": "你正走在坊市之间，一个身着素袍的中年散修拦住了去路。他的修为不在你之下，但举止谦和有礼。\n\n「{name}道友，久仰。」他从袖中取出一枚玉牌，「我代表散修联盟，诚挚邀你加入。」\n\n「散修联盟虽不如大宗门底蕴深厚，但盟中金丹以上的散修已有数十位，遍布各州——没门没派的散修，在联盟里也能找到师尊、同道与靠山。」\n\n他顿了顿：「{realm}的修为在散修中已是凤毛麟角。联盟需要你——而你，也需要一个真正属于自己的归宿。」",
+    "choices": [
+      {
+        "text": "接过玉牌，加入散修联盟",
+        "next": "sanxiu_fangshi_hub",
+        "effect": {
+          "attrs": {
+            "声望": 5,
+            "贡献": 20
+          },
+          "addItems": [
+            "dan_dahuan",
+            "shu_zixiao"
+          ],
+          "setFlags": [
+            "散修联盟",
+            "联盟弟子"
+          ],
+          "clearFlags": [
+            "散修之路"
+          ]
+        }
+      },
+      {
+        "text": "婉拒——散修逍遥惯了，不入任何组织",
+        "next": "sanxiu_fangshi_hub",
+        "effect": {
+          "attrs": {
+            "勇气": 3,
+            "声望": 2
+          }
+        }
+      }
+    ]
+  },
+  "ev_xx_leiyu": {
+    "rarity": "普通",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "修行·雷雨夜参悟",
+    "text": "一夜雷雨交加，你盘坐窗前，雷光照得室内忽明忽暗。突然间一道惊雷劈落山巅，那一瞬的电光在你识海中久久不散——天雷的运行轨迹中，竟藏着一种玄妙的灵力运转之法。\n\n你闭上眼，丹田灵力不自觉地沿着那道轨迹运转起来……",
+    "choices": [
+      {
+        "text": "乘势参悟天雷中的道韵",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_xx_leiyu_wu",
+          "fail": "ev_xx_leiyu_ling"
+        }
+      }
+    ]
+  },
+  "ev_xx_leiyu_wu": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "修行·雷雨夜参悟·悟了",
+    "text": "雷声渐远，你的识海中却仿佛还回荡着那一声惊雷。体内灵力自然而然地顺着天雷轨迹运转了一个小周天——比平日快了三倍不止。\n\n你睁开眼，只觉视野都清明了几分。\n\n【悟性 +1】",
+    "onEnter": {
+      "attrs": {
+        "悟性": 1
+      }
+    },
+    "choices": [
+      {
+        "text": "心满意足，静坐调息",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_xx_leiyu_ling": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "修行·雷雨夜参悟·充沛",
+    "text": "虽然没参透天雷中的道韵，但雷雨之夜灵气异常充沛——你趁机吸纳了比平日多出几成的灵气。\n\n窗外的雨渐渐小了，丹田里暖融融的。\n\n【灵力 +5】",
+    "onEnter": {
+      "attrs": {
+        "灵力": 5
+      }
+    },
+    "choices": [
+      {
+        "text": "收功起身",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_xx_yuexia": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "修行·月下练剑",
+    "text": "月上中天，荒林空地上银辉洒落如霜。你拔剑出鞘，对着月光独自拆解剑招——四下无人，不必顾忌招式是否好看，一剑一剑只求更准、更快。\n\n剑光在月下连成一片冷白的光幕。不知练了多少遍，最后一个收势，剑尖恰好停在月光最亮的那一线上。",
+    "choices": [
+      {
+        "text": "感悟剑招中的不足",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_xx_yuexia_gain",
+          "fail": "ev_xx_yuexia_none"
+        }
+      }
+    ]
+  },
+  "ev_xx_yuexia_gain": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "修行·月下练剑·精进",
+    "text": "你忽然停下剑——方才最后一式的剑尖轨迹，与月光落在地上的光路几乎完全重合。一个之前始终练不顺的剑招，此刻竟自然而然地挥了出来。\n\n原来不是剑法难，是之前的月色不够好。\n\n【攻击 +1】",
+    "onEnter": {
+      "attrs": {
+        "攻击": 1
+      }
+    },
+    "choices": [
+      {
+        "text": "收剑入鞘，踏月而归",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_xx_yuexia_none": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "修行·月下练剑·寻常一夜",
+    "text": "挥汗如雨地练了一个时辰，招式还是那个招式，速度还是那个速度。但手臂上的肌肉记住了今天的轨迹——练功本来就不是每天都有突破。\n\n你收剑入鞘，对着月亮笑了笑。明天再练。",
+    "choices": [
+      {
+        "text": "收剑入鞘，踏月而归",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_xx_dujing": {
+    "rarity": "普通",
+    "tags": [
+      "宗门日常",
+      "town_market"
+    ],
+    "title": "修行·读经有感",
+    "text": "你翻开一本旧经卷，本是无心翻阅，却被其中一句「气沉丹田而不凝，意守灵台而不执」触动了心弦。\n\n这句话你读过无数次，今日却像是第一次看见。放下经卷，你闭目内视，尝试按字面意思重新调整吐纳节奏——",
+    "choices": [
+      {
+        "text": "细细体悟经文中的深意",
+        "roll": {
+          "chance": 0.6,
+          "success": "ev_xx_dujing_wu",
+          "fail": "ev_xx_dujing_ling"
+        }
+      }
+    ]
+  },
+  "ev_xx_dujing_wu": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "修行·读经有感·顿悟",
+    "text": "原来之前一直练错了——不是气沉丹田不够深，而是沉下去之后，忘记了「不凝」二字。不执着于丹田的感觉，才能让灵力自然地流转周身。\n\n再睁眼时，全身经脉都暖融融的，仿佛泡了一场温泉。\n\n【灵力 +3・悟性 +1】",
+    "onEnter": {
+      "attrs": {
+        "灵力": 3,
+        "悟性": 1
+      }
+    },
+    "choices": [
+      {
+        "text": "掩卷长叹：朝闻道，夕死可矣",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_xx_dujing_ling": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "修行·读经有感·微进",
+    "text": "虽有感悟，但经文深奥，一时难以完全消化。不过调整后的吐纳确实比之前顺畅了几分——识海里那几句经文，日后慢慢琢磨便是。\n\n【灵力 +3】",
+    "onEnter": {
+      "attrs": {
+        "灵力": 3
+      }
+    },
+    "choices": [
+      {
+        "text": "掩卷起身",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_xx_danbai": {
+    "rarity": "普通",
+    "tags": [
+      "town_market"
+    ],
+    "title": "修行·炼丹尝试",
+    "text": "你在坊市淘到一方粗浅的炼丹残方，按方索骥凑齐了几味药材，借了茶棚后院的旧丹炉试了一炉。\n\n丹炉盖子砰砰响，炉膛里忽明忽暗——火候这东西，纸上写的和实际掌握的是两回事。",
+    "choices": [
+      {
+        "text": "小心控制火候",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_xx_danbai_hao",
+          "fail": "ev_xx_danbai_bai"
+        }
+      },
+      {
+        "text": "加大火力赌一把",
+        "roll": {
+          "chance": 0.3,
+          "success": "ev_xx_danbai_hao",
+          "fail": "ev_xx_danbai_bai"
+        }
+      }
+    ]
+  },
+  "ev_xx_danbai_hao": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "修行·炼丹尝试·意外成功",
+    "text": "砰——丹炉盖子被气浪冲开，三粒圆滚滚的丹药稳稳地落在炉底的玉盘上。虽然成色不算上佳，但确实炼成了！\n\n你擦了擦脸上的烟灰，咧嘴笑了。炼丹——好像也没有传说中那么玄乎？\n\n【获得回气散、凝露丸】",
+    "onEnter": {
+      "addItems": [
+        "dan_huiqi",
+        "wan_ninglu"
+      ]
+    },
+    "choices": [
+      {
+        "text": "收好丹药，下次再试",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_xx_danbai_bai": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "修行·炼丹失败",
+    "text": "一股焦糊味从丹炉里飘了出来。你掀开炉盖——炉底只有一撮黑灰，药材全都报废了。茶棚老板闻着味探头进来，表情一言难尽。\n\n「道友……下次炼丹，能不能换个地方？」\n\n【损失一株疗伤草——药材报废】",
+    "onEnter": {
+      "removeItems": [
+        "lingcao"
+      ]
+    },
+    "choices": [
+      {
+        "text": "尴尬一笑，收拾残局",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_xx_tiaoxi": {
+    "rarity": "普通",
+    "tags": [
+      "宗门日常",
+      "town_market"
+    ],
+    "title": "修行·调息入定",
+    "text": "你寻了一处僻静角落盘膝坐下，双手结印，闭目入定。半柱香后，呼吸渐渐绵长如抽丝，杂念如河底沉沙般缓缓沉淀。\n\n耳边能听见远处弟子练剑的叮当声，但那声音仿佛隔着一层水——清澈，却不扰神。",
+    "choices": [
+      {
+        "text": "以恢复为主，调理伤势",
+        "effect": {
+          "attrs": {
+            "气血": 8
+          }
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "以修炼为主，吸纳灵气",
+        "effect": {
+          "attrs": {
+            "灵力": 3
+          }
+        },
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_xx_lingkuang": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds",
+      "sect_back_mountain"
+    ],
+    "title": "修行·灵石矿脉",
+    "text": "你在一处不起眼的溪涧旁发现水底泛着淡淡的灵光。俯身拨开卵石——石缝之间，几块未经雕琢却灵气充沛的矿石半埋在沙中。\n\n是灵石矿脉！虽然只是微末支脉，对个人修行来说已经足够了。",
+    "choices": [
+      {
+        "text": "仔细挖掘矿脉",
+        "roll": {
+          "chance": 0.6,
+          "success": "ev_xx_lingkuang_hao",
+          "fail": "ev_xx_lingkuang_ping"
+        }
+      }
+    ]
+  },
+  "ev_xx_lingkuang_hao": {
+    "rarity": "稀有",
+    "tags": [],
+    "title": "修行·灵石矿脉·丰收",
+    "text": "你沿溪流向上溯源，在源头发现了一小片裸露的矿脉——品质比下游的好了不止一筹。\n\n敲敲打打忙了半天，收获了足够修炼数月的灵石。\n\n【灵力 +5・获得灵石矿×2】",
+    "onEnter": {
+      "attrs": {
+        "灵力": 5
+      },
+      "addItems": [
+        "lingshi_kuang",
+        "lingshi_kuang"
+      ]
+    },
+    "choices": [
+      {
+        "text": "满载而归",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_xx_lingkuang_ping": {
+    "rarity": "稀有",
+    "tags": [],
+    "title": "修行·灵石矿脉·微薄",
+    "text": "矿脉比预想的要贫瘠得多，翻遍了溪涧也只找到一小块灵石矿。不过蚂蚱也是肉——修行路上，每一分资源都弥足珍贵。\n\n【灵力 +2・获得灵石矿】",
+    "onEnter": {
+      "attrs": {
+        "灵力": 2
+      },
+      "addItems": [
+        "lingshi_kuang"
+      ]
+    },
+    "choices": [
+      {
+        "text": "聊胜于无",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_xx_lundao": {
+    "rarity": "普通",
+    "tags": [
+      "宗门日常"
+    ],
+    "title": "修行·同门论道",
+    "text": "几个相熟的弟子又在大槐树下论道，争论从「结丹时灵力该走哪条经」一路飙到了「剑修到底该不该练体术」。\n\n热腾腾的茶气里，各种奇谈怪论横飞。有人的观点高明得让你低头沉思，也有人的理论荒谬到你忍不住想反驳。",
+    "choices": [
+      {
+        "text": "参与讨论，陈述己见",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_xx_lundao_wu",
+          "fail": "ev_xx_lundao_re"
+        }
+      },
+      {
+        "text": "旁听不语，静心品味",
+        "effect": {
+          "attrs": {
+            "悟性": 1
+          }
+        },
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_xx_lundao_wu": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "修行·同门论道·获益",
+    "text": "你说到一半忽然自己顿住了——在反驳同门的论点时，你不得不重新梳理自己过往的修炼经验，结果发现了一个之前从未注意到的误区。\n\n同门们还在争论不休，你却已经陷入沉思。这一悟，抵得过自己修炼半个月。\n\n【悟性 +1・灵力 +3】",
+    "onEnter": {
+      "attrs": {
+        "悟性": 1,
+        "灵力": 3
+      }
+    },
+    "choices": [
+      {
+        "text": "心有所得，返回居所消化",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_xx_lundao_re": {
+    "rarity": "普通",
+    "tags": [],
+    "title": "修行·同门论道·热闹",
+    "text": "论道变成了抬杠，抬杠变成了吵架，吵架差点变成切磋。好在有人及时拉住了——「算了算了，改日再论。」\n\n虽然没悟出什么大道理，但热热闹闹地过了个午后，心情倒是不错。\n\n【勇气 +1】",
+    "onEnter": {
+      "attrs": {
+        "勇气": 1
+      }
+    },
+    "choices": [
+      {
+        "text": "笑着回居所",
+        "next": "sect_hub"
+      }
+    ]
+  },
+  "ev_xx_duanzao": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "修行·锻造意外",
+    "text": "坊市打铁铺的老师傅正在锻造一把新剑，几个散修围在炉边看热闹。你凑过去想讨教几句打铁的经验，老师傅嫌你碍事，把一个多余的铁坯塞给你：「想学？自己试试。」\n\n你挽起袖子，抡起铁锤——",
+    "choices": [
+      {
+        "text": "沉下心来，认真锻造",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_xx_duanzao_hao",
+          "fail": "ev_xx_duanzao_bai"
+        }
+      }
+    ]
+  },
+  "ev_xx_duanzao_hao": {
+    "rarity": "稀有",
+    "tags": [],
+    "title": "修行·锻造意外·精进",
+    "text": "叮叮当当锤了一下午，竟然打出了一把品相不错的短剑。老师傅验看之后眉毛一挑：「头一回？小子有点天赋。这把你留着用吧。」\n\n虽然只是凡铁，但亲手锻造的武器握在手里，感觉就是不一样。\n\n【获得青锋剑】",
+    "onEnter": {
+      "addItems": [
+        "jian_qingfeng"
+      ]
+    },
+    "choices": [
+      {
+        "text": "谢过老师傅",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_xx_duanzao_bai": {
+    "rarity": "稀有",
+    "tags": [],
+    "title": "修行·锻造意外·意外",
+    "text": "你抡锤正欢，不料铁坯中有暗裂——一锤下去，碎铁片崩了一地，差点打到旁边的散修。\n\n老师傅叹了口气：「……算了，今天炉子也该熄火了。」\n\n【无事发生，但你的铁剑多了几个豁口】",
+    "choices": [
+      {
+        "text": "尴尬收场",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_xx_lingshou": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds",
+      "sect_back_mountain"
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    },
+    "title": "修行·灵兽认主",
+    "text": "你在林中歇脚时，一只毛茸茸的小东西从树后探出头来——是只幼年灵狐，一身银白皮毛在日光下熠熠生辉。它乌溜溜的眼睛望着你，既不害怕也不逃开，反而小心翼翼地凑过来嗅了嗅你的手指。\n\n灵兽认主，可遇不可求。这只小灵狐似乎与你格外投缘。",
+    "choices": [
+      {
+        "text": "轻轻抚摸它，收下这个小伙伴",
+        "effect": {
+          "addItems": [
+            "lingcao"
+          ],
+          "attrs": {
+            "机缘": 2
+          }
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "虽有不舍，但修行之路不适合带着它",
+        "effect": {
+          "attrs": {
+            "机缘": 1
+          }
+        },
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_xx_lingyu": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market",
+      "sect_back_mountain"
+    ],
+    "title": "修行·天降灵雨",
+    "text": "天空中忽然飘起一场细雨——但这雨滴不是寻常雨水，每一滴都裹着肉眼可见的灵光。坊市中所有修士都冲到了街上，仰头张开双臂迎接这场难得的天降灵雨。\n\n灵雨只持续了一炷香的工夫，但你体内的灵力在这短短的时间里暴涨了一截。\n\n【全属性 +5%，一日】",
+    "onEnter": {
+      "attrs": {
+        "气血": 5,
+        "灵力": 5,
+        "攻击": 1,
+        "防御": 1,
+        "悟性": 1
+      },
+      "day": 1
+    },
+    "choices": [
+      {
+        "text": "在灵雨中盘膝吐纳，尽情吸纳",
+        "next": "town_market"
+      },
+      {
+        "text": "雨过天晴，继续前行",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_xy_zhilu": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·仙人指路",
+    "text": "你在突破失败后颓然坐于溪边，月色下忽见一位白发老者踏波而来。\n\n「{name}，修仙之路本就坎坷。你{linggen}的资质不差，只是缺了一点明悟。」老者伸手在你眉心一点，一道清凉气流直透识海，往日修行中百思不解之处豁然贯通。\n\n「记住：道不在高，在悟。」老者身影渐渐淡去，只余一缕月光洒在溪面上。\n\n【悟性 +3·获得标记：仙人指点——突破率永久提升5%】",
+    "choices": [
+      {
+        "text": "伏身长拜，铭记于心",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 18
+        }
+      },
+      "realm": {
+        "gte": 2
+      }
+    },
+    "onEnter": {
+      "attrs": {
+        "悟性": 3
+      },
+      "setFlags": [
+        "仙人指点"
+      ]
+    }
+  },
+  "ev_xy_suipian": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·上古法宝碎片",
+    "text": "你在荒野深处的一处陨坑中发现一枚黯淡的金属碎片，表面隐隐有符文流转。\n\n指尖触碰的一瞬，一股远古的威压扑面而来——这绝非寻常之物，或许是上古大能炼制仙品法宝时崩落的碎片。\n\n然而碎片残缺不全，其上符文断裂，显然还有更多散落在世间。若能集齐三枚……\n\n【获得上古法宝碎片·一｜标记：fragment_1】",
+    "choices": [
+      {
+        "text": "小心收藏碎片，记下此地方位",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 20
+        }
+      }
+    },
+    "onEnter": {
+      "setFlags": [
+        "fragment_1"
+      ],
+      "addItems": [
+        "gongfa_canjuan"
+      ]
+    }
+  },
+  "ev_xy_baihu": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·白狐衔环",
+    "text": "林间雾气忽然浓得化不开，一只通体雪白的灵狐从雾中款款走出，后腿拖着一道深可见骨的伤口。\n\n灵狐乌溜溜的眼睛望着你，口中衔着一枚莹白的玉环，轻轻放在你脚边，然后伏地哀鸣。\n\n你运起灵力探查，发现这白狐体内竟有淡淡的仙灵之气——这不是凡兽，而是一只开了灵智的仙狐后裔！\n\n【需灵力 ≥ 30 方可救治·标记：saved_fox】",
+    "choices": [
+      {
+        "text": "运功为白狐疗伤",
+        "next": "town_market"
+      },
+      {
+        "text": "不敢轻举妄动，放下一些干粮离开",
+        "cond": {
+          "flags": [
+            "ganliang"
+          ]
+        },
+        "effect": {
+          "removeItems": [
+            "ganliang"
+          ]
+        },
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 18
+        },
+        "灵力": {
+          "gte": 30
+        }
+      }
+    },
+    "onEnter": {
+      "attrs": {
+        "灵力": 5
+      },
+      "setFlags": [
+        "saved_fox"
+      ],
+      "addItems": [
+        "pai_huichun"
+      ]
+    }
+  },
+  "ev_xy_lingmai": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·地脉显化",
+    "text": "打坐修炼到第七日深夜，坐下的青石忽然微微震颤——一道炽白的光柱自地底冲天而起，将半边山峰照得亮如白昼！\n\n这不是寻常灵气，而是一条沉寂千年的地脉灵根，不知为何在这一刻苏醒了。喷涌的灵光如瀑布倒流，自百会穴灌入你的经脉，丹田中的灵力以肉眼可见的速度暴涨！\n\n当光芒散尽，青石上只剩一个暗红色的远古符文，缓缓没入你的掌心。\n\n【灵力 +60·标记：灵脉眷顾】",
+    "choices": [
+      {
+        "text": "盘膝运功吸纳这股沛然灵力",
+        "next": "sect_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 22
+        }
+      },
+      "realm": {
+        "gte": 2
+      }
+    },
+    "onEnter": {
+      "attrs": {
+        "灵力": 60
+      },
+      "setFlags": [
+        "灵脉眷顾"
+      ]
+    }
+  },
+  "ev_xy_tianshu": {
+    "rarity": "传说",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·天书残页",
+    "text": "藏经阁最深处的禁制忽然对你洞开。一本封尘万年的古卷自行翻开，三张残页飘然而起，其上文字竟不似人间文字——而是以道纹直接刻入识海。\n\n三页天书，你只能勉强读懂第一页的内容。但那已足够让你对天地法则的认知天翻地覆。\n\n看阁长老闻讯赶来，看到漂浮的残页后倒吸一口凉气：「这是……开派祖师留下的天书！千年无人能启，竟被你……」\n\n【悟性 +3·机缘 +3】",
+    "choices": [
+      {
+        "text": "恭恭敬敬将天书残页奉还藏经阁",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 25
+        }
+      },
+      "realm": {
+        "gte": 3
+      }
+    },
+    "onEnter": {
+      "attrs": {
+        "悟性": 3,
+        "机缘": 3
+      }
+    }
+  },
+  "ev_cs_fangshi_laozhe": {
+    "rarity": "传说",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·神秘老者",
+    "text": "坊市最偏僻的巷尾，一位身着灰袍的老者席地而坐，身前只摆着三件物品：一枚锈迹斑斑的铜铃、一卷发黄的旧皮卷、一块乌黑无光的铁片。\n\n「有缘人。」老者抬起浑浊的双眼，「老朽在此等了三十年，只为等一个{linggen}的人来挑一件。」\n\n他咧嘴一笑，露出稀疏的牙齿：「三件之中只有一件是真的宝贝——挑错了，是你福缘不够；挑对了……嘿嘿。」\n\n【机缘 ≥ 12 可触发此事件】",
+    "choices": [
+      {
+        "text": "选那枚铜铃",
+        "roll": {
+          "chance": 0.33,
+          "success": "ev_cs_fangshi_laozhe_hao",
+          "fail": "ev_cs_fangshi_laozhe_ping"
+        }
+      },
+      {
+        "text": "选那卷旧皮卷",
+        "roll": {
+          "chance": 0.33,
+          "success": "ev_cs_fangshi_laozhe_hao",
+          "fail": "ev_cs_fangshi_laozhe_ping"
+        }
+      },
+      {
+        "text": "选那块铁片",
+        "roll": {
+          "chance": 0.33,
+          "success": "ev_cs_fangshi_laozhe_hao",
+          "fail": "ev_cs_fangshi_laozhe_ping"
+        }
+      },
+      {
+        "text": "心生警惕，不买",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 12
+        }
+      }
+    }
+  },
+  "ev_cs_fangshi_laozhe_hao": {
+    "rarity": "传说",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·慧眼识宝",
+    "text": "老者哈哈大笑：「好眼力！此物跟老朽六十年，今日终于等来了识货之人。」\n\n他将那枚毫不起眼的小铃铛往空中一抛——铃身锈迹尽褪，一道夺目金光冲天而起，竟是一件货真价实的灵品法器！\n\n「老朽乃云游散修，在此设局三十年，只为寻一有缘之人。此铃名清心，便赠予你了。」\n\n【获得清心铃】",
+    "choices": [
+      {
+        "text": "郑重接过铜铃，躬身道谢",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "ling_qingxin"
+      ]
+    }
+  },
+  "ev_cs_fangshi_laozhe_ping": {
+    "rarity": "传说",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·走眼",
+    "text": "老者叹了口气，将你选中的物件收回袖中：「缘分未到。」\n\n你心头有些失落，却也明白这种机缘本就强求不得。老者拍了拍你的肩：「小友不必介怀，能在老朽摊前驻足，便已是有些福缘之人。来日方长。」\n\n【虽未得宝，却也长了见识：悟性 +1】",
+    "choices": [
+      {
+        "text": "抱拳行礼，转身离去",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "悟性": 1
+      }
+    }
+  },
+  "ev_cs_fangshi_guishi": {
+    "rarity": "传说",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·鬼市拍卖",
+    "text": "午夜子时，坊市地下密道中灯火幽暗。戴面具的修士们围坐在一张巨大的石桌前，桌上摆着三件来历不明的拍品。\n\n主持拍卖的蒙面人声音嘶哑：「第一件：一枚不知品阶的妖丹，起拍价灵石五枚。第二件：一本残破剑谱，起拍价灵石三枚。第三件：一截不知名的古木，起拍价灵石八枚。」\n\n你的目光落在第三件上——那截古木表面焦黑，但你敏锐地感应到其中蕴含的磅礴木灵之气。\n\n【机缘 ≥ 13 可触发·悟性 ≥ 10 可辨识古木】",
+    "choices": [
+      {
+        "text": "举牌拍下那截古木（需悟性 ≥ 10）",
+        "cond": {
+          "attrs": {
+            "悟性": {
+              "gte": 10
+            },
+            "贡献": {
+              "gte": 8
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -8
+          }
+        },
+        "roll": {
+          "chance": 0.6,
+          "success": "ev_cs_fangshi_guishi_hao",
+          "fail": "ev_cs_fangshi_guishi_ping"
+        }
+      },
+      {
+        "text": "拍那枚妖丹（花费贡献 5）",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 5
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -5
+          }
+        },
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_cs_fangshi_guishi_dan",
+          "fail": "ev_cs_fangshi_guishi_ping"
+        }
+      },
+      {
+        "text": "只看不买，悄悄离开",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 13
+        }
+      }
+    }
+  },
+  "ev_cs_fangshi_guishi_hao": {
+    "rarity": "传说",
+    "tags": [
+      "town_market"
+    ],
+    "title": "鬼市·慧眼识珠",
+    "text": "你以八点贡献的价格拍下古木，旁人皆以为你疯了。但当你用灵力催动，焦黑表皮层层剥落——里面竟是一段碧绿如玉的万年灵木！\n\n满场哗然。蒙面主持人的声音都变了调：「……好眼力！」\n\n【获得天材地宝·悟性 +1】",
+    "choices": [
+      {
+        "text": "在众人艳羡的目光中收起灵木，速速离去",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "tiancai"
+      ],
+      "attrs": {
+        "悟性": 1
+      }
+    }
+  },
+  "ev_cs_fangshi_guishi_dan": {
+    "rarity": "传说",
+    "tags": [
+      "town_market"
+    ],
+    "title": "鬼市·妖丹得手",
+    "text": "你拍的妖丹虽非极品，但胜在品质稳定——一枚中阶妖丹，炼丹炼器皆可用。\n\n旁边的修士嘀咕了一句：「运气不错。」\n\n【获得中阶妖丹】",
+    "choices": [
+      {
+        "text": "收好妖丹，离开鬼市",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "yaodan_zhong"
+      ]
+    }
+  },
+  "ev_cs_fangshi_guishi_ping": {
+    "rarity": "传说",
+    "tags": [
+      "town_market"
+    ],
+    "title": "鬼市·失手",
+    "text": "你举了几次牌，每次都被旁人压一头。最终三件拍品都落入他人之手。\n\n蒙面主持人瞥了你一眼：「鬼市的规矩——价高者得，童叟无欺。下次带够灵石再来。」\n\n【贡献已花费，但什么也没拍到，不过鬼市之行让你长了见识：悟性 +1】",
+    "choices": [
+      {
+        "text": "悻悻离开地下密道",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "悟性": 1
+      }
+    }
+  },
+  "ev_cs_fangshi_gubao": {
+    "rarity": "传说",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·古宝鉴定",
+    "text": "坊市中心最大的鉴宝阁今日请来了一位退隐多年的老鉴定师——据说他曾为金丹修士鉴定过仙品法宝。\n\n当铺掌柜捧出一尊尘封多年的三足小鼎：「这件东西在库房里压了二十年，谁也看不出门道。老先生请——」\n\n老鉴定师眯起眼看了半晌，忽然抬头，目光越过众人，直直落在你身上：「那位小道友，你过来看看。」\n\n【机缘 ≥ 14·悟性 ≥ 10 方可辨识此鼎】",
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 14
+        },
+        "悟性": {
+          "gte": 10
+        }
+      }
+    },
+    "choices": [
+      {
+        "text": "凝神细观，以神识探入鼎中",
+        "effect": {
+          "attrs": {
+            "神识": 2,
+            "悟性": 1,
+            "机缘": 1
+          }
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "谦逊推辞：晚辈见识浅薄",
+        "effect": {
+          "attrs": {
+            "悟性": 1
+          }
+        },
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_cs_huanglin_lingshou": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·灵兽幼崽",
+    "text": "穿过一片竹林，你听到一阵微弱的吱吱声。竹叶堆里蜷着一只刚出生不久的幼兽——浑身覆盖着淡金色的绒毛，额头上生着一撮火焰般的红毛。\n\n这是一只罕见的金毛灵犼幼崽。成年灵犼战力堪比金丹，但幼崽却脆弱无比。母犼迟迟不见踪影，恐怕已是凶多吉少。\n\n【机缘 ≥ 12 可发现·收养或出售】",
+    "choices": [
+      {
+        "text": "收养这只幼犼（获得灵兽伙伴·耗费贡献 10）",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 10
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -10,
+            "勇气": 2,
+            "魅力": 2
+          },
+          "setFlags": [
+            "灵犼幼崽"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "将幼犼带到坊市出售（获得贡献 15）",
+        "effect": {
+          "attrs": {
+            "贡献": 15
+          }
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "不忍带走，留下一些食物后离开",
+        "effect": {
+          "removeItems": [
+            "ganliang"
+          ]
+        },
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 12
+        }
+      }
+    }
+  },
+  "ev_cs_huanglin_guzhanchang": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·古战场怨魂",
+    "text": "你踏入一片诡异的荒地——断剑残戟插满赤土，空气中弥漫着铁锈般的血腥气。\n\n阴风骤起，一具身披残甲的怨魂自尸骨间凝聚成形，空洞的眼窝对上了你的目光。它张口发出无声的咆哮，杀气如实质般扑面而来——这怨魂生前至少是金丹期的将领！\n\n【幽冥鬼将：金丹·鬼物】\n【机缘 ≥ 14·筑基以上方可一战】",
+    "choices": [
+      {
+        "text": "拔剑迎战这缕千年怨魂！",
+        "battle": {
+          "enemy": "ghost_general",
+          "win": "town_market",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "以神识镇压怨气，超度亡灵（需神识 ≥ 12）",
+        "cond": {
+          "attrs": {
+            "神识": {
+              "gte": 12
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "神识": 2,
+            "悟性": 1,
+            "机缘": 1
+          }
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "怨气太重，速速离开",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 14
+        }
+      },
+      "realm": {
+        "gte": 2
+      }
+    }
+  },
+  "ev_cs_huanglin_lingyao": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·千年灵药",
+    "text": "峭壁裂缝中，一株通体晶莹的灵参正吞吐日月精华——参体隐隐成形，须子随呼吸微微颤动，似是活物。\n\n这是千年灵参！服之可脱胎换骨，抵得过苦修数十年。然而灵参下方，一条通体漆黑的妖蛇盘踞如环，竖瞳冷冰冰地锁定着你。\n\n【黑纹妖蛇：练气三层·妖兽｜守护千年灵参】\n【机缘 ≥ 15·金丹以上方可尝试】",
+    "choices": [
+      {
+        "text": "斩杀妖蛇，摘取灵参",
+        "battle": {
+          "enemy": "black_snake",
+          "win": "ev_cs_huanglin_lingyao_de",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "以灵识沟通妖蛇，请求分一小须（需神识 ≥ 15）",
+        "cond": {
+          "attrs": {
+            "神识": {
+              "gte": 15
+            }
+          }
+        },
+        "effect": {
+          "addItems": [
+            "qiannianlingshen"
+          ],
+          "attrs": {
+            "神识": 1
+          }
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "灵参虽好，性命更贵，退走",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 15
+        }
+      },
+      "realm": {
+        "gte": 3
+      }
+    }
+  },
+  "ev_cs_huanglin_lingyao_de": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·灵参到手",
+    "text": "妖蛇断成两截，翠绿的蛇血洒了一地。你小心翼翼地将千年灵参连根挖出——参体入手温润，灵气几乎要化成实质滴落。\n\n你将灵参用布层层包好收入行囊。这等天材地宝，无论自用还是出售，都价值连城。\n\n【获得千年灵参·获得中阶妖丹】",
+    "choices": [
+      {
+        "text": "收拾战场，悄然离去",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "qiannianlingshen",
+        "yaodan_zhong"
+      ],
+      "attrs": {
+        "灵力": 10
+      }
+    }
+  },
+  "ev_cs_houshan_lingqichaoxi": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·灵气潮汐",
+    "text": "今日后山的灵气浓度忽然暴涨——肉眼可见的灵光如海浪般一波波涌来，草木疯长，山泉沸腾。\n\n传功长老的声音通过传音符响彻山间：「百年一遇的灵气潮汐！诸弟子速速寻地打坐，错过今日再等百年！」\n\n你抢到一处灵光最盛的石台，盘膝而坐。潮汐灵力如瀑布灌顶，一日修炼抵得过寻常百日！\n\n【机缘 ≥ 12·灵力翻倍一日】",
+    "choices": [
+      {
+        "text": "抓住机缘，全力吸纳这股天赐灵力！",
+        "next": "sect_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 12
+        }
+      },
+      "realm": {
+        "gte": 1
+      }
+    },
+    "onEnter": {
+      "attrs": {
+        "灵力": 25
+      }
+    }
+  },
+  "ev_cs_houshan_yike": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·仙人遗刻",
+    "text": "后山深处一处人迹罕至的崖壁上，苔藓剥落处露出一片古朴的刻文。字迹如刀削斧劈，每一笔都透着浩瀚的剑意。\n\n你凝神细观，识海中忽然出现一个模糊的身影——一位白衣仙人，在崖壁上挥剑刻字。一剑一笔，天地共鸣。\n\n待你回过神来，已是日落西山。识海中的剑意久久不散，你隐隐觉得自己的剑法感悟又上了一层。\n\n【机缘 ≥ 14·悟道 +2】",
+    "choices": [
+      {
+        "text": "在崖壁前长跪一日，试图参透全部剑意",
+        "next": "sect_hub"
+      },
+      {
+        "text": "拓下剑痕刻文，留待日后慢慢参详",
+        "effect": {
+          "addItems": [
+            "gongfa_canjuan"
+          ]
+        },
+        "next": "sect_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 14
+        }
+      },
+      "realm": {
+        "gte": 2
+      }
+    },
+    "onEnter": {
+      "attrs": {
+        "悟性": 2,
+        "灵力": 10
+      }
+    }
+  },
+  "ev_cs_houshan_chuansong": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·古传送阵",
+    "text": "后山脚下，你发现一座半埋在泥土中的古传送阵——阵纹黯淡但未完全熄灭，边缘刻着古篆：「通幽。」\n\n这座传送阵已经沉寂了不知多少年，但符文之间偶尔闪过的灵光说明它仍然可用。然而传送阵的另一端通往何处，无人知晓。\n\n你敢踏入这未知的传送阵吗？\n\n【机缘 ≥ 15·筑基以上方可激活】",
+    "choices": [
+      {
+        "text": "以灵力激活阵法，踏入未知之地！",
+        "roll": {
+          "chance": 0.5,
+          "success": "ev_cs_houshan_chuansong_hao",
+          "fail": "ev_cs_houshan_chuansong_ping"
+        }
+      },
+      {
+        "text": "拓下阵纹后再做计较（获得功法残卷·暂不踏入）",
+        "effect": {
+          "addItems": [
+            "gongfa_canjuan"
+          ]
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "危险不明，记住位置后离开",
+        "next": "sect_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 15
+        }
+      },
+      "realm": {
+        "gte": 2
+      }
+    }
+  },
+  "ev_cs_houshan_chuansong_hao": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·秘境之赐",
+    "text": "一阵天旋地转后，你出现在一处鸟语花香的秘境山谷中。谷心有一汪灵泉，泉底沉着数枚璀璨的灵石和几株罕见的灵植。\n\n你四下打量——此处似乎是一处上古修士的药圃，主人早已离去，留下的灵植却依旧生机勃勃。\n\n【获得天灵芝·获得益灵花·灵力 +15】",
+    "choices": [
+      {
+        "text": "满载而归，传送回后山",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "tianlingzhi",
+        "yilinghua"
+      ],
+      "attrs": {
+        "灵力": 15
+      }
+    }
+  },
+  "ev_cs_houshan_chuansong_ping": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·传送失败",
+    "text": "阵法一阵嗡鸣后归于沉寂——你仍站在原地。古传送阵的能量不足以完成这次传送，但阵纹在激活过程中剥落了一层锈迹，反而亮了几分。\n\n「或许下次能量足够时……」你暗自记下这个位置。\n\n【虽未传走，但激活过程让你对阵法有了一丝感悟：悟性 +1】",
+    "choices": [
+      {
+        "text": "拍拍尘土，返回居所",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "悟性": 1
+      }
+    }
+  },
+  "ev_cs_zong_leitou": {
+    "rarity": "传说",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·雷劫观悟",
+    "text": "轰隆——！\n\n一道紫黑色的雷劫劈在宗门后山方向。你赶去一看，是一位外宗散修在渡金丹劫——可惜准备不足，雷劫劈到一半便已力竭。\n\n散修浑身焦黑地盘坐在雷坑中，虽渡劫失败，却保住了一条命。他睁开眼，见你在旁观，苦笑一声：「让你见笑了。不过——」\n\n他以手指地，在焦土上画出一道玄妙的雷纹：「雷劫虽险，其中奥妙却也不少。这道雷纹，算是我送你的观礼之礼。」\n\n【机缘 ≥ 12·筑基以上可感悟雷劫奥妙：灵力 +10·悟性 +1】",
+    "choices": [
+      {
+        "text": "诚心一揖：多谢前辈指点",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 12
+        }
+      },
+      "realm": {
+        "gte": 2
+      }
+    },
+    "onEnter": {
+      "attrs": {
+        "灵力": 10,
+        "悟性": 1
+      }
+    }
+  },
+  "ev_cs_zong_xingyun": {
+    "rarity": "传说",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·天降机缘",
+    "text": "你正在演武场上练剑，忽然一道流星划破天际——不偏不倚，正落在演武场中央！烟尘散去，砸出一个三尺深的陨坑。\n\n坑底躺着一枚拳头大小、通体流转七彩光华的晶石。围观的弟子们面面相觑，没人敢上前。\n\n传功长老匆匆赶来，俯身检视后倒吸一口凉气：「星髓……这是天外流星中偶见的星髓！小友，这是你的机缘。」\n\n【机缘 ≥ 15·获得星髓链碎片】",
+    "choices": [
+      {
+        "text": "在众人艳羡中收好星髓",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 15
+        }
+      }
+    },
+    "onEnter": {
+      "addItems": [
+        "tiancai"
+      ],
+      "attrs": {
+        "机缘": 2,
+        "灵力": 10
+      }
+    }
+  },
+  "ev_cs_huanglin_gujing": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·古井奇遇",
+    "text": "荒林深处有一口枯井，井口被藤蔓封得严严实实。你拨开藤蔓探头一看——井底竟有一汪清泉，泉水中映出的不是你的倒影，而是一幕幕过往与未来的画面。\n\n你看到自己修行的历程，看到突破时的瓶颈，看到未来的岔路口——这口古井，是一处天然的道心镜！\n\n【机缘 ≥ 13·通过道心镜审视自身：悟性 +2·灵力 +10】",
+    "choices": [
+      {
+        "text": "在井边静坐一宿，细细感悟",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 13
+        }
+      }
+    },
+    "onEnter": {
+      "attrs": {
+        "悟性": 2,
+        "灵力": 10
+      }
+    }
+  },
+  "ev_xy_fangshi_sanxiu_jiaoyi": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·散修交易会",
+    "text": "北街的旧茶楼里，每月十五都有一场散修自发组织的交易会——不带灵石，以物易物。你挤进茶楼时，十几号散修正围坐在几张方桌前，桌上摆满了各色物品。\n\n一个中年散修举着一株紫纹参喊道：「换一瓶凝神丹！哪位道友有？」\n\n【机缘 ≥ 8 可发现此交易会】",
+    "choices": [
+      {
+        "text": "拿出凝神丹换取紫纹参",
+        "cond": {
+          "items": [
+            "dan_ningshen"
+          ]
+        },
+        "effect": {
+          "removeItems": [
+            "dan_ningshen"
+          ],
+          "addItems": [
+            "shen_ziwen"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "随便看看，不交易",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    }
+  },
+  "ev_xy_fangshi_danshi": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·炼丹师招募",
+    "text": "南街丹铺门口贴了张大红纸：招募炼丹助手，无需经验，日结贡献 3 点，需辨识基本灵草。\n\n铺内一位炼丹师模样的中年人正对着一堆药草发愁：「这批货成色参差不齐，我一个人实在分拣不过来——谁来搭把手？」\n\n【机缘 ≥ 8·悟性 ≥ 6 可胜任】",
+    "choices": [
+      {
+        "text": "上前应募，帮忙分拣灵草（需悟性 ≥ 6）",
+        "cond": {
+          "attrs": {
+            "悟性": {
+              "gte": 6
+            }
+          }
+        },
+        "roll": {
+          "chance": 0.7,
+          "success": "ev_xy_fangshi_danshi_hao",
+          "fail": "ev_xy_fangshi_danshi_ping"
+        }
+      },
+      {
+        "text": "不够自信，离开",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    }
+  },
+  "ev_xy_fangshi_danshi_hao": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·炼丹助手",
+    "text": "你眼力不错，半日工夫便将药材分拣得妥妥当当。炼丹师大喜：「利索！以后每月十五来我这儿帮忙——这几粒凝露丸算是今日的额外酬劳。」\n\n【贡献 +3·获得凝露丸】",
+    "choices": [
+      {
+        "text": "收好酬劳，告辞",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 3
+      },
+      "addItems": [
+        "wan_ninglu"
+      ]
+    }
+  },
+  "ev_xy_fangshi_danshi_ping": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·帮了个倒忙",
+    "text": "你分拣药材时把两味外形相似的灵草搞混了。炼丹师揉着太阳穴叹了口气：「算了算了，还是我自己来吧……」\n\n他递给你一粒清尘丹作为辛苦费。\n\n【贡献 +1·获得清尘丹】",
+    "choices": [
+      {
+        "text": "不好意思地道谢告辞",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 1
+      },
+      "addItems": [
+        "dan_qingchen"
+      ]
+    }
+  },
+  "ev_xy_fangshi_qingbao": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·情报贩子",
+    "text": "茶铺角落里，一个戴着斗笠的瘦小男子朝你招了招手：「道友，买消息吗？荒林北边最近有动静——据说有人看到了灵兽的踪迹。」\n\n他竖起一根手指：「一点贡献，这消息就是你的。」\n\n【机缘 ≥ 9 可遇到情报贩子】",
+    "choices": [
+      {
+        "text": "付贡献买消息（花费贡献 1）",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 1
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -1
+          },
+          "setFlags": [
+            "情报贩子消息"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "情报贩子的话不可轻信，走开",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 9
+        }
+      }
+    }
+  },
+  "ev_xy_fangshi_jiedai": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·灵石借贷",
+    "text": "坊市角落里开着一间不起眼的小铺子，招牌上歪歪扭扭写着「周记借贷」。掌柜是个胖胖的中年人，笑呵呵的：「道友缺灵石？好说好说——借五还六，童叟无欺。」\n\n旁边一个散修小声嘀咕：「利息倒不算高……就是逾期不还的话，催账的可不是善茬。」\n\n【机缘 ≥ 10 可发现此处】",
+    "choices": [
+      {
+        "text": "借入 5 点贡献应急",
+        "effect": {
+          "attrs": {
+            "贡献": 5
+          },
+          "setFlags": [
+            "借贷未还"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "风险太大，不借",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 10
+        }
+      }
+    }
+  },
+  "ev_xy_huanglin_lingquan": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·灵泉发现",
+    "text": "你在荒林深处发现一眼清泉——泉水泛着淡淡的蓝色荧光，掬起一捧，泉水入手便化作精纯的灵气渗入掌心。\n\n这是难得的灵泉！在此修炼一日，效果远超寻常打坐。不过灵泉位置隐秘，附近隐有妖兽气息——此处并非无主之地。\n\n【机缘 ≥ 8 可发现灵泉】",
+    "choices": [
+      {
+        "text": "在灵泉旁打坐修炼一日（灵力 +15）",
+        "effect": {
+          "attrs": {
+            "灵力": 15
+          },
+          "day": 1
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "取些灵泉带走（获得凝露丸的炼制原料：获得益灵花）",
+        "effect": {
+          "addItems": [
+            "yilinghua"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "此地不宜久留，离开",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    }
+  },
+  "ev_xy_huanglin_yaoshou": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·妖兽巢穴",
+    "text": "你误打误撞发现了山狸的巢穴——三只幼崽蜷在干草堆里，母狸外出觅食未归。巢穴边缘散落着一些兽骨和几株被啃了一半的灵草。\n\n趁着母狸不在，你可以顺手拿走那些灵草，也可以悄悄退走免得惹麻烦。\n\n【机缘 ≥ 8 可发现巢穴】",
+    "choices": [
+      {
+        "text": "趁母狸不在，捡走灵草（获得疗伤草·聚花草）",
+        "effect": {
+          "addItems": [
+            "lingcao",
+            "juhuacao"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "不想惹麻烦，悄悄退走",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    }
+  },
+  "ev_xy_huanglin_milu": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·迷路修士",
+    "text": "密林深处，一个身穿外宗弟子服的年轻修士正焦急地四处张望。见你出现，他如遇救星：「道友！我在林中转了三天了，随身丹药也耗尽了——能否指点回坊市的路？」\n\n【机缘 ≥ 9·帮助迷路修士】",
+    "choices": [
+      {
+        "text": "带他返回{town}（获得感激之礼：清尘丹）",
+        "effect": {
+          "addItems": [
+            "dan_qingchen"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "指路即可，不必同行",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 9
+        }
+      }
+    }
+  },
+  "ev_xy_huanglin_shanzei": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·山贼截道",
+    "text": "行至一处山隘，三道身影从树丛后蹿出——三个彪形大汉提着刀拦住了去路：「此山是我开，此树是我栽！识相的，把身上的丹药灵草都留下！」\n\n为首的山贼咧嘴一笑，露出一口黄牙。虽说是凡人，但三打一，兵器在手，倒也棘手。\n\n【山贼头领：凡兽级别战力】",
+    "choices": [
+      {
+        "text": "拔剑迎战三个山贼！",
+        "battle": {
+          "enemy": "wild_boar",
+          "win": "ev_xy_huanglin_shanzei_win",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "给他们一些丹药打发了事",
+        "cond": {
+          "items": [
+            "dan_qingchen"
+          ]
+        },
+        "effect": {
+          "removeItems": [
+            "dan_qingchen"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "一个轻功越过他们，扬长而去（需身法·勇气 ≥ 8）",
+        "cond": {
+          "attrs": {
+            "勇气": {
+              "gte": 8
+            }
+          }
+        },
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 10
+        }
+      }
+    }
+  },
+  "ev_xy_huanglin_shanzei_win": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·击退山贼",
+    "text": "你三两下便将三个山贼打趴在地。为首的那个捂着鼻子求饶：「好汉饶命！我们也是被妖兽占了村子，才不得已干这勾当……」\n\n你没收了他们的兵器，放他们走了。地上散落着他们抢来的杂物——其中竟有一株不错的灵草。\n\n【获得疗伤草·勇气 +1】",
+    "choices": [
+      {
+        "text": "收起战利品，继续赶路",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "lingcao"
+      ],
+      "attrs": {
+        "勇气": 1
+      }
+    }
+  },
+  "ev_xy_houshan_biguan": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·闭关洞府",
+    "text": "后山峭壁上，你发现了一道以禁制封住的石门。禁制不算高深，你略一运功便破开了——门后是一间小型闭关洞府，石床石桌齐全，墙上还刻着前人留下的打坐心得。\n\n在此闭关一日，效果格外显著。\n\n【机缘 ≥ 8 可发现隐藏洞府】",
+    "choices": [
+      {
+        "text": "在洞府中闭关修炼一日（灵力 +20·消耗一日）",
+        "effect": {
+          "attrs": {
+            "灵力": 20
+          },
+          "day": 1
+        },
+        "next": "sect_hub"
+      },
+      {
+        "text": "拓下墙上心得后离开（获得功法残卷）",
+        "effect": {
+          "addItems": [
+            "gongfa_canjuan"
+          ]
+        },
+        "next": "sect_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    }
+  },
+  "ev_xy_houshan_jiaoliang": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·同门较技",
+    "text": "后山空地上，几个弟子围在一起，中间两人正在比剑。见你过来，其中一个收剑笑道：「{name}！来得正好——我们正在赌谁能一剑劈开这块青石。你要不要试试？」\n\n【机缘 ≥ 8·切磋较技】",
+    "choices": [
+      {
+        "text": "提剑上前，试试自己的一剑之威！",
+        "roll": {
+          "chance": 0.6,
+          "success": "ev_xy_houshan_jiaoliang_hao",
+          "fail": "ev_xy_houshan_jiaoliang_ping"
+        }
+      },
+      {
+        "text": "观摩片刻后离开",
+        "next": "sect_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    }
+  },
+  "ev_xy_houshan_jiaoliang_hao": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·一剑破石",
+    "text": "你运足灵力，一剑斩落——青石应声裂成两半，切面光滑如镜。同门们齐齐喝彩：「好剑法！」\n\n场中最年长的师兄拍了拍你的肩：「这一剑的力道和准头都不错。有空来演武场找我切磋。」\n\n【勇气 +1·贡献 +2】",
+    "choices": [
+      {
+        "text": "抱拳还礼，返回居所",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "勇气": 1,
+        "贡献": 2
+      }
+    }
+  },
+  "ev_xy_houshan_jiaoliang_ping": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·剑法不精",
+    "text": "你一剑斩在青石上，只留下一道浅浅的白痕。同门们忍不住笑了，却并非嘲笑——有人递过剑来：「你这样发力不对，看我演示。」\n\n虽然出了丑，却也学到了东西。\n\n【贡献 +1·悟性 +1】",
+    "choices": [
+      {
+        "text": "认真观摩学习后离去",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 1,
+        "悟性": 1
+      }
+    }
+  },
+  "ev_xy_houshan_zhanglao_kaohe": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·长老考核",
+    "text": "巡山长老今日在后山设下临时考核——所有路过的弟子都要演练一套基础剑法。\n\n长老坐在青石上，手中拂尘微微摇晃：「{name}，轮到你了。别紧张，老夫只看根基，不看你有多花哨。」\n\n【机缘 ≥ 10·筑基以上方可参加】",
+    "choices": [
+      {
+        "text": "气定神闲，施展所学",
+        "roll": {
+          "chance": 0.6,
+          "success": "ev_xy_houshan_kaohe_hao",
+          "fail": "ev_xy_houshan_kaohe_ping"
+        }
+      },
+      {
+        "text": "恭敬请辞：弟子今日有伤在身",
+        "next": "sect_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 10
+        }
+      },
+      "realm": {
+        "gte": 2
+      }
+    }
+  },
+  "ev_xy_houshan_kaohe_hao": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·长老嘉许",
+    "text": "一套剑法行云流水般使完。长老微阖的双眼睁开，目光中多了几分赞许：「火候到了。{name}，你{linggen}的根基扎得扎实。」\n\n他拂尘一挥，一枚玉简落入你手中——里面记录了一套灵阶功法的入门要诀。\n\n【贡献 +5·获得凝神丹·at 获得标记：长老嘉许】",
+    "choices": [
+      {
+        "text": "双手接过玉简，躬身谢恩",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 5
+      },
+      "addItems": [
+        "dan_ningshen"
+      ],
+      "setFlags": [
+        "长老嘉许"
+      ]
+    }
+  },
+  "ev_xy_houshan_kaohe_ping": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·还需努力",
+    "text": "长老看完你的剑法，沉吟片刻：「招式的架子有了，但剑中无神——回去把基础桩功再练三个月。」\n\n虽是批评，却也切中要害。你认真记下了长老的指点。\n\n【贡献 +2·悟性 +1】",
+    "choices": [
+      {
+        "text": "诚心受教，行礼告退",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 2,
+        "悟性": 1
+      }
+    }
+  },
+  "ev_xy_houshan_lingyao_diao": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·灵药失窃调查",
+    "text": "药圃管事愁眉苦脸地拉住你：「{name}！昨夜药圃被盗，少了好几株聚花草。长老让我三天内查个水落石出——你帮我看看，这地上的脚印像是哪种妖兽留下的？」\n\n地上有几串凌乱的小脚印，往东延伸到一处灌木丛后便不见了。\n\n【机缘 ≥ 9 可参与调查】",
+    "choices": [
+      {
+        "text": "循着脚印追踪下去",
+        "roll": {
+          "chance": 0.6,
+          "success": "ev_xy_houshan_diao_hao",
+          "fail": "ev_xy_houshan_diao_ping"
+        }
+      },
+      {
+        "text": "没有刑侦之才，推辞",
+        "next": "sect_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 9
+        }
+      }
+    }
+  },
+  "ev_xy_houshan_diao_hao": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·破案",
+    "text": "你循着脚印找到了一处赤目鼠妖的巢穴——鼠窝里堆满了被啃得七零八落的灵草残渣，还有几株完好的聚花草被压在下面。\n\n你三下五除二解决了鼠妖，把剩下的灵草拿回药圃。管事喜出望外：「多亏了你！以后再有这种事，还找你！」\n\n【贡献 +4·获得聚花草】",
+    "choices": [
+      {
+        "text": "谦虚两句，返回居所",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 4
+      },
+      "addItems": [
+        "juhuacao"
+      ]
+    }
+  },
+  "ev_xy_houshan_diao_ping": {
+    "rarity": "稀有",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·调查无果",
+    "text": "脚印在山溪边断了。你在附近搜索了一个时辰，一无所获。\n\n回到药圃，管事失望地叹气：「算了——去坊市再买些回来便是。麻烦你了。」\n\n【贡献 +1】",
+    "choices": [
+      {
+        "text": "歉然告辞",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 1
+      }
+    }
+  },
+  "ev_xy_tongyong_leiyu": {
+    "rarity": "稀有",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·雷雨夜悟道",
+    "text": "暴风雨夜，电闪雷鸣。你独坐居所窗前，望着天幕上窜动的雷蛇出神。一道惊雷劈在后山崖壁，你心中忽然闪过一丝明悟——雷之威，不在力，而在速。\n\n你提笔在墙上写下八个小字，字迹虽潦草，却隐隐透着雷韵。\n\n【机缘 ≥ 8·悟性 +1·灵力 +5】",
+    "choices": [
+      {
+        "text": "又看了一会儿雷雨，方才歇下",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    },
+    "onEnter": {
+      "attrs": {
+        "悟性": 1,
+        "灵力": 5
+      }
+    }
+  },
+  "ev_xy_tongyong_gujing": {
+    "rarity": "稀有",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·古井奇遇",
+    "text": "宗门后厨房旁有一口千年古井，井水甘洌，据说泡茶一绝。今日你打水时却发现井底透出一缕金光——捞上来一看，居然是一枚不知多少年前掉落的凝神玉佩。\n\n「这玉……似乎是某位前辈的遗物。」你摩挲着温润的玉面，能感受到其中蕴含的纯净灵力。\n\n【机缘 ≥ 8·获得凝神玉佩】",
+    "choices": [
+      {
+        "text": "将玉佩系在腰间，继续打水",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    },
+    "onEnter": {
+      "addItems": [
+        "pei_ningshen"
+      ]
+    }
+  },
+  "ev_xy_tongyong_mengjing": {
+    "rarity": "稀有",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·梦境授法",
+    "text": "深夜，你做了一个奇怪的梦。梦中一位看不清面容的白衣仙人盘坐云海之上，口中念着一篇玄奥功法。你拼命想记住每一个字，醒来时却只记得开篇几句。\n\n然而就是这几句，已让你对修为有了新的领悟。你顾不上洗漱，冲到桌前将梦中铭记的句子写了三遍，生怕忘记。\n\n【机缘 ≥ 9·悟性 +1·灵力 +8】",
+    "choices": [
+      {
+        "text": "将记下的功法反复咀嚼，刻入脑海",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 9
+        }
+      }
+    },
+    "onEnter": {
+      "attrs": {
+        "悟性": 1,
+        "灵力": 8
+      }
+    }
+  },
+  "ev_xy_tongyong_shuixiu": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·水修论道",
+    "text": "临江茶楼临窗的位置，几个散修正在高谈阔论——从剑法到心法，从丹药到阵法，争得唾沫横飞。\n\n其中一位蓝袍修士见解独到，你旁听了一会儿，忍不住插了两句。蓝袍修士转过头打量你：「{linggen}？有意思。来，我考你一道题——」\n\n【机缘 ≥ 8·参加即兴论道】",
+    "choices": [
+      {
+        "text": "侃侃而谈，与蓝袍修士论道",
+        "roll": {
+          "chance": 0.6,
+          "success": "ev_xy_tongyong_shuixiu_hao",
+          "fail": "ev_xy_tongyong_shuixiu_ping"
+        }
+      },
+      {
+        "text": "旁听即可，不插嘴",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 8
+        }
+      }
+    }
+  },
+  "ev_xy_tongyong_shuixiu_hao": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·论道得悟",
+    "text": "蓝袍修士听完你的见解，抚掌大笑：「妙极！这个问题困扰我三年，竟被你一言点破。」\n\n他从袖中取出一枚凝神丹递给你：「一点心意，不成敬意。在下青阳门水元子，改日再来临江，定要找道友再论一场。」\n\n【获得凝神丹·悟性 +1】",
+    "choices": [
+      {
+        "text": "接过丹药，拱手告别",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "dan_ningshen"
+      ],
+      "attrs": {
+        "悟性": 1
+      }
+    }
+  },
+  "ev_xy_tongyong_shuixiu_ping": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·论道无言",
+    "text": "蓝袍修士抛出的问题极为刁钻，你苦思片刻终究答不上来。他倒也不见怪，笑着说：「无妨，这个问题本就不容易。能引你思考，已是论道之效。」\n\n虽然没能展现见识，但思考的过程本身也是一种修炼。\n\n【灵力 +3】",
+    "choices": [
+      {
+        "text": "受教了，拱手告辞",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "灵力": 3
+      }
+    }
+  },
+  "ev_xy_zong_yaoguang": {
+    "rarity": "稀有",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·药光初现",
+    "text": "丹房今日开炉炼大丹——司药长老亲自掌火，满宗弟子都在外围围观。丹炉中火焰忽青忽紫，药香漫天。\n\n长老忽然喝道：「谁来助我一臂之力——以灵力稳住炉温？」\n\n【机缘 ≥ 10·灵力 ≥ 20 方可助炼】",
+    "choices": [
+      {
+        "text": "上前助长老稳住丹炉（需灵力 ≥ 20）",
+        "cond": {
+          "attrs": {
+            "灵力": {
+              "gte": 20
+            }
+          }
+        },
+        "roll": {
+          "chance": 0.6,
+          "success": "ev_xy_zong_yaoguang_hao",
+          "fail": "ev_xy_zong_yaoguang_ping"
+        }
+      },
+      {
+        "text": "自知修为不够，在旁观摩",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "cond": {
+      "attrs": {
+        "机缘": {
+          "gte": 10
+        }
+      }
+    }
+  },
+  "ev_xy_zong_yaoguang_hao": {
+    "rarity": "稀有",
+    "tags": [
+      "宗门"
+    ],
+    "title": "丹房·丹成",
+    "text": "你稳住心神，将灵力缓缓注入丹炉。火焰由狂暴转为温顺，药香浓得化不开。长老喝了一声：「收！」\n\n丹炉开启，三枚凝神丹莹然生辉。长老取出其中一枚递给你：「有功者赏——接着。」\n\n【获得凝神丹·贡献 +3】",
+    "choices": [
+      {
+        "text": "接过丹药，躬身谢恩",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "dan_ningshen"
+      ],
+      "attrs": {
+        "贡献": 3
+      }
+    }
+  },
+  "ev_xy_zong_yaoguang_ping": {
+    "rarity": "稀有",
+    "tags": [
+      "宗门"
+    ],
+    "title": "丹房·火候不足",
+    "text": "你灵力输入过急，火焰不但没稳住反而窜起老高。长老衣袖一挥将你震开：「退下！」\n\n所幸丹未炸炉——只是品质差了些。长老摇头叹气：「年轻人，心急吃不了热豆腐。」\n\n【灵力 -5·但也长了见识：悟性 +1】",
+    "choices": [
+      {
+        "text": "讪讪退到一旁",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "灵力": -5,
+        "悟性": 1
+      }
+    }
+  },
+  "ev_pt_fangshi_huajia": {
+    "rarity": "普通",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·讨价还价",
+    "text": "你在地摊上看中一株凝气草，要价 3 点贡献。你学着那些老散修的架势，硬着头皮砍价：「这叶子都蔫了——2 点，不能再多了。」\n\n摊主是个粗豪汉子，被你逗乐了：「道友这是头一回来坊市吧？砍价砍得跟背书似的。成，两株算你 3 点。」\n\n【贡献 -3·获得凝气草 x2】",
+    "choices": [
+      {
+        "text": "成交！",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 3
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -3
+          },
+          "addItems": [
+            "ningqicao",
+            "ningqicao"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "还是算了",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_pt_fangshi_shezhang": {
+    "rarity": "普通",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·赊账",
+    "text": "丹药铺门口，一个面黄肌瘦的散修正跟掌柜磨嘴皮子：「就差两粒回气散——过两日卖了妖丹就还你……」\n\n掌柜一脸不耐烦：「不行不行，上个月赊的还没还呢。」\n\n散修瞥见你站在一旁，眼睛一亮：「道友！行行好，借我 2 点贡献应个急——卖了妖丹马上还你！」\n\n【你信他吗？】",
+    "choices": [
+      {
+        "text": "掏出 2 点贡献借给他",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 2
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -2
+          }
+        },
+        "roll": {
+          "chance": 0.4,
+          "success": "ev_pt_fangshi_shezhang_huan",
+          "fail": "ev_pt_fangshi_shezhang_pao"
+        }
+      },
+      {
+        "text": "人生地不熟，不敢借",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_pt_fangshi_shezhang_huan": {
+    "rarity": "普通",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·守信之人",
+    "text": "三日后，散修果然在丹药铺门口等你，递过来 3 点贡献：「多出的一点是利息，道友仗义，这份情我记下了！」\n\n【贡献 +3·勇气 +1】",
+    "choices": [
+      {
+        "text": "收下贡献，与他道别",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 3,
+        "勇气": 1
+      }
+    }
+  },
+  "ev_pt_fangshi_shezhang_pao": {
+    "rarity": "普通",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·一去不回",
+    "text": "此后半月，你再也没见过那个散修。丹药铺掌柜幸灾乐祸地摇头：「老夫早说了——散了散了，你就当买个教训。」\n\n【悟性 +1——吃一堑长一智】",
+    "choices": [
+      {
+        "text": "苦笑摇头，认了这笔账",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "悟性": 1
+      }
+    }
+  },
+  "ev_pt_fangshi_jiahuo": {
+    "rarity": "普通",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·买到假货",
+    "text": "地摊上一枚「聚气丹」标价只要平时的一半。你贪便宜买了一粒——打开一看，丸子里掺了一半的米粉，灵效约等于零。\n\n你再回头去找那摊主，早就收摊走人了。旁边卖旧书的老头哼了一声：「丹药打折？不是假就是毒。」\n\n【贡献 -2·获得一粒无效丹药——悟性 +1·长了记性】",
+    "choices": [
+      {
+        "text": "咬牙认栽（花费贡献 2）",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 2
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -2,
+            "悟性": 1
+          }
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "运气不好，不买了",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_pt_fangshi_laoxiang": {
+    "rarity": "普通",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·遇到老乡",
+    "text": "人潮中你忽然听到一声乡音——一个挑着担子的货郎操着{village}的口音在叫卖山货。\n\n货郎认出你，喜出望外：「{name}！没想到在这儿遇见你——来来来，这包山核桃你拿着，不早说——我表哥在山里收的，不值钱。」\n\n【获得干粮·魅力 +1】",
+    "choices": [
+      {
+        "text": "接过山货，寒暄几句后道别",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "ganliang"
+      ],
+      "attrs": {
+        "魅力": 1
+      }
+    }
+  },
+  "ev_pt_huanglin_caiyao": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·采药意外",
+    "text": "你拨开一丛灌木，不小心惊动了一窝野蜂——嗡嗡声中黑云般扑来。你抱头鼠窜，跳进溪水里才躲过一劫。\n\n不过也不算全亏——溪边正好长着几丛品质不错的聚花草，顺手采了。\n\n【获得聚花草】",
+    "choices": [
+      {
+        "text": "一身湿漉漉地返回{town}",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "juhuacao"
+      ]
+    }
+  },
+  "ev_pt_huanglin_milu": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·密林迷路",
+    "text": "荒林深处处处长得差不多，你左拐右拐，兜了一个大圈子又回到了原点。\n\n不过多走的路也没白费——你在兜圈的路上发现了一株被落叶盖住的疗伤草。\n\n【获得疗伤草·时间多耗半日】",
+    "choices": [
+      {
+        "text": "终于找到来时的路标，返回{town}",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "lingcao"
+      ]
+    }
+  },
+  "ev_pt_huanglin_wenquan": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·发现温泉",
+    "text": "穿过一片竹林，你发现了一处天然温泉——水面上白雾袅袅，空气中弥漫着淡淡的硫磺味。\n\n四下无人。你犹豫了一下，还是脱下沾满泥点的外衣，泡了进去。水温恰到好处，连日奔波的疲惫渐渐化开。\n\n【气血 +3】",
+    "choices": [
+      {
+        "text": "泡完温泉，精神抖擞地离开",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "气血": 3
+      }
+    }
+  },
+  "ev_pt_huanglin_lieren": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·猎人交易",
+    "text": "荒林边缘的猎户小屋里，一个老猎人正在剥一张野猪皮。见你过来，他咧嘴一笑：「小道长，身上可有多余的丹药？我这有张上好的兽皮，跟你换。」\n\n以丹药换兽皮——在散修之间也算常见交易。\n\n【可以清尘丹换兽皮】",
+    "choices": [
+      {
+        "text": "用清尘丹换兽皮",
+        "cond": {
+          "items": [
+            "dan_qingchen"
+          ]
+        },
+        "effect": {
+          "removeItems": [
+            "dan_qingchen"
+          ],
+          "addItems": [
+            "pimao"
+          ]
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "不必了，告辞",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_pt_huanglin_yeguo": {
+    "rarity": "普通",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·野果充饥",
+    "text": "走了半日肚子咕咕作响。你在一棵野果树上摘了几枚红彤彤的野果，虽不顶饱，胜在清甜解渴。\n\n你一边啃野果一边想——下次出门，干粮得多备些。\n\n【灵力 +1】",
+    "choices": [
+      {
+        "text": "吃饱喝足，继续赶路",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "灵力": 1
+      }
+    }
+  },
+  "ev_pt_houshan_chenzhong": {
+    "rarity": "普通",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·晨钟",
+    "text": "清晨第一缕天光刚越过山脊，宗门的大钟轰然响起，惊起满林的飞鸟。你在山道上停下脚步，听完了一百零八声钟响。\n\n这是{sect}传承千年的规矩——晨钟一百零八，暮鼓一百零八，意为涤尽一百零八种烦恼。\n\n【灵力 +2】",
+    "choices": [
+      {
+        "text": "听完钟声，心中一片澄明",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "灵力": 2
+      }
+    }
+  },
+  "ev_pt_houshan_tiaoshui": {
+    "rarity": "普通",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·挑水",
+    "text": "后山山泉旁，杂役弟子排着队打水。你碰巧走过，见一个小师妹的木桶太重提不上来，顺手帮了一把。\n\n小师妹红着脸道谢：「多谢师兄！」旁边几个杂役弟子都朝你投来感激的目光。\n\n【魅力 +1】",
+    "choices": [
+      {
+        "text": "摆摆手：举手之劳",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "魅力": 1
+      }
+    }
+  },
+  "ev_pt_houshan_saoye": {
+    "rarity": "普通",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·扫落叶",
+    "text": "秋风一起，山道上落了厚厚一层黄叶。执事正愁没人打扫，正好看见你路过：「{name}！帮你执事叔一把——把这段山道扫干净再走。」\n\n你接过扫帚，刷刷刷地扫了半个时辰。山道干净了，你也出了一身薄汗——不过筋骨倒是活络了不少。\n\n【贡献 +1·气血 +1】",
+    "choices": [
+      {
+        "text": "搁下扫帚，向执事复命",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 1,
+        "气血": 1
+      }
+    }
+  },
+  "ev_pt_houshan_shixiong": {
+    "rarity": "普通",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·遇到师兄",
+    "text": "山路上迎面走来一位入室师兄，背着一柄长剑，步履沉稳。他见了你，点了点头：「{name}，近来修行可有困惑？」\n\n你如实说了几句近期的瓶颈。师兄听罢沉吟片刻，给了三点建议——话虽不多，却让你对当前的修炼有了新的方向。\n\n【灵力 +3】",
+    "choices": [
+      {
+        "text": "真诚道谢，继续上山",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "灵力": 3
+      }
+    }
+  },
+  "ev_pt_houshan_lingqixibo": {
+    "rarity": "普通",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·灵气稀薄",
+    "text": "今天后山的灵气格外稀薄——不知是地脉波动还是被前面的弟子抢光了。你在几个常去的修炼点试了试，吸纳效率都不理想。\n\n修炼这回事，有时也讲究天时地利。\n\n【灵力 +1——总比不修炼强】",
+    "choices": [
+      {
+        "text": "聊胜于无，回居所改日再来",
+        "next": "sect_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "灵力": 1
+      }
+    }
+  },
+  "ev_pt_zong_chuangong": {
+    "rarity": "普通",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·传功堂排队",
+    "text": "今日传功堂开讲，你早早赶到却发现队伍已经排到了山门外。几个弟子正议论纷纷——据说是来了位云游的高僧客座讲法，连外门杂役都跑来凑热闹。\n\n你排了半个时辰才挤进堂中，讲法已然过半。不过听完那段关于「心无所住」的开示，倒也别有收获。\n\n【悟性 +1】",
+    "choices": [
+      {
+        "text": "听完讲法，默默退出",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "悟性": 1
+      }
+    }
+  },
+  "ev_pt_zong_danfang": {
+    "rarity": "普通",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·丹房帮工",
+    "text": "丹房今日开炉需大量柴火，司药师兄四处拉壮丁。你被拽去劈了半日柴火——好在丹房管一顿午饭，菜色还不差。\n\n有个在丹房帮工多年的杂役师兄悄悄告诉你一个炼丹小诀窍：「火候不到时放半株聚花草，能把香气逼出来。」\n\n【贡献 +2·获得干粮】",
+    "choices": [
+      {
+        "text": "劈完柴火，领了午饭回居所",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 2
+      },
+      "addItems": [
+        "ganliang"
+      ]
+    }
+  },
+  "ev_pt_zong_cangjing": {
+    "rarity": "普通",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·藏经阁整理",
+    "text": "看阁老执事今日整理经卷，需要人手把归还的书册一一归架。你自告奋勇帮了半日，执事很满意你的细心。\n\n整理中你瞥到了几本有趣的杂书记录——虽然不是功法，但记载了不少修仙界的奇闻轶事。\n\n【贡献 +2·悟性 +1】",
+    "choices": [
+      {
+        "text": "归完最后一册，向执事告辞",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 2,
+        "悟性": 1
+      }
+    }
+  },
+  "ev_pt_zong_zhiye": {
+    "rarity": "普通",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·值夜",
+    "text": "今夜轮到你值夜——巡守藏经阁外围，防止妖兽或宵小闯入。\n\n月黑风高，你提着灯笼在阁外绕了三圈。除了惊起一只野猫，一夜无事。不过熬夜巡逻让你多了一分对宗门安全的责任感。\n\n【贡献 +3·但有些困倦——灵力 +2】",
+    "choices": [
+      {
+        "text": "天亮交班，揉着眼睛回居所补觉",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 3,
+        "灵力": 2
+      }
+    }
+  },
+  "ev_pt_zong_lingshi": {
+    "rarity": "普通",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·灵石矿脉消息",
+    "text": "宗门公告栏上贴了一张新告示：后山以北三十里发现一条小型灵石矿脉，宗门正在招募弟子前往勘探。\n\n告示上特意写道：「矿脉附近妖兽出没频繁，练气九层以下弟子建议结队前往。」\n\n【获得了灵石矿脉的线索】",
+    "choices": [
+      {
+        "text": "记下位置，改日前往探索",
+        "next": "zongmen_npc_hub"
+      },
+      {
+        "text": "暂时不感兴趣",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "onEnter": {
+      "setFlags": [
+        "灵石矿脉线索"
+      ]
+    }
+  },
+  "ev_pt_zong_yanyuan": {
+    "rarity": "普通",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·演武场帮闲",
+    "text": "演武场今日有外宗访客前来交流切磋，场边人手不够。执事见了你便招手：「{name}，过来帮着记分递茶水，回头给你记贡献。」\n\n你捧着记分板在场上跑前跑后，期间也偷空看了几场精彩的比试——外宗弟子的剑法路数与{sect}大为不同，令人大开眼界。\n\n【贡献 +3·悟性 +1】",
+    "choices": [
+      {
+        "text": "忙完一场，向执事领了贡献回居所",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 3,
+        "悟性": 1
+      }
+    }
+  },
+  "ev_pt_zong_qingjie": {
+    "rarity": "普通",
+    "tags": [
+      "宗门"
+    ],
+    "title": "宗门·雨后清淤",
+    "text": "暴雨过后，通往藏经阁的石阶被山洪冲下的泥沙堵了大半。执事敲锣召集弟子清淤——你不情不愿地扛着铁锹去了。\n\n干了两个时辰，灰头土脸。但看着被清理干净的石阶，心里莫名有几分成就感。\n\n【贡献 +2·气血 +1】",
+    "choices": [
+      {
+        "text": "扛着铁锹回居所冲洗",
+        "next": "zongmen_npc_hub"
+      }
+    ],
+    "onEnter": {
+      "attrs": {
+        "贡献": 2,
+        "气血": 1
+      }
+    }
+  },
+  "ev_chain_fox_dream": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·白狐托梦",
+    "text": "深夜，你做了一个奇异的梦——那只被你救过的白狐踏月而来，通体笼罩在皎洁的月光中。\n\n白狐在你面前伏下身，口吐人言：「恩人，多谢当日救命之恩。我乃月华仙狐之后，被仇家追杀方落难荒林。你{linggen}的根基已有火候，我以月华之力助你一臂——」\n\n白狐眉心射出一道银光，没入你的丹田。你感到一股温暖的力量在经脉中缓缓流淌。\n\n【灵力 +20·标记：fox_dream】",
+    "choices": [
+      {
+        "text": "从梦中惊醒，月光洒了满床",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "flags": [
+        "saved_fox"
+      ]
+    },
+    "onEnter": {
+      "attrs": {
+        "灵力": 20
+      },
+      "setFlags": [
+        "fox_dream"
+      ]
+    }
+  },
+  "ev_chain_fox_reward": {
+    "rarity": "传说",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·白狐献宝",
+    "text": "数月后，你在荒林旧地又见到了白狐——它的伤口已经完全愈合，身边还跟着两只同样雪白的幼狐。\n\n白狐口中衔着一枚光芒流转的圆珠走到你面前，轻轻放在你脚边。然后它带着幼狐转身离开，消失在晨雾中，再无踪影。\n\n你捡起圆珠——入手温润，珠内仿佛藏着一轮明月。这是仙狐一族以月华之力凝结的映月珠，品阶极高。\n\n【获得映月珠·机缘 +3·标记：fox_reward】",
+    "choices": [
+      {
+        "text": "向白狐消失的方向一揖到地",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "flags": [
+        "fox_dream"
+      ]
+    },
+    "onEnter": {
+      "addItems": [
+        "zhu_yingyue"
+      ],
+      "attrs": {
+        "机缘": 3
+      },
+      "setFlags": [
+        "fox_reward"
+      ]
+    }
+  },
+  "ev_chain_fragment2": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·碎片共鸣",
+    "text": "你怀中的法宝碎片忽然发出微弱的嗡鸣——它在共振！你循着共鸣的方向走到后山剑冢附近，在断剑堆中发现第二枚碎片。\n\n两枚碎片靠近时，符文自行亮起，隐隐浮现出完整的纹路——可惜还缺最后一枚，无法呈现全貌。\n\n【标记：fragment_2·获得功法残卷】",
+    "choices": [
+      {
+        "text": "将第二枚碎片也小心收好",
+        "next": "sect_hub"
+      }
+    ],
+    "cond": {
+      "flags": [
+        "fragment_1"
+      ]
+    },
+    "onEnter": {
+      "setFlags": [
+        "fragment_2"
+      ],
+      "addItems": [
+        "gongfa_canjuan"
+      ]
+    }
+  },
+  "ev_chain_fragment3": {
+    "rarity": "传说",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·碎片显踪",
+    "text": "你在坊市走动时，怀中的两枚碎片忽然剧烈震动——一处地摊上，一枚被当作铜纽扣出售的小圆片突然飞起，与你的两枚碎片自动拼合。\n\n摊主吓了一跳：「这、这东西怎么自己飞了？！」\n\n三枚碎片拼合后，形成了一件完整的仙品法宝雏形——但还需最后一步才能激活：以灵力灌注七日七夜。\n\n【标记：fragment_3】",
+    "choices": [
+      {
+        "text": "付给摊主一些补偿，收好拼合的碎片（花费贡献 5）",
+        "cond": {
+          "attrs": {
+            "贡献": {
+              "gte": 5
+            }
+          }
+        },
+        "effect": {
+          "attrs": {
+            "贡献": -5
+          }
+        },
+        "next": "town_market"
+      },
+      {
+        "text": "道谢后带着碎片离开",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "flags": [
+        "fragment_2"
+      ]
+    },
+    "onEnter": {
+      "setFlags": [
+        "fragment_3"
+      ]
+    }
+  },
+  "ev_chain_fabao_hecheng": {
+    "rarity": "传说",
+    "tags": [
+      "sect_back_mountain"
+    ],
+    "title": "后山·法宝终成",
+    "text": "你寻了一处灵气浓郁之地，将拼合的三枚碎片置入灵阵中心，以自身灵力温养了整整七日七夜。\n\n第七日黎明，灵阵轰然炸开——一柄通体晶莹、流转七彩光华的法宝悬浮半空，正是上古修士遗留的仙品法宝！\n\n「太虚残剑。」一个缥缈的声音在你识海中响起——这是炼制此剑的主人留下的最后讯息。\n\n【获得太虚残剑·标记：法宝终成·机缘 +5】",
+    "choices": [
+      {
+        "text": "双手捧剑，朝天一拜",
+        "next": "sect_hub"
+      }
+    ],
+    "cond": {
+      "flags": [
+        "fragment_1",
+        "fragment_2",
+        "fragment_3"
+      ]
+    },
+    "onEnter": {
+      "addItems": [
+        "jian_taixu"
+      ],
+      "attrs": {
+        "机缘": 5
+      },
+      "setFlags": [
+        "法宝终成"
+      ],
+      "day": 7
+    }
+  },
+  "ev_chain_sanxiu_save": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·救下散修",
+    "text": "林间传来兵刃交击之声——一个散修正被两头灰毛妖狼围攻，道袍上血迹斑斑，已然落了下风。\n\n「道友救命！」散修瞥见你，嘶声喊道：「我乃岭南散修赵长风，今日之恩，来日必报！」\n\n【灰毛妖狼 x2：练气一层】",
+    "choices": [
+      {
+        "text": "拔剑相助，共击妖狼！",
+        "battle": {
+          "enemy": "gray_wolf",
+          "win": "ev_chain_sanxiu_save_win",
+          "lose": "town_market"
+        }
+      },
+      {
+        "text": "明哲保身，绕道离开",
+        "next": "town_market"
+      }
+    ]
+  },
+  "ev_chain_sanxiu_save_win": {
+    "rarity": "稀有",
+    "tags": [
+      "town_wilds"
+    ],
+    "title": "荒林·并肩退敌",
+    "text": "两人合力之下，两头妖狼一死一逃。赵长风喘着粗气，从怀里摸出一只瓷瓶：「大恩不言谢！这瓶清尘丹聊表心意——改日在岭南相见，赵某必有重酬！」\n\n他在你手心里画了一道追踪符纹：「道友若有暇来岭南，凭此符纹便可寻到我。散修虽穷，却最重情义。」\n\n【获得清尘丹·勇气 +2·标记：saved_sanxiu】",
+    "choices": [
+      {
+        "text": "与赵长风口述道别",
+        "next": "town_market"
+      }
+    ],
+    "onEnter": {
+      "addItems": [
+        "dan_qingchen"
+      ],
+      "attrs": {
+        "勇气": 2
+      },
+      "setFlags": [
+        "saved_sanxiu"
+      ]
+    }
+  },
+  "ev_chain_sanxiu_reward": {
+    "rarity": "稀有",
+    "tags": [
+      "town_market"
+    ],
+    "title": "坊市·散修报恩",
+    "text": "时隔多日，你正在坊市闲逛，赵长风忽然从人群中钻出来，满脸喜色：「道友！可算找到你了！上次救命之恩，我一直记在心上。」\n\n他从怀里取出一对流光溢彩的小铃铛：「这对清心铃是我不久前在古修洞府中所得，品质上佳。请务必收下。」\n\n【获得清心铃·贡献 +5·标记：sanxiu_reward】",
+    "choices": [
+      {
+        "text": "郑重收下，拉他去茶楼叙旧",
+        "next": "town_market"
+      }
+    ],
+    "cond": {
+      "flags": [
+        "saved_sanxiu"
+      ]
+    },
+    "onEnter": {
+      "addItems": [
+        "ling_qingxin"
+      ],
+      "attrs": {
+        "贡献": 5
+      },
+      "setFlags": [
+        "sanxiu_reward"
+      ]
+    }
+  }
+}
