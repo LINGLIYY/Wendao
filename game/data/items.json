@@ -1100,5 +1100,59 @@
     "rarity": "??",
     "desc": "???????????????????",
     "value": 450
+  },
+  "recipe_huiqi": {
+    "name": "回气散配方",
+    "type": "配方",
+    "rarity": "凡品",
+    "desc": "记载了回气散的炼制方法。材料：疗伤草×1。",
+    "use": {
+      "craft": "recipe_huiqi"
+    }
+  },
+  "recipe_bigu": {
+    "name": "辟谷丹配方",
+    "type": "配方",
+    "rarity": "灵品",
+    "desc": "记载了辟谷丹的炼制方法。材料：疗伤草×2、凝气草×1。",
+    "use": {
+      "craft": "recipe_bigu"
+    }
+  },
+  "recipe_tianxiang": {
+    "name": "天香续命丹配方",
+    "type": "配方",
+    "rarity": "玄品",
+    "desc": "记载了天香续命丹的炼制方法。材料：聚花草×2、异香花×1、天灵芝×1。",
+    "use": {
+      "craft": "recipe_tianxiang"
+    }
+  },
+  "recipe_tiexuanjing": {
+    "name": "铁玄晶配方",
+    "type": "配方",
+    "rarity": "灵品",
+    "desc": "记载了铁玄晶的炼制方法。材料：凡铁矿石×2、霞隐矿×1。",
+    "use": {
+      "craft": "recipe_tiexuanjing"
+    }
+  },
+  "recipe_qingfeng": {
+    "name": "清风剑配方",
+    "type": "配方",
+    "rarity": "玄品",
+    "desc": "记载了清风剑的炼制方法。材料：铁玄晶×2、兽骨×3。",
+    "use": {
+      "craft": "recipe_qingfeng"
+    }
+  },
+  "recipe_huichun": {
+    "name": "回春木牌配方",
+    "type": "配方",
+    "rarity": "灵品",
+    "desc": "记载了回春木牌的炼制方法。材料：兽骨×2、灵石矿×1。",
+    "use": {
+      "craft": "recipe_huichun"
+    }
   }
 }

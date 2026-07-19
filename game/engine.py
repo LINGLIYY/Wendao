@@ -128,6 +128,7 @@ class GameEngine:
         self.enemies = self._load_json("enemies")
         self.skills = self._load_json("skills")
         self.battle_actions = self._load_json("battle_actions")
+        self.recipes = self._load_json("recipes")
         # —— 支撑表（战斗物品 / 奖励归类 / 境界配置）——
         self.config = self._load_json("config")
         self.items = self._load_json("items")
@@ -205,6 +206,9 @@ class GameEngine:
         # 进入交互式战斗
         if c.get("battle"):
             return self.battle.start(c["battle"])
+        # 炼制（炼丹/炼器）
+        if c.get("craft"):
+            return self.craft(c["craft"])
         # 奖励表结算
         if c.get("rewardTable"):
             return self.settle_reward(c["rewardTable"], c.get("next"))
@@ -436,6 +440,66 @@ class GameEngine:
             "突破・失败",
             "灵力奔涌至瓶颈处却如浪碎礁石，轰然溃散！\n\n"
             "【灵力损三成，气血 -5。稳固根基，来日再战。】", back)
+
+    # ================= 炼制（炼丹/炼器）=================
+
+    def craft(self, recipe_id):
+        """炼制系统：查配方 → 检材料 → 算成功率 → 判定 → 产出
+        配方来自 recipes.json，成功率 = baseRate + sect craftBonus"""
+        recipe = self.recipes.get(recipe_id)
+        if not recipe:
+            self.state.push_log("????"); return self.goto(self.state.data.get("scene"), skip_enter=True)
+
+        # 检查境界要求
+        req_realm = recipe.get("requireRealm", 0)
+        if self.state.data.get("realm", 0) < req_realm:
+            self.state.push_log("????"); return self.goto(self.state.data.get("scene"), skip_enter=True)
+
+        # 检查材料
+        inputs = recipe.get("inputs", {})
+        for item_id, count in inputs.items():
+            actual = self.state.data["items"].count(item_id)
+            if actual < count:
+                it_name = self.items.get(item_id, {}).get("name", item_id)
+                self.state.push_log("????"); return self.goto(self.state.data.get("scene"), skip_enter=True)
+
+        # 消耗材料
+        for item_id, count in inputs.items():
+            for _ in range(count):
+                self.state.remove_item(item_id)
+
+        # 计算成功率
+        rate = recipe.get("baseRate", 0.5)
+        craft_key = recipe.get("craftKey", "")
+        sect = self.state.sect_info()
+        if sect:
+            craft_bonus = sect.get("specialty", {}).get("craftBonus", {}).get(craft_key, 0)
+            rate += craft_bonus
+        rate = max(0.05, min(0.95, rate))
+
+        success = random.random() < rate
+        output_id = recipe["output"]
+        out_name = self.items.get(output_id, {}).get("name", output_id)
+
+        self.state.push_log('炼制%s：成功率%d%%，%s' % (recipe["name"], int(rate * 100), '成功！获得「' + out_name + '」' if success else '失败…材料化作飞灰'))
+
+        if success:
+            self.state.add_item(output_id)
+
+        # 渲染结果
+        scene_title = '炼制·%s' % ('成' if success else '败')
+        nl = chr(10)
+        scene_text = '「%s」——成功率 %d%%。' + nl + nl
+        scene_text = scene_text % (recipe["name"], int(rate * 100))
+        if success:
+            scene_text += '光华敛去，炉中「%s」已成。' % out_name
+        else:
+            scene_text += '炉火失控，材料尽数化为飞灰。'
+        scene = {"title": scene_title, "text": scene_text, "choices": [
+            {"text": "继续", "next": self.state.data.get("scene") or "sect_hub"}
+        ]}
+        self._auto_save()
+        return self._render(scene, scene["choices"])
 
     # ================= 事件抽取 =================
 

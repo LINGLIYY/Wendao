@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """修仙・问道 — Python 游戏状态中心 (GameState)
 
 移植自 server/state.js (State) + server.js 的文件存档 (Save) 与 stateSnapshot()。
@@ -965,3 +965,5 @@ if __name__ == "__main__":
     print("有效属性:", gs.effective()["eff"])
     print("插值:", gs.interpolate("{name}({origin}/{linggen}/{constitution}) — {realm}"))
     print("快照键:", sorted(gs.to_dict().keys()))
+
+

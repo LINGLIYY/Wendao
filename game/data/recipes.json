@@ -1,0 +1,74 @@
+{
+  "recipe_huiqi": {
+    "name": "回气散配方",
+    "type": "炼丹",
+    "requireRealm": 0,
+    "inputs": {
+      "lingcao": 1
+    },
+    "output": "dan_huiqi",
+    "baseRate": 0.8,
+    "craftKey": "炼丹"
+  },
+  "recipe_bigu": {
+    "name": "辟谷丹配方",
+    "type": "炼丹",
+    "requireRealm": 1,
+    "inputs": {
+      "lingcao": 2,
+      "ningqicao": 1
+    },
+    "output": "dan_bigu",
+    "baseRate": 0.65,
+    "craftKey": "炼丹"
+  },
+  "recipe_tianxiang": {
+    "name": "天香续命丹配方",
+    "type": "炼丹",
+    "requireRealm": 2,
+    "inputs": {
+      "juhuacao": 2,
+      "yilinghua": 1,
+      "tianlingzhi": 1
+    },
+    "output": "dan_tianxiang",
+    "baseRate": 0.45,
+    "craftKey": "炼丹"
+  },
+  "recipe_tiexuanjing": {
+    "name": "铁玄晶配方",
+    "type": "炼器",
+    "requireRealm": 1,
+    "inputs": {
+      "fan_tie": 2,
+      "xiayin_kuang": 1
+    },
+    "output": "tie_xuanjing",
+    "baseRate": 0.7,
+    "craftKey": "炼器"
+  },
+  "recipe_qingfeng": {
+    "name": "清风剑配方",
+    "type": "炼器",
+    "requireRealm": 2,
+    "inputs": {
+      "tie_xuanjing": 2,
+      "shougu": 3
+    },
+    "output": "jian_qingfeng",
+    "baseRate": 0.5,
+    "craftKey": "炼器"
+  },
+  "recipe_huichun": {
+    "name": "回春木牌配方",
+    "type": "炼器",
+    "requireRealm": 1,
+    "inputs": {
+      "shougu": 2,
+      "lingshi_kuang": 1
+    },
+    "output": "pai_huichun",
+    "baseRate": 0.65,
+    "craftKey": "炼器"
+  }
+}
