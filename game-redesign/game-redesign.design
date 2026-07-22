@@ -1,0 +1,111 @@
+{
+  "data": [
+    {
+      "id": "page-create",
+      "title": "创建角色",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1753036800000,
+      "canvasData": {
+        "x": 0,
+        "y": 0,
+        "group": 0,
+        "deviceType": "desktop"
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/create.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-main",
+      "title": "游戏主界面",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1753036801000,
+      "canvasData": {
+        "x": 620,
+        "y": 0,
+        "group": 0,
+        "deviceType": "desktop"
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/main.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-battle",
+      "title": "战斗界面",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1753036802000,
+      "canvasData": {
+        "x": 1240,
+        "y": 0,
+        "group": 0,
+        "deviceType": "desktop"
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/battle.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-create-v2",
+      "title": "创建角色（天命版）",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1753036900000,
+      "canvasData": {
+        "x": 0,
+        "y": 377,
+        "group": 1,
+        "deviceType": "desktop"
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/create-v2.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-main-v2",
+      "title": "主界面（含创角）",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1753037000000,
+      "canvasData": {
+        "x": 620,
+        "y": 377,
+        "group": 1,
+        "deviceType": "desktop"
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/main-v2.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-app",
+      "title": "完整单页应用",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1753037100000,
+      "canvasData": {
+        "x": 0,
+        "y": 754,
+        "group": 2,
+        "deviceType": "desktop"
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/app.html",
+        "interactions": []
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": true,
+    "deviceType": "desktop",
+    "projectName": "修仙问道单页重设计"
+  }
+}

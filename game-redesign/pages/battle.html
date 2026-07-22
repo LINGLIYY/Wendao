@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修仙问道 — 战斗</title>
+    <style id="theme-vars">
+/* 修仙问道 — Brand Design Tokens */
+
+:root {
+  /* ---- Core ---- */
+  --xian-background: #0c0e14;
+  --xian-foreground: #d8d3c4;
+  --xian-card: #151821;
+  --xian-card-foreground: #d8d3c4;
+  --xian-popover: #1a1e28;
+  --xian-popover-foreground: #d8d3c4;
+  --xian-primary: #c9a96e;
+  --xian-primary-foreground: #0c0e14;
+  --xian-muted: #1e2230;
+  --xian-muted-foreground: #8a8578;
+  --xian-border: #282d3a;
+  --xian-input: #1a1e28;
+  --xian-ring: #c9a96e;
+  --xian-radius-sm: 4px;
+  --xian-radius-md: 8px;
+  --xian-radius-lg: 12px;
+
+  /* ---- State ---- */
+  --state-success: #7ec9a0;
+  --state-warning: #e8c97a;
+  --state-error: #c96a5e;
+  --state-info: #7ab8ff;
+
+  /* ---- Rarity ---- */
+  --rarity-common: #d8d3c4;
+  --rarity-ling: #7ab8ff;
+  --rarity-xuan: #b48aff;
+  --rarity-xian: #ff6b9d;
+
+  /* ---- Surface Layers ---- */
+  --surface-base: #0c0e14;
+  --surface-raised: #151821;
+  --surface-overlay: #1a1e28;
+  --surface-float: #1e2230;
+
+  /* ---- Typography ---- */
+  --font-display: "Noto Serif SC", "SimSun", serif;
+  --font-body: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+}
+
+/* ---- Semantic Fallbacks (for Tailwind resolution) ---- */
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--xian-background);
+    --color-foreground: var(--xian-foreground);
+    --color-card: var(--xian-card);
+    --color-card-foreground: var(--xian-card-foreground);
+    --color-popover: var(--xian-popover);
+    --color-popover-foreground: var(--xian-popover-foreground);
+    --color-primary: var(--xian-primary);
+    --color-primary-foreground: var(--xian-primary-foreground);
+    --color-muted: var(--xian-muted);
+    --color-muted-foreground: var(--xian-muted-foreground);
+    --color-border: var(--xian-border);
+    --color-input: var(--xian-input);
+    --color-ring: var(--xian-ring);
+    --radius-sm: var(--xian-radius-sm);
+    --radius-md: var(--xian-radius-md);
+    --radius-lg: var(--xian-radius-lg);
+  }
+  @layer base {
+    body { background: var(--xian-background); color: var(--xian-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--xian-background); }
+      .text-background { color: var(--xian-background); }
+      .border-background { border-color: var(--xian-background); }
+      .ring-background { --tw-ring-color: var(--xian-background); }
+      .bg-foreground { background-color: var(--xian-foreground); }
+      .text-foreground { color: var(--xian-foreground); }
+      .border-foreground { border-color: var(--xian-foreground); }
+      .ring-foreground { --tw-ring-color: var(--xian-foreground); }
+      .bg-card { background-color: var(--xian-card); }
+      .text-card { color: var(--xian-card); }
+      .border-card { border-color: var(--xian-card); }
+      .ring-card { --tw-ring-color: var(--xian-card); }
+      .bg-card-foreground { background-color: var(--xian-card-foreground); }
+      .text-card-foreground { color: var(--xian-card-foreground); }
+      .border-card-foreground { border-color: var(--xian-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--xian-card-foreground); }
+      .bg-popover { background-color: var(--xian-popover); }
+      .text-popover { color: var(--xian-popover); }
+      .border-popover { border-color: var(--xian-popover); }
+      .ring-popover { --tw-ring-color: var(--xian-popover); }
+      .bg-popover-foreground { background-color: var(--xian-popover-foreground); }
+      .text-popover-foreground { color: var(--xian-popover-foreground); }
+      .border-popover-foreground { border-color: var(--xian-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--xian-popover-foreground); }
+      .bg-primary { background-color: var(--xian-primary); }
+      .text-primary { color: var(--xian-primary); }
+      .border-primary { border-color: var(--xian-primary); }
+      .ring-primary { --tw-ring-color: var(--xian-primary); }
+      .bg-primary-foreground { background-color: var(--xian-primary-foreground); }
+      .text-primary-foreground { color: var(--xian-primary-foreground); }
+      .border-primary-foreground { border-color: var(--xian-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--xian-primary-foreground); }
+      .bg-muted { background-color: var(--xian-muted); }
+      .text-muted { color: var(--xian-muted); }
+      .border-muted { border-color: var(--xian-muted); }
+      .ring-muted { --tw-ring-color: var(--xian-muted); }
+      .bg-muted-foreground { background-color: var(--xian-muted-foreground); }
+      .text-muted-foreground { color: var(--xian-muted-foreground); }
+      .border-muted-foreground { border-color: var(--xian-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--xian-muted-foreground); }
+      .bg-border { background-color: var(--xian-border); }
+      .text-border { color: var(--xian-border); }
+      .border-border { border-color: var(--xian-border); }
+      .ring-border { --tw-ring-color: var(--xian-border); }
+      .bg-input { background-color: var(--xian-input); }
+      .text-input { color: var(--xian-input); }
+      .border-input { border-color: var(--xian-input); }
+      .ring-input { --tw-ring-color: var(--xian-input); }
+      .bg-ring { background-color: var(--xian-ring); }
+      .text-ring { color: var(--xian-ring); }
+      .border-ring { border-color: var(--xian-ring); }
+      .ring-ring { --tw-ring-color: var(--xian-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="h-screen overflow-hidden font-sans antialiased">
+    <main class="flex flex-col h-screen">
+
+      <!-- ===== TOP BAR ===== -->
+      <header class="bg-card border-b border-border h-12 flex items-center justify-between px-4 shrink-0 z-30">
+        <!-- Left: Title -->
+        <div class="flex items-center gap-2">
+          <!-- Mobile hamburger -->
+          <button class="lg:hidden w-8 h-8 flex items-center justify-center text-muted-foreground hover:text-primary transition-colors rounded" data-dom-id="btn-menu-toggle" aria-label="菜单">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+          <h1 style="font-family: var(--font-display)" class="text-primary text-lg font-semibold tracking-wide">修仙问道</h1>
+        </div>
+
+        <!-- Center: Save / Load -->
+        <div class="flex items-center gap-2">
+          <button data-dom-id="btn-save" class="w-8 h-8 flex items-center justify-center bg-card border border-border rounded-md text-muted-foreground hover:text-primary transition-colors" aria-label="存档">
+            <i data-lucide="save" class="w-[18px] h-[18px]"></i>
+          </button>
+          <button data-dom-id="btn-load" class="w-8 h-8 flex items-center justify-center bg-card border border-border rounded-md text-muted-foreground hover:text-primary transition-colors" aria-label="读档">
+            <i data-lucide="folder-open" class="w-[18px] h-[18px]"></i>
+          </button>
+        </div>
+
+        <!-- Right: Panel toggles -->
+        <div class="flex items-center gap-1">
+          <button data-dom-id="btn-char-panel" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-primary transition-colors" aria-label="人物">
+            <i data-lucide="user" class="w-[18px] h-[18px]"></i>
+          </button>
+          <button data-dom-id="btn-bag-panel" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-primary transition-colors" aria-label="背包">
+            <i data-lucide="backpack" class="w-[18px] h-[18px]"></i>
+          </button>
+          <button data-dom-id="btn-gongfa-panel" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-primary transition-colors" aria-label="功法">
+            <i data-lucide="scroll-text" class="w-[18px] h-[18px]"></i>
+          </button>
+          <button data-dom-id="btn-log-panel" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-primary transition-colors" aria-label="日志">
+            <i data-lucide="list" class="w-[18px] h-[18px]"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- ===== BODY: Sidebar + Battle Arena ===== -->
+      <div class="flex flex-1 min-h-0">
+
+        <!-- ===== LEFT SIDEBAR — Character HUD ===== -->
+        <aside class="hidden lg:flex flex-col w-[260px] shrink-0 bg-card border-r border-border overflow-y-auto">
+          <div class="p-4 flex flex-col flex-1">
+            <!-- Character name -->
+            <div class="mb-1">
+              <span style="font-family: var(--font-display)" class="text-lg font-semibold text-primary">云无涯</span>
+            </div>
+            <!-- Realm badge -->
+            <span class="inline-block bg-muted text-primary text-xs px-2 py-0.5 rounded w-fit">练气期</span>
+
+            <div class="border-b border-border my-3"></div>
+
+            <!-- Key stats -->
+            <div class="flex flex-col gap-2 text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-muted-foreground">天数</span>
+                <span class="text-foreground font-semibold">42</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted-foreground">灵石</span>
+                <span class="text-foreground font-semibold">1,280</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted-foreground">修为</span>
+                <span class="text-foreground font-semibold">67%</span>
+              </div>
+              <!-- Progress bar -->
+              <div class="w-full h-1.5 bg-muted rounded-full overflow-hidden">
+                <div class="h-full rounded-full bg-primary" style="width: 67%"></div>
+              </div>
+            </div>
+
+            <div class="border-b border-border my-3"></div>
+
+            <!-- Attributes section -->
+            <span class="text-xs text-muted-foreground tracking-widest uppercase mb-2">属性</span>
+            <div class="grid grid-cols-3 gap-y-2 gap-x-1">
+              <div class="flex flex-col items-center">
+                <span class="text-xs text-muted-foreground">灵力</span>
+                <span class="text-sm font-semibold text-foreground">45</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <span class="text-xs text-muted-foreground">体质</span>
+                <span class="text-sm font-semibold text-foreground">28</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <span class="text-xs text-muted-foreground">神识</span>
+                <span class="text-sm font-semibold text-foreground">32</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <span class="text-xs text-muted-foreground">悟性</span>
+                <span class="text-sm font-semibold text-foreground">38</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <span class="text-xs text-muted-foreground">根骨</span>
+                <span class="text-sm font-semibold text-foreground">25</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <span class="text-xs text-muted-foreground">气运</span>
+                <span class="text-sm font-semibold text-foreground">30</span>
+              </div>
+            </div>
+
+            <div class="border-b border-border my-3"></div>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1.5">
+              <span class="bg-muted text-muted-foreground text-xs px-2 py-0.5 rounded">金灵根</span>
+              <span class="bg-muted text-muted-foreground text-xs px-2 py-0.5 rounded">凡体</span>
+              <span class="bg-muted text-muted-foreground text-xs px-2 py-0.5 rounded">散修</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ===== BATTLE ARENA ===== -->
+        <section class="flex-1 min-w-0 overflow-y-auto" data-scroll-region="primary">
+          <div class="max-w-2xl mx-auto px-6 py-8 lg:px-8 lg:py-10">
+
+            <!-- Battle Header -->
+            <div class="text-center mb-8">
+              <h2 style="font-family: var(--font-display)" class="text-xl text-primary font-semibold">遭遇妖兽</h2>
+              <div class="w-10 h-0.5 bg-primary mx-auto mt-2"></div>
+              <p class="text-sm text-muted-foreground mt-3">第三回合</p>
+            </div>
+
+            <!-- Combatants Section -->
+            <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-6 items-center mb-6">
+
+              <!-- Player Card -->
+              <div class="bg-card border border-border rounded-lg p-5">
+                <div class="mb-3">
+                  <span class="text-foreground font-semibold">云无涯</span>
+                  <span class="block text-xs text-muted-foreground mt-0.5">练气期</span>
+                </div>
+                <!-- HP Bar -->
+                <div class="flex items-center justify-between text-xs text-muted-foreground mb-1.5">
+                  <span>气血</span>
+                  <span>168 / 240</span>
+                </div>
+                <div class="w-full h-3 bg-muted rounded-full overflow-hidden">
+                  <div class="h-full rounded-full bg-primary" style="width: 70%"></div>
+                </div>
+                <span class="block text-xs mt-2" style="color: var(--state-success)">灵力充裕</span>
+              </div>
+
+              <!-- VS Divider -->
+              <div class="hidden md:flex items-center justify-center">
+                <span class="text-2xl font-bold text-muted-foreground">VS</span>
+              </div>
+
+              <!-- Mobile VS Divider -->
+              <div class="flex md:hidden items-center justify-center -my-2">
+                <div class="flex-1 h-px bg-border"></div>
+                <span class="text-lg font-bold text-muted-foreground px-4">VS</span>
+                <div class="flex-1 h-px bg-border"></div>
+              </div>
+
+              <!-- Enemy Card -->
+              <div class="bg-card border border-border rounded-lg p-5">
+                <div class="mb-3">
+                  <span class="font-semibold" style="color: var(--state-error)">赤焰蟒</span>
+                  <span class="block text-xs text-muted-foreground mt-0.5">妖兽</span>
+                </div>
+                <!-- HP Bar -->
+                <div class="flex items-center justify-between text-xs text-muted-foreground mb-1.5">
+                  <span>气血</span>
+                  <span>84 / 240</span>
+                </div>
+                <div class="w-full h-3 bg-muted rounded-full overflow-hidden">
+                  <div class="h-full rounded-full" style="width: 35%; background: var(--state-error)"></div>
+                </div>
+                <span class="block text-xs mt-2" style="color: var(--state-error)">身受重伤</span>
+              </div>
+
+            </div>
+
+            <!-- Battle Log -->
+            <div class="bg-card border border-border rounded-lg p-4 mt-6">
+              <h3 class="text-sm text-muted-foreground mb-3">战斗记录</h3>
+
+              <div class="text-sm leading-relaxed">
+                <div class="border-b border-border py-2">
+                  你运转心法，一掌拍出 — 赤焰蟒受到 <span class="font-semibold" style="color: var(--state-error)">45</span> 点伤害
+                </div>
+                <div class="border-b border-border py-2">
+                  赤焰蟒猛然甩尾 — 你受到 <span class="font-semibold" style="color: var(--state-error)">22</span> 点伤害
+                </div>
+                <div class="border-b border-border py-2">
+                  你灵力涌动，青锋剑斩出一道剑气 — 赤焰蟒受到 <span class="font-semibold" style="color: var(--state-error)">58</span> 点伤害
+                </div>
+                <div class="border-b border-border py-2">
+                  <span style="color: var(--state-error)">赤焰蟒吐出烈焰</span> — 你受到 <span class="font-semibold" style="color: var(--state-error)">30</span> 点伤害
+                </div>
+                <div class="py-2">
+                  你借势后撤，调息片刻
+                </div>
+              </div>
+            </div>
+
+            <!-- Battle Action Buttons -->
+            <div class="grid grid-cols-2 gap-3 mt-6">
+              <button class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer flex items-center gap-3">
+                <i data-lucide="sword" class="w-5 h-5 text-primary shrink-0"></i>
+                <span class="font-medium">全力攻击</span>
+              </button>
+              <button class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer flex items-center gap-3">
+                <i data-lucide="shield" class="w-5 h-5 text-primary shrink-0"></i>
+                <span class="font-medium">运转心法</span>
+              </button>
+              <button class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer flex items-center gap-3">
+                <i data-lucide="flask-round" class="w-5 h-5 text-primary shrink-0"></i>
+                <span class="font-medium">使用丹药 <span class="text-muted-foreground text-sm">(×3)</span></span>
+              </button>
+              <button class="bg-card border border-border rounded-lg px-5 py-4 text-left text-muted-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer flex items-center gap-3">
+                <i data-lucide="log-out" class="w-5 h-5 shrink-0"></i>
+                <span class="font-medium">尝试逃跑</span>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

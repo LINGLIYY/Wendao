@@ -272,6 +272,10 @@ class GameHandler(BaseHTTPRequestHandler):
             return self._api(self._api_saves)
         if path == '/api/export':
             return self._api(self._api_export)
+        if path == '/api/create-data':
+            return self._api(self._api_create_data)
+        if path == '/api/all-sects':
+            return self._api(self._api_all_sects)
         return self._static(path)
 
     def do_POST(self):
@@ -384,6 +388,50 @@ class GameHandler(BaseHTTPRequestHandler):
 
     def _api_saves(self):
         self._json(200, {'saves': saves_list()})
+
+    def _api_create_data(self):
+        """返回角色创建选项（灵根/体质/出身/姓名表）"""
+        tables = getattr(state, 'char_tables', {})
+        self._json(200, {
+            'ok': True,
+            'data': {
+                'linggen': tables.get('linggen', []),
+                'constitution': tables.get('constitution', []),
+                'origin': tables.get('origin', []),
+                'names': tables.get('names', {}),
+            },
+            'labels': {
+                'linggen': '灵根',
+                'constitution': '体质',
+                'origin': '出身',
+                'name': '道号',
+                'randomName': '随机',
+                'startGame': '踏入仙途',
+                'restart': '重新开始',
+                'loading': '正在加载角色创建数据...',
+                'summaryDay': '第',
+                'summaryDayUnit': '天',
+                'summaryStones': '灵石',
+            }
+        })
+
+    def _api_all_sects(self):
+        """返回所有宗门信息（不含入宗条件等内部字段）"""
+        sects_table = getattr(state, 'sects_table', {})
+        sects_list = []
+        if isinstance(sects_table, dict):
+            for sid, sdata in sects_table.items():
+                if not isinstance(sdata, dict):
+                    continue
+                sects_list.append({
+                    'id': sid,
+                    'name': sdata.get('name'),
+                    'alignment': sdata.get('alignment'),
+                    'desc': sdata.get('desc'),
+                    'specialty': sdata.get('specialty'),
+                    'culture': sdata.get('culture'),
+                })
+        self._json(200, {'ok': True, 'sects': sects_list})
 
     def _api_export(self):
         disposition = "attachment; filename=save.json; filename*=UTF-8''" + quote('修仙问道-进度.json')

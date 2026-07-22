@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修仙问道 — 踏入仙途</title>
+    <style id="theme-vars">
+/* 修仙问道 — Brand Design Tokens */
+
+:root {
+  /* ---- Core ---- */
+  --xian-background: #0c0e14;
+  --xian-foreground: #d8d3c4;
+  --xian-card: #151821;
+  --xian-card-foreground: #d8d3c4;
+  --xian-popover: #1a1e28;
+  --xian-popover-foreground: #d8d3c4;
+  --xian-primary: #c9a96e;
+  --xian-primary-foreground: #0c0e14;
+  --xian-muted: #1e2230;
+  --xian-muted-foreground: #8a8578;
+  --xian-border: #282d3a;
+  --xian-input: #1a1e28;
+  --xian-ring: #c9a96e;
+  --xian-radius-sm: 4px;
+  --xian-radius-md: 8px;
+  --xian-radius-lg: 12px;
+
+  /* ---- State ---- */
+  --state-success: #7ec9a0;
+  --state-warning: #e8c97a;
+  --state-error: #c96a5e;
+  --state-info: #7ab8ff;
+
+  /* ---- Rarity ---- */
+  --rarity-common: #d8d3c4;
+  --rarity-ling: #7ab8ff;
+  --rarity-xuan: #b48aff;
+  --rarity-xian: #ff6b9d;
+
+  /* ---- Surface Layers ---- */
+  --surface-base: #0c0e14;
+  --surface-raised: #151821;
+  --surface-overlay: #1a1e28;
+  --surface-float: #1e2230;
+
+  /* ---- Typography ---- */
+  --font-display: "Noto Serif SC", "SimSun", serif;
+  --font-body: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+}
+
+/* ---- Semantic Fallbacks (for Tailwind resolution) ---- */
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--xian-background);
+    --color-foreground: var(--xian-foreground);
+    --color-card: var(--xian-card);
+    --color-card-foreground: var(--xian-card-foreground);
+    --color-popover: var(--xian-popover);
+    --color-popover-foreground: var(--xian-popover-foreground);
+    --color-primary: var(--xian-primary);
+    --color-primary-foreground: var(--xian-primary-foreground);
+    --color-muted: var(--xian-muted);
+    --color-muted-foreground: var(--xian-muted-foreground);
+    --color-border: var(--xian-border);
+    --color-input: var(--xian-input);
+    --color-ring: var(--xian-ring);
+    --radius-sm: var(--xian-radius-sm);
+    --radius-md: var(--xian-radius-md);
+    --radius-lg: var(--xian-radius-lg);
+  }
+  @layer base {
+    body { background: var(--xian-background); color: var(--xian-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--xian-background); }
+      .text-background { color: var(--xian-background); }
+      .border-background { border-color: var(--xian-background); }
+      .ring-background { --tw-ring-color: var(--xian-background); }
+      .bg-foreground { background-color: var(--xian-foreground); }
+      .text-foreground { color: var(--xian-foreground); }
+      .border-foreground { border-color: var(--xian-foreground); }
+      .ring-foreground { --tw-ring-color: var(--xian-foreground); }
+      .bg-card { background-color: var(--xian-card); }
+      .text-card { color: var(--xian-card); }
+      .border-card { border-color: var(--xian-card); }
+      .ring-card { --tw-ring-color: var(--xian-card); }
+      .bg-card-foreground { background-color: var(--xian-card-foreground); }
+      .text-card-foreground { color: var(--xian-card-foreground); }
+      .border-card-foreground { border-color: var(--xian-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--xian-card-foreground); }
+      .bg-popover { background-color: var(--xian-popover); }
+      .text-popover { color: var(--xian-popover); }
+      .border-popover { border-color: var(--xian-popover); }
+      .ring-popover { --tw-ring-color: var(--xian-popover); }
+      .bg-popover-foreground { background-color: var(--xian-popover-foreground); }
+      .text-popover-foreground { color: var(--xian-popover-foreground); }
+      .border-popover-foreground { border-color: var(--xian-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--xian-popover-foreground); }
+      .bg-primary { background-color: var(--xian-primary); }
+      .text-primary { color: var(--xian-primary); }
+      .border-primary { border-color: var(--xian-primary); }
+      .ring-primary { --tw-ring-color: var(--xian-primary); }
+      .bg-primary-foreground { background-color: var(--xian-primary-foreground); }
+      .text-primary-foreground { color: var(--xian-primary-foreground); }
+      .border-primary-foreground { border-color: var(--xian-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--xian-primary-foreground); }
+      .bg-muted { background-color: var(--xian-muted); }
+      .text-muted { color: var(--xian-muted); }
+      .border-muted { border-color: var(--xian-muted); }
+      .ring-muted { --tw-ring-color: var(--xian-muted); }
+      .bg-muted-foreground { background-color: var(--xian-muted-foreground); }
+      .text-muted-foreground { color: var(--xian-muted-foreground); }
+      .border-muted-foreground { border-color: var(--xian-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--xian-muted-foreground); }
+      .bg-border { background-color: var(--xian-border); }
+      .text-border { color: var(--xian-border); }
+      .border-border { border-color: var(--xian-border); }
+      .ring-border { --tw-ring-color: var(--xian-border); }
+      .bg-input { background-color: var(--xian-input); }
+      .text-input { color: var(--xian-input); }
+      .border-input { border-color: var(--xian-input); }
+      .ring-input { --tw-ring-color: var(--xian-input); }
+      .bg-ring { background-color: var(--xian-ring); }
+      .text-ring { color: var(--xian-ring); }
+      .border-ring { border-color: var(--xian-ring); }
+      .ring-ring { --tw-ring-color: var(--xian-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen antialiased">
+
+<main class="min-h-screen flex justify-center px-4 py-10">
+  <div class="w-full max-w-xl flex flex-col gap-8">
+
+    <!-- Title Banner -->
+    <section class="text-center pt-4 pb-2">
+      <h1
+        class="text-3xl font-bold tracking-wide text-foreground"
+        style="font-family: var(--font-display)"
+      >踏入仙途</h1>
+      <div class="gold-line"></div>
+      <p class="text-muted-foreground text-sm mt-3">灵根体质，皆为天命所定</p>
+    </section>
+
+    <!-- Name Input -->
+    <section class="flex flex-col gap-2">
+      <div class="flex items-center justify-between">
+        <label class="text-sm font-medium text-muted-foreground" style="font-family: var(--font-display)">道号</label>
+        <button
+          data-dom-id="btn-random-name"
+          class="text-xs text-primary hover:underline cursor-pointer"
+          style="font-family: var(--font-display)"
+        >随机</button>
+      </div>
+      <input
+        type="text"
+        placeholder="输入你的道号"
+        class="w-full bg-card border border-border rounded-lg px-4 py-3 text-xl text-center text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors"
+      />
+    </section>
+
+    <!-- 天命揭示区 — 占卜风格 -->
+    <section class="flex flex-col gap-4">
+      <div class="flex flex-col gap-1">
+        <h2 class="text-lg font-semibold text-primary" style="font-family: var(--font-display)">天命</h2>
+        <p class="text-sm text-muted-foreground">灵根、体质、出身皆由天定，非人力可择</p>
+      </div>
+
+      <div class="bg-card border border-border rounded-lg p-6 flex flex-col items-center gap-6">
+        <!-- 占卜按钮 -->
+        <button
+          data-dom-id="btn-divine"
+          class="flex items-center gap-2 bg-muted border border-border rounded-lg px-6 py-3 text-primary cursor-pointer hover:border-primary transition-colors"
+        >
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+          <span class="text-base font-medium" style="font-family: var(--font-display)">占卜天命</span>
+        </button>
+
+        <!-- 揭示结果（占卜后显示） -->
+        <div class="w-full flex flex-col gap-4">
+          <!-- 灵根 -->
+          <div class="flex items-center gap-3 border-b border-border pb-3">
+            <span class="text-xs text-muted-foreground w-12 text-right shrink-0" style="font-family: var(--font-display)">灵根</span>
+            <span class="text-base font-semibold text-foreground" style="font-family: var(--font-display)">双灵根</span>
+            <span class="text-xs text-muted-foreground">水 · 木</span>
+          </div>
+          <!-- 体质 -->
+          <div class="flex items-center gap-3 border-b border-border pb-3">
+            <span class="text-xs text-muted-foreground w-12 text-right shrink-0" style="font-family: var(--font-display)">体质</span>
+            <span class="text-base font-semibold text-foreground" style="font-family: var(--font-display)">灵韵体质</span>
+            <span class="text-xs text-muted-foreground">灵气亲和，修炼事半功倍</span>
+          </div>
+          <!-- 出身 -->
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-muted-foreground w-12 text-right shrink-0" style="font-family: var(--font-display)">出身</span>
+            <span class="text-base font-semibold text-foreground" style="font-family: var(--font-display)">农家子弟</span>
+            <span class="text-xs text-muted-foreground">出身寒微，心志坚韧</span>
+          </div>
+        </div>
+
+        <!-- 重新占卜 -->
+        <button
+          data-dom-id="btn-re-divine"
+          class="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors"
+        >不满意？重新占卜</button>
+      </div>
+    </section>
+
+    <!-- Start Button -->
+    <section class="pt-2 pb-8">
+      <button
+        data-dom-id="btn-start"
+        class="w-full bg-primary text-primary-foreground rounded-lg py-3 text-lg font-semibold cursor-pointer hover:opacity-90 transition-opacity"
+      >开始修仙</button>
+    </section>
+
+  </div>
+</main>
+
+
+    <style>
+    html { background: var(--xian-background); }
+    body {
+      font-family: var(--font-body);
+      background: var(--xian-background);
+      color: var(--xian-foreground);
+    }
+    .gold-line {
+      width: 48px;
+      height: 2px;
+      background: var(--xian-primary);
+      margin: 12px auto 0;
+    }
+    </style>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修仙问道 — 踏入仙途</title>
+    <style id="theme-vars">
+/* 修仙问道 — Brand Design Tokens */
+
+:root {
+  /* ---- Core ---- */
+  --xian-background: #0c0e14;
+  --xian-foreground: #d8d3c4;
+  --xian-card: #151821;
+  --xian-card-foreground: #d8d3c4;
+  --xian-popover: #1a1e28;
+  --xian-popover-foreground: #d8d3c4;
+  --xian-primary: #c9a96e;
+  --xian-primary-foreground: #0c0e14;
+  --xian-muted: #1e2230;
+  --xian-muted-foreground: #8a8578;
+  --xian-border: #282d3a;
+  --xian-input: #1a1e28;
+  --xian-ring: #c9a96e;
+  --xian-radius-sm: 4px;
+  --xian-radius-md: 8px;
+  --xian-radius-lg: 12px;
+
+  /* ---- State ---- */
+  --state-success: #7ec9a0;
+  --state-warning: #e8c97a;
+  --state-error: #c96a5e;
+  --state-info: #7ab8ff;
+
+  /* ---- Rarity ---- */
+  --rarity-common: #d8d3c4;
+  --rarity-ling: #7ab8ff;
+  --rarity-xuan: #b48aff;
+  --rarity-xian: #ff6b9d;
+
+  /* ---- Surface Layers ---- */
+  --surface-base: #0c0e14;
+  --surface-raised: #151821;
+  --surface-overlay: #1a1e28;
+  --surface-float: #1e2230;
+
+  /* ---- Typography ---- */
+  --font-display: "Noto Serif SC", "SimSun", serif;
+  --font-body: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+}
+
+/* ---- Semantic Fallbacks (for Tailwind resolution) ---- */
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--xian-background);
+    --color-foreground: var(--xian-foreground);
+    --color-card: var(--xian-card);
+    --color-card-foreground: var(--xian-card-foreground);
+    --color-popover: var(--xian-popover);
+    --color-popover-foreground: var(--xian-popover-foreground);
+    --color-primary: var(--xian-primary);
+    --color-primary-foreground: var(--xian-primary-foreground);
+    --color-muted: var(--xian-muted);
+    --color-muted-foreground: var(--xian-muted-foreground);
+    --color-border: var(--xian-border);
+    --color-input: var(--xian-input);
+    --color-ring: var(--xian-ring);
+    --radius-sm: var(--xian-radius-sm);
+    --radius-md: var(--xian-radius-md);
+    --radius-lg: var(--xian-radius-lg);
+  }
+  @layer base {
+    body { background: var(--xian-background); color: var(--xian-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--xian-background); }
+      .text-background { color: var(--xian-background); }
+      .border-background { border-color: var(--xian-background); }
+      .ring-background { --tw-ring-color: var(--xian-background); }
+      .bg-foreground { background-color: var(--xian-foreground); }
+      .text-foreground { color: var(--xian-foreground); }
+      .border-foreground { border-color: var(--xian-foreground); }
+      .ring-foreground { --tw-ring-color: var(--xian-foreground); }
+      .bg-card { background-color: var(--xian-card); }
+      .text-card { color: var(--xian-card); }
+      .border-card { border-color: var(--xian-card); }
+      .ring-card { --tw-ring-color: var(--xian-card); }
+      .bg-card-foreground { background-color: var(--xian-card-foreground); }
+      .text-card-foreground { color: var(--xian-card-foreground); }
+      .border-card-foreground { border-color: var(--xian-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--xian-card-foreground); }
+      .bg-popover { background-color: var(--xian-popover); }
+      .text-popover { color: var(--xian-popover); }
+      .border-popover { border-color: var(--xian-popover); }
+      .ring-popover { --tw-ring-color: var(--xian-popover); }
+      .bg-popover-foreground { background-color: var(--xian-popover-foreground); }
+      .text-popover-foreground { color: var(--xian-popover-foreground); }
+      .border-popover-foreground { border-color: var(--xian-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--xian-popover-foreground); }
+      .bg-primary { background-color: var(--xian-primary); }
+      .text-primary { color: var(--xian-primary); }
+      .border-primary { border-color: var(--xian-primary); }
+      .ring-primary { --tw-ring-color: var(--xian-primary); }
+      .bg-primary-foreground { background-color: var(--xian-primary-foreground); }
+      .text-primary-foreground { color: var(--xian-primary-foreground); }
+      .border-primary-foreground { border-color: var(--xian-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--xian-primary-foreground); }
+      .bg-muted { background-color: var(--xian-muted); }
+      .text-muted { color: var(--xian-muted); }
+      .border-muted { border-color: var(--xian-muted); }
+      .ring-muted { --tw-ring-color: var(--xian-muted); }
+      .bg-muted-foreground { background-color: var(--xian-muted-foreground); }
+      .text-muted-foreground { color: var(--xian-muted-foreground); }
+      .border-muted-foreground { border-color: var(--xian-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--xian-muted-foreground); }
+      .bg-border { background-color: var(--xian-border); }
+      .text-border { color: var(--xian-border); }
+      .border-border { border-color: var(--xian-border); }
+      .ring-border { --tw-ring-color: var(--xian-border); }
+      .bg-input { background-color: var(--xian-input); }
+      .text-input { color: var(--xian-input); }
+      .border-input { border-color: var(--xian-input); }
+      .ring-input { --tw-ring-color: var(--xian-input); }
+      .bg-ring { background-color: var(--xian-ring); }
+      .text-ring { color: var(--xian-ring); }
+      .border-ring { border-color: var(--xian-ring); }
+      .ring-ring { --tw-ring-color: var(--xian-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen antialiased">
+
+<main class="min-h-screen flex justify-center px-4 py-10">
+  <div class="w-full max-w-2xl flex flex-col gap-8">
+
+    <!-- Title Banner -->
+    <section class="text-center pt-4 pb-2">
+      <h1
+        class="text-3xl font-bold tracking-wide text-foreground"
+        style="font-family: var(--font-display)"
+      >踏入仙途</h1>
+      <div class="gold-line"></div>
+      <p class="text-muted-foreground text-sm mt-3">请选择你的修仙根基</p>
+    </section>
+
+    <!-- Name Input -->
+    <section class="flex flex-col gap-2">
+      <div class="flex items-center justify-between">
+        <label class="text-sm font-medium text-muted-foreground" style="font-family: var(--font-display)">道号</label>
+        <button
+          data-dom-id="btn-random-name"
+          class="text-xs text-primary hover:underline cursor-pointer"
+          style="font-family: var(--font-display)"
+        >随机</button>
+      </div>
+      <input
+        type="text"
+        placeholder="输入你的道号"
+        class="w-full bg-card border border-border rounded-lg px-4 py-3 text-xl text-center text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors"
+      />
+    </section>
+
+    <!-- 灵根 Selection -->
+    <section class="flex flex-col gap-4">
+      <div class="flex flex-col gap-1">
+        <h2 class="text-lg font-semibold text-primary" style="font-family: var(--font-display)">灵根</h2>
+        <p class="text-sm text-muted-foreground">灵根决定你的修行天赋与悟性</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer active">
+          <p class="text-base font-medium text-foreground">天灵根</p>
+          <p class="text-sm text-muted-foreground mt-1">万中无一，修行之路畅通无阻</p>
+        </div>
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer">
+          <p class="text-base font-medium text-foreground">真灵根</p>
+          <p class="text-sm text-muted-foreground mt-1">三系同修，进境较快</p>
+        </div>
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer">
+          <p class="text-base font-medium text-foreground">双灵根</p>
+          <p class="text-sm text-muted-foreground mt-1">两系相辅，中上之资</p>
+        </div>
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer">
+          <p class="text-base font-medium text-foreground">伪灵根</p>
+          <p class="text-sm text-muted-foreground mt-1">四系以上，修行缓慢</p>
+        </div>
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer sm:col-span-2">
+          <p class="text-base font-medium text-foreground">无灵根</p>
+          <p class="text-sm text-muted-foreground mt-1">凡人无根，以力证道，步步艰辛</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 体质 Selection -->
+    <section class="flex flex-col gap-4">
+      <div class="flex flex-col gap-1">
+        <h2 class="text-lg font-semibold text-primary" style="font-family: var(--font-display)">体质</h2>
+        <p class="text-sm text-muted-foreground">体质影响你的修行根基与肉身潜力</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer">
+          <p class="text-base font-medium text-foreground">先天道体</p>
+          <p class="text-sm text-muted-foreground mt-1">天生修道之体，万中无一</p>
+        </div>
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer active">
+          <p class="text-base font-medium text-foreground">灵韵体质</p>
+          <p class="text-sm text-muted-foreground mt-1">灵气亲和，修炼事半功倍</p>
+        </div>
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer">
+          <p class="text-base font-medium text-foreground">凡人之躯</p>
+          <p class="text-sm text-muted-foreground mt-1">肉身凡胎，以勤补拙</p>
+        </div>
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer">
+          <p class="text-base font-medium text-foreground">残缺体质</p>
+          <p class="text-sm text-muted-foreground mt-1">体质有缺，处处受限</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 出身 Selection -->
+    <section class="flex flex-col gap-4">
+      <div class="flex flex-col gap-1">
+        <h2 class="text-lg font-semibold text-primary" style="font-family: var(--font-display)">出身</h2>
+        <p class="text-sm text-muted-foreground">出身决定你的初始机缘与见闻</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer">
+          <p class="text-base font-medium text-foreground">仙门之后</p>
+          <p class="text-sm text-muted-foreground mt-1">父母皆为修士，自幼耳濡目染</p>
+        </div>
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer active">
+          <p class="text-base font-medium text-foreground">世家子弟</p>
+          <p class="text-sm text-muted-foreground mt-1">书香门第，知书达理</p>
+        </div>
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer">
+          <p class="text-base font-medium text-foreground">江湖散人</p>
+          <p class="text-sm text-muted-foreground mt-1">漂泊江湖，见多识广</p>
+        </div>
+        <div class="pick-card bg-card border border-border rounded-lg p-4 cursor-pointer">
+          <p class="text-base font-medium text-foreground">农家子弟</p>
+          <p class="text-sm text-muted-foreground mt-1">出身寒微，心志坚韧</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Start Button -->
+    <section class="pt-2 pb-8">
+      <button
+        data-dom-id="btn-start"
+        class="w-full bg-primary text-primary-foreground rounded-lg py-3 text-lg font-semibold cursor-pointer hover:opacity-90 transition-opacity"
+      >开始修仙</button>
+    </section>
+
+  </div>
+</main>
+
+
+    <style>
+    html { background: var(--xian-background); }
+    body {
+      font-family: var(--font-body);
+      background: var(--xian-background);
+      color: var(--xian-foreground);
+    }
+    .pick-card {
+      transition: background-color 0.2s ease, border-color 0.2s ease, border-left-color 0.2s ease;
+    }
+    .pick-card:hover {
+      border-color: var(--xian-muted-foreground);
+    }
+    .pick-card.active {
+      border-left: 3px solid var(--xian-primary);
+      background: var(--xian-muted);
+    }
+    .gold-line {
+      width: 48px;
+      height: 2px;
+      background: var(--xian-primary);
+      margin: 12px auto 0;
+    }
+  </style>
+</body>
+</html>

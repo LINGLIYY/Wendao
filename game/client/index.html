@@ -1,48 +1,1550 @@
-<!DOCTYPE html><html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>修仙・问道</title><link rel="stylesheet" href="css/style.css"></head>
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>修仙问道</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            xian: {
+              background: 'var(--xian-background)',
+              foreground: 'var(--xian-foreground)',
+              card: 'var(--xian-card)',
+              popover: 'var(--xian-popover)',
+              primary: 'var(--xian-primary)',
+              'primary-foreground': 'var(--xian-primary-foreground)',
+              muted: 'var(--xian-muted)',
+              'muted-foreground': 'var(--xian-muted-foreground)',
+              border: 'var(--xian-border)',
+              input: 'var(--xian-input)',
+              ring: 'var(--xian-ring)',
+            }
+          },
+          fontFamily: {
+            display: ['var(--font-display)', 'serif'],
+            body: ['var(--font-body)', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --xian-background: #0c0e14;
+      --xian-foreground: #d8d3c4;
+      --xian-card: #151821;
+      --xian-popover: #1a1e28;
+      --xian-primary: #c9a96e;
+      --xian-primary-foreground: #0c0e14;
+      --xian-muted: #1e2230;
+      --xian-muted-foreground: #8a8578;
+      --xian-border: #282d3a;
+      --xian-input: #1a1e28;
+      --xian-ring: #c9a96e;
+      --state-success: #7ec9a0;
+      --state-warning: #e8c97a;
+      --state-error: #c96a5e;
+      --state-info: #7ab8ff;
+      --rarity-common: #d8d3c4;
+      --rarity-ling: #7ab8ff;
+      --rarity-xuan: #b48aff;
+      --rarity-xian: #ff6b9d;
+      --font-display: "Noto Serif SC", "SimSun", serif;
+      --font-body: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--xian-background);
+      color: var(--xian-foreground);
+      font-family: var(--font-body);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-track {
+      background: var(--xian-muted);
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background: var(--xian-border);
+      border-radius: 3px;
+    }
+
+    .choice-btn {
+      transition: all 0.2s;
+    }
+    .choice-btn:hover:not(:disabled) {
+      background-color: var(--xian-muted);
+      border-color: var(--xian-primary);
+    }
+    .choice-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .battle-choice {
+      border-left: 4px solid var(--state-error);
+    }
+
+    .hp-bar {
+      transition: width 0.3s ease;
+    }
+
+    .panel-slide {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .toast {
+      animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+
+    .spinner {
+      border: 3px solid var(--xian-muted);
+      border-top: 3px solid var(--xian-primary);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .sect-card {
+      transition: all 0.2s;
+    }
+    .sect-card:hover {
+      background-color: var(--xian-muted);
+      cursor: pointer;
+    }
+  </style>
+</head>
 <body>
+  <div id="app" class="min-h-screen flex flex-col">
+    <!-- 顶部栏 -->
+    <header class="h-12 border-b border-border bg-card flex items-center justify-between px-4 shrink-0">
+      <div class="flex items-center gap-4">
+        <h1 class="font-display text-xl text-primary">修仙问道</h1>
+        <div class="flex gap-2">
+          <button id="btn-save" class="px-3 py-1 text-sm bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded border border-border transition-colors" disabled>存档</button>
+          <button id="btn-load" class="px-3 py-1 text-sm bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded border border-border transition-colors" disabled>读档</button>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <button id="btn-character" class="panel-btn px-3 py-1 text-sm bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded border border-border transition-colors" data-panel="character" disabled>人物</button>
+        <button id="btn-inventory" class="panel-btn px-3 py-1 text-sm bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded border border-border transition-colors" data-panel="inventory" disabled>背包</button>
+        <button id="btn-gongfa" class="panel-btn px-3 py-1 text-sm bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded border border-border transition-colors" data-panel="gongfa" disabled>功法</button>
+        <button id="btn-sect" class="panel-btn px-3 py-1 text-sm bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded border border-border transition-colors" data-panel="sect" disabled>宗门</button>
+        <button id="btn-log" class="panel-btn px-3 py-1 text-sm bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded border border-border transition-colors" data-panel="log" disabled>日志</button>
+      </div>
+    </header>
 
-<a href="#main-col" class="skip-link">跳到主内容</a>
+    <!-- 主内容区 -->
+    <div class="flex-1 flex overflow-hidden">
+      <!-- 侧边栏 HUD -->
+      <aside id="sidebar" class="w-64 border-r border-border bg-card flex-shrink-0 hidden lg:flex flex-col">
+        <div id="hud-content" class="p-4 flex-1 overflow-y-auto scrollbar-thin">
+          <!-- HUD内容动态生成 -->
+          <div class="text-muted-foreground text-sm">等待开始游戏...</div>
+        </div>
+      </aside>
 
-<header id="top-bar"><div id="game-title">修仙・問道</div><div id="toolbar">
-  <button id="btn-save" onclick="UI.saveGame()" aria-label="存档">存档</button>
-  <button id="btn-load" onclick="UI.loadGame()" aria-label="读档">读档</button>
-</div></header>
+      <!-- 中央区域 -->
+      <main id="main-area" class="flex-1 overflow-hidden flex flex-col">
+        <!-- 创角区域 -->
+        <div id="create-area" class="flex-1 overflow-y-auto p-6 scrollbar-thin hidden">
+          <div class="max-w-2xl mx-auto">
+            <h2 class="font-display text-2xl text-primary mb-6 text-center">踏入仙途</h2>
 
-<div id="app">
-  <div id="game-area">
-    <nav id="tab-bar">
-      <button class="tab-btn active" data-tab="create" id="tab-create-btn" onclick="UI.switchTab('create')" aria-label="创建角色" role="tab" aria-selected="true">创角</button>
-      <button class="tab-btn" data-tab="play" onclick="UI.switchTab('play')" aria-label="修行" role="tab" aria-selected="false">修行</button>
-      <button class="tab-btn" data-tab="char" onclick="UI.switchTab('char')" aria-label="人物属性" role="tab" aria-selected="false">人物</button>
-      <button class="tab-btn" data-tab="bag" onclick="UI.switchTab('bag')" aria-label="背包物品" role="tab" aria-selected="false">背包</button>
-      <button class="tab-btn" data-tab="sect" style="display:none" onclick="UI.switchTab('sect')" aria-label="宗门" role="tab" aria-selected="false">宗门</button>
-      <button class="tab-btn" data-tab="gongfa" onclick="UI.switchTab('gongfa')" aria-label="功法管理" role="tab" aria-selected="false">功法</button>
-      <button class="tab-btn" data-tab="log" onclick="UI.switchTab('log')" aria-label="事件日志" role="tab" aria-selected="false">日志</button>
-    </nav>
-    <div id="tab-play" class="tab-page">
-      <div id="layout">
-        <aside id="char-panel"></aside>
-        <main id="main-col">
-          <div id="scene-title" aria-live="polite"></div>
-          <div id="scene-text" aria-live="polite"></div>
-          <div id="choices"></div>
-        </main>
+            <!-- 道号输入 -->
+            <div class="mb-6">
+              <label class="block text-sm mb-2">道号</label>
+              <div class="flex gap-2">
+                <input id="player-name" type="text" class="flex-1 px-3 py-2 bg-input border border-border rounded focus:outline-none focus:border-primary" placeholder="输入道号">
+                <button id="btn-random-name" class="px-4 py-2 bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded border border-border transition-colors">随机</button>
+              </div>
+            </div>
+
+            <!-- 天命占卜 -->
+            <button id="btn-divine" class="w-full mb-6 py-3 bg-primary text-primary-foreground rounded font-display text-lg hover:opacity-90 transition-opacity">
+              天命占卜
+            </button>
+
+            <!-- 刷新次数 -->
+            <div class="text-center mb-4 text-muted-foreground">
+              剩余 <span id="refresh-count">3</span> 次 | 已用 <span id="used-count">0</span> / 3
+            </div>
+
+            <!-- 占卜结果 -->
+            <div id="divine-result" class="space-y-4 mb-6">
+              <!-- 动态生成 -->
+            </div>
+
+            <!-- 开始游戏按钮 -->
+            <button id="btn-start-game" class="w-full py-3 bg-muted-foreground text-primary-foreground rounded font-display text-lg hover:opacity-90 transition-opacity disabled:opacity-50" disabled>
+              踏入仙途
+            </button>
+
+            <!-- 继续游戏按钮 -->
+            <button id="btn-continue-game" class="w-full py-3 bg-primary text-primary-foreground rounded font-display text-lg hover:opacity-90 transition-opacity hidden">
+              继续游戏
+            </button>
+          </div>
+        </div>
+
+        <!-- 探索区域 -->
+        <div id="explore-area" class="flex-1 overflow-y-auto p-6 scrollbar-thin hidden">
+          <div class="max-w-3xl mx-auto">
+            <h2 id="scene-title" class="font-display text-2xl text-primary mb-4"></h2>
+            <div id="scene-text" class="mb-6 whitespace-pre-wrap leading-relaxed"></div>
+            <div id="choices" class="space-y-2"></div>
+          </div>
+        </div>
+
+        <!-- 战斗区域 -->
+        <div id="battle-area" class="flex-1 overflow-y-auto p-6 scrollbar-thin hidden">
+          <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-4 text-muted-foreground">
+              第 <span id="battle-round">1</span> 回合
+            </div>
+
+            <!-- 战斗双方 -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <!-- 玩家 -->
+              <div class="bg-card border border-border rounded-lg p-4">
+                <div class="flex justify-between items-center mb-2">
+                  <span id="player-name" class="font-display text-primary"></span>
+                  <span id="player-realm" class="text-sm bg-muted px-2 py-1 rounded"></span>
+                </div>
+                <div class="relative h-4 bg-muted rounded overflow-hidden mb-1">
+                  <div id="player-hp-bar" class="hp-bar absolute left-0 top-0 h-full bg-primary" style="width: 100%"></div>
+                </div>
+                <div class="text-sm text-center">
+                  <span id="player-hp">100</span> / <span id="player-max-hp">100</span>
+                </div>
+              </div>
+
+              <!-- 敌人 -->
+              <div class="bg-card border border-border rounded-lg p-4">
+                <div class="flex justify-between items-center mb-2">
+                  <span id="enemy-name" class="font-display text-state-error"></span>
+                  <span id="enemy-realm" class="text-sm bg-muted px-2 py-1 rounded"></span>
+                </div>
+                <div class="relative h-4 bg-muted rounded overflow-hidden mb-1">
+                  <div id="enemy-hp-bar" class="hp-bar absolute left-0 top-0 h-full bg-state-error" style="width: 100%"></div>
+                </div>
+                <div class="text-sm text-center">
+                  <span id="enemy-hp">100</span> / <span id="enemy-max-hp">100</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 战斗记录 -->
+            <div id="battle-log" class="bg-card border border-border rounded-lg p-4 mb-6 h-48 overflow-y-auto scrollbar-thin">
+            </div>
+
+            <!-- 战斗选项 -->
+            <div id="battle-choices" class="grid grid-cols-2 gap-2">
+            </div>
+          </div>
+        </div>
+
+        <!-- 加载状态 -->
+        <div id="loading-area" class="flex-1 flex items-center justify-center">
+          <div class="text-center">
+            <div class="spinner mx-auto mb-4"></div>
+            <div class="text-muted-foreground">正在加载...</div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- 右侧面板遮罩 -->
+    <div id="panel-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="closePanel()"></div>
+
+    <!-- 右侧面板 -->
+    <aside id="right-panel" class="fixed right-0 top-0 bottom-0 w-96 bg-card border-l border-border z-50 panel-slide transform translate-x-full overflow-hidden flex flex-col">
+      <div class="h-12 border-b border-border flex items-center justify-between px-4 shrink-0">
+        <h3 id="panel-title" class="font-display text-lg text-primary"></h3>
+        <button onclick="closePanel()" class="p-1 hover:bg-muted rounded">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div id="panel-content" class="flex-1 overflow-y-auto scrollbar-thin p-4">
+        <!-- 面板内容动态生成 -->
+      </div>
+    </aside>
+
+    <!-- 存档/读档模态框 -->
+    <div id="save-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-card border border-border rounded-lg w-full max-w-md">
+        <div class="h-12 border-b border-border flex items-center justify-between px-4">
+          <h3 id="save-modal-title" class="font-display text-lg text-primary"></h3>
+          <button onclick="closeSaveModal()" class="p-1 hover:bg-muted rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+        <div id="save-slots" class="p-4 space-y-3">
+          <!-- 存档槽位动态生成 -->
+        </div>
       </div>
     </div>
-    <div id="tab-create" class="tab-page"></div>
-    <div id="tab-char" class="tab-page" style="display:none"></div>
-    <div id="tab-bag" class="tab-page" style="display:none"></div>
-    <div id="tab-sect" class="tab-page" style="display:none"></div>
-    <div id="tab-gongfa" class="tab-page" style="display:none"></div>
-    <div id="tab-log" class="tab-page" style="display:none"></div>
+
+    <!-- Toast 容器 -->
+    <div id="toast-container" class="fixed bottom-4 right-4 z-50 space-y-2">
+    </div>
   </div>
-</div>
 
-<div id="modal-overlay" hidden onclick="this.hidden=true">
-  <div class="modal-box" id="modal-content" onclick="event.stopPropagation()"></div>
-</div>
-<div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script>
+    // ==================== API ====================
+    class GameAPI {
+      constructor() { this.baseHeaders = { 'Content-Type': 'application/json' }; }
+      async call(method, path, body) {
+        const opts = { method, headers: this.baseHeaders };
+        if (body !== undefined) opts.body = JSON.stringify(body);
+        const r = await fetch(path, opts);
+        const data = await r.json();
+        if (!r.ok && !data.error) data.error = 'HTTP ' + r.status;
+        return data;
+      }
+      ping()       { return this.call('GET', '/api/ping'); }
+      createData() { return this.call('GET', '/api/create-data'); }
+      allSects()   { return this.call('GET', '/api/all-sects'); }
+      newGame(cd)  { return this.call('POST', '/api/new-game', cd); }
+      action(choice) { return this.call('POST', '/api/action', choice); }
+      item(op, id, slot) { return this.call('POST', '/api/item', { op, id, slot }); }
+      save(slot)   { return this.call('POST', '/api/save', { slot }); }
+      load(slot)   { return this.call('POST', '/api/load', { slot }); }
+      saves()      { return this.call('GET', '/api/saves'); }
+    }
 
-<script src="js/ui.js"></script>
-</body></html>
+    const api = new GameAPI();
+
+    // ==================== 全局状态 ====================
+    let gameState = null;
+    let gameScene = null;
+    let gameBattle = null;
+    let createData = null;
+    let allSectsData = null;
+    let isLoading = false;
+    let currentPanel = null;
+    let refreshLeft = 3;
+    let refreshUsed = 0;
+    let selectedLinggen = null;
+    let selectedConstitution = null;
+    let selectedOrigin = null;
+    let isSaveMode = false;
+
+    // ==================== 工具函数 ====================
+    function _esc(str) {
+      if (str === null || str === undefined) return '';
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function getRarityColor(rarity) {
+      switch(rarity) {
+        case '仙': return 'var(--rarity-xian)';
+        case '玄': return 'var(--rarity-xuan)';
+        case '灵': return 'var(--rarity-ling)';
+        default: return 'var(--rarity-common)';
+      }
+    }
+
+    function showToast(message, type = 'info') {
+      const colors = {
+        success: 'var(--state-success)',
+        error: 'var(--state-error)',
+        warning: 'var(--state-warning)',
+        info: 'var(--state-info)'
+      };
+      const toast = document.createElement('div');
+      toast.className = 'toast px-4 py-2 bg-card border border-border rounded shadow-lg';
+      toast.style.borderLeft = `4px solid ${colors[type]}`;
+      toast.textContent = message;
+      document.getElementById('toast-container').appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    function setLoading(loading) {
+      isLoading = loading;
+      document.querySelectorAll('button').forEach(btn => {
+        btn.disabled = loading;
+      });
+      if (loading) {
+        document.getElementById('loading-area').classList.remove('hidden');
+        document.getElementById('create-area').classList.add('hidden');
+        document.getElementById('explore-area').classList.add('hidden');
+        document.getElementById('battle-area').classList.add('hidden');
+      }
+    }
+
+    // ==================== 区域切换 ====================
+    function showArea(areaId) {
+      ['loading-area', 'create-area', 'explore-area', 'battle-area'].forEach(id => {
+        document.getElementById(id).classList.add('hidden');
+      });
+      document.getElementById(areaId).classList.remove('hidden');
+    }
+
+    function updateSidebar() {
+      if (!gameState) {
+        document.getElementById('hud-content').innerHTML = '<div class="text-muted-foreground text-sm">等待开始游戏...</div>';
+        return;
+      }
+
+      const s = gameState;
+      const realmPercent = s.realmInfo.toNext > 0 ? (s.attrs['灵力'] / s.realmInfo.toNext * 100) : 100;
+
+      let html = `
+        <div class="mb-4">
+          <div class="font-display text-xl text-primary mb-1">${_esc(s.name)}</div>
+          <div class="text-sm bg-muted inline-block px-2 py-1 rounded">${_esc(s.realm)}</div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 mb-4 text-sm">
+          <div class="bg-muted p-2 rounded">
+            <div class="text-muted-foreground">天数</div>
+            <div class="font-display">${s.day}</div>
+          </div>
+          <div class="bg-muted p-2 rounded">
+            <div class="text-muted-foreground">灵石</div>
+            <div class="font-display">${s.stones}</div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-sm text-muted-foreground mb-1">修为进度</div>
+          <div class="relative h-3 bg-muted rounded overflow-hidden">
+            <div class="absolute left-0 top-0 h-full bg-primary" style="width: ${realmPercent}%"></div>
+          </div>
+          <div class="text-xs text-right text-muted-foreground">${s.attrs['灵力']} / ${s.realmInfo.toNext}</div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-sm text-muted-foreground mb-2">六维属性</div>
+          <div class="grid grid-cols-1 gap-1 text-xs">
+      `;
+
+      for (const [attr, value] of Object.entries(s.attrs)) {
+        html += `
+          <div class="flex justify-between bg-muted px-2 py-1 rounded">
+            <span>${_esc(attr)}</span>
+            <span class="font-display">${value}</span>
+          </div>
+        `;
+      }
+
+      html += `
+          </div>
+        </div>
+
+        <div class="space-y-1 text-xs">
+          <div class="flex justify-between">
+            <span class="text-muted-foreground">灵根</span>
+            <span>${_esc(s.linggen)}</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-muted-foreground">体质</span>
+            <span>${_esc(s.constitution)}</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-muted-foreground">出身</span>
+            <span>${_esc(s.origin)}</span>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('hud-content').innerHTML = html;
+    }
+
+    // ==================== 创角 ====================
+    function initCreateArea() {
+      if (!createData) return;
+
+      const l = createData.labels;
+      document.getElementById('btn-start-game').textContent = l.startGame;
+      document.getElementById('btn-continue-game').textContent = '继续游戏';
+
+      // 清空结果
+      document.getElementById('divine-result').innerHTML = '';
+      selectedLinggen = null;
+      selectedConstitution = null;
+      selectedOrigin = null;
+      document.getElementById('btn-start-game').disabled = true;
+
+      updateRefreshCount();
+    }
+
+    function updateRefreshCount() {
+      document.getElementById('refresh-count').textContent = refreshLeft;
+      document.getElementById('used-count').textContent = refreshUsed;
+    }
+
+    function generateRandomName() {
+      if (!createData) return '';
+      const given = createData.data.names.family[Math.floor(Math.random() * createData.data.names.family.length)];
+      const family = createData.data.names.given[Math.floor(Math.random() * createData.data.names.given.length)];
+      return family + given;
+    }
+
+    function divine() {
+      if (refreshLeft <= 0) {
+        showToast('占卜次数已用尽', 'warning');
+        return;
+      }
+
+      refreshLeft--;
+      refreshUsed++;
+      updateRefreshCount();
+
+      const linggen = createData.data.linggen[Math.floor(Math.random() * createData.data.linggen.length)];
+      const constitution = createData.data.constitution[Math.floor(Math.random() * createData.data.constitution.length)];
+      const origin = createData.data.origin[Math.floor(Math.random() * createData.data.origin.length)];
+
+      selectedLinggen = linggen;
+      selectedConstitution = constitution;
+      selectedOrigin = origin;
+
+      const l = createData.labels;
+      let html = `
+        <div class="bg-card border border-border rounded-lg p-4">
+          <div class="text-sm text-muted-foreground mb-2">${l.linggen}</div>
+          <div class="font-display text-primary">${_esc(linggen.id)}</div>
+          <div class="text-xs text-muted-foreground mt-1">${_esc(linggen.wuxingDesc || '')}</div>
+        </div>
+        <div class="bg-card border border-border rounded-lg p-4">
+          <div class="text-sm text-muted-foreground mb-2">${l.constitution}</div>
+          <div class="font-display text-primary">${_esc(constitution.id)}</div>
+          <div class="text-xs text-muted-foreground mt-1">${_esc(constitution.passive || '无特殊效果')}</div>
+        </div>
+        <div class="bg-card border border-border rounded-lg p-4">
+          <div class="text-sm text-muted-foreground mb-2">${l.origin}</div>
+          <div class="font-display text-primary">${_esc(origin.id)}</div>
+          <div class="text-xs text-muted-foreground mt-1">${_esc(origin.desc || '')}</div>
+        </div>
+      `;
+
+      document.getElementById('divine-result').innerHTML = html;
+      document.getElementById('btn-start-game').disabled = false;
+    }
+
+    async function startGame() {
+      const name = document.getElementById('player-name').value.trim();
+      if (!name) {
+        showToast('请输入道号', 'error');
+        return;
+      }
+      if (!selectedLinggen || !selectedConstitution || !selectedOrigin) {
+        showToast('请先进行天命占卜', 'error');
+        return;
+      }
+
+      setLoading(true);
+      try {
+        const result = await api.newGame({
+          name,
+          linggen: selectedLinggen.id,
+          constitution: selectedConstitution.id,
+          origin: selectedOrigin.id
+        });
+
+        if (result.ok) {
+          gameState = result.state;
+          gameScene = result.scene;
+          gameBattle = null;
+
+          showArea('explore-area');
+          renderExplore();
+          updateSidebar();
+          enableGameButtons();
+          showToast('踏入仙途，修仙之路由此开始', 'success');
+        } else {
+          showToast(result.error || '创建游戏失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // ==================== 探索 ====================
+    function renderExplore() {
+      if (!gameScene) return;
+
+      document.getElementById('scene-title').textContent = gameScene.title || '';
+      document.getElementById('scene-text').textContent = gameScene.text || '';
+
+      const choicesContainer = document.getElementById('choices');
+      choicesContainer.innerHTML = '';
+
+      if (gameScene.choices && gameScene.choices.length > 0) {
+        gameScene.choices.forEach(choice => {
+          const btn = document.createElement('button');
+          btn.className = 'choice-btn w-full text-left px-4 py-3 bg-card border border-border rounded hover:border-primary';
+          if (choice.action === 'battle') {
+            btn.classList.add('battle-choice');
+          }
+          btn.textContent = choice.text || '';
+          btn.onclick = () => handleChoice(choice);
+          choicesContainer.appendChild(btn);
+        });
+      }
+    }
+
+    async function handleChoice(choice) {
+      if (isLoading) return;
+      setLoading(true);
+
+      try {
+        const result = await api.action(choice);
+
+        if (result.ok) {
+          gameState = result.state;
+          gameScene = result.scene;
+          gameBattle = result.battle || null;
+
+          updateSidebar();
+
+          if (gameBattle) {
+            showArea('battle-area');
+            renderBattle();
+          } else {
+            showArea('explore-area');
+            renderExplore();
+          }
+        } else {
+          showToast(result.error || '操作失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // ==================== 战斗 ====================
+    function renderBattle() {
+      if (!gameBattle) return;
+
+      const b = gameBattle;
+
+      document.getElementById('battle-round').textContent = b.round;
+
+      // 玩家
+      document.getElementById('player-name').textContent = b.player.name;
+      document.getElementById('player-realm').textContent = b.player.realm;
+      document.getElementById('player-hp').textContent = b.player.hp;
+      document.getElementById('player-max-hp').textContent = b.player.maxHp;
+      const playerHpPercent = (b.player.hp / b.player.maxHp * 100);
+      document.getElementById('player-hp-bar').style.width = playerHpPercent + '%';
+
+      // 敌人
+      document.getElementById('enemy-name').textContent = b.enemy.name;
+      document.getElementById('enemy-realm').textContent = b.enemy.realm;
+      document.getElementById('enemy-hp').textContent = b.enemy.hp;
+      document.getElementById('enemy-max-hp').textContent = b.enemy.maxHp;
+      const enemyHpPercent = (b.enemy.hp / b.enemy.maxHp * 100);
+      document.getElementById('enemy-hp-bar').style.width = enemyHpPercent + '%';
+
+      // 战斗记录
+      const logContainer = document.getElementById('battle-log');
+      logContainer.innerHTML = '';
+      const recentLogs = b.log.slice(-8);
+      recentLogs.forEach(log => {
+        const div = document.createElement('div');
+        div.className = 'text-sm mb-1';
+        div.textContent = log;
+        logContainer.appendChild(div);
+      });
+      logContainer.scrollTop = logContainer.scrollHeight;
+
+      // 战斗选项
+      const choicesContainer = document.getElementById('battle-choices');
+      choicesContainer.innerHTML = '';
+
+      const battleChoices = [
+        { text: '全力攻击', action: 'attack' },
+        { text: '运转心法', action: 'skill' },
+        { text: '使用丹药', action: 'item' },
+        { text: '尝试逃跑', action: 'flee' }
+      ];
+
+      battleChoices.forEach(choice => {
+        const btn = document.createElement('button');
+        btn.className = 'choice-btn px-4 py-3 bg-card border border-border rounded hover:border-primary';
+        btn.textContent = choice.text;
+        btn.onclick = () => handleChoice(choice);
+        choicesContainer.appendChild(btn);
+      });
+    }
+
+    // ==================== 面板 ====================
+    function openPanel(panelId) {
+      currentPanel = panelId;
+      const panel = document.getElementById('right-panel');
+      const overlay = document.getElementById('panel-overlay');
+      const titleEl = document.getElementById('panel-title');
+      const contentEl = document.getElementById('panel-content');
+
+      overlay.classList.remove('hidden');
+      panel.classList.remove('translate-x-full');
+
+      switch(panelId) {
+        case 'character':
+          titleEl.textContent = '人物详情';
+          renderCharacterPanel(contentEl);
+          break;
+        case 'inventory':
+          titleEl.textContent = '背包';
+          renderInventoryPanel(contentEl);
+          break;
+        case 'gongfa':
+          titleEl.textContent = '功法';
+          renderGongfaPanel(contentEl);
+          break;
+        case 'sect':
+          titleEl.textContent = '宗门';
+          renderSectPanel(contentEl);
+          break;
+        case 'log':
+          titleEl.textContent = '日志';
+          renderLogPanel(contentEl);
+          break;
+      }
+    }
+
+    function closePanel() {
+      currentPanel = null;
+      document.getElementById('right-panel').classList.add('translate-x-full');
+      document.getElementById('panel-overlay').classList.add('hidden');
+    }
+
+    function renderCharacterPanel(container) {
+      if (!gameState) return;
+      const s = gameState;
+
+      let html = `
+        <div class="space-y-4">
+          <div class="bg-muted p-3 rounded">
+            <div class="text-sm text-muted-foreground mb-1">道号</div>
+            <div class="font-display text-lg text-primary">${_esc(s.name)}</div>
+          </div>
+
+          <div class="bg-muted p-3 rounded">
+            <div class="text-sm text-muted-foreground mb-1">境界</div>
+            <div class="font-display">${_esc(s.realm)}</div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2">
+            <div class="bg-muted p-2 rounded text-center">
+              <div class="text-xs text-muted-foreground">灵根</div>
+              <div class="text-sm">${_esc(s.linggen)}</div>
+            </div>
+            <div class="bg-muted p-2 rounded text-center">
+              <div class="text-xs text-muted-foreground">体质</div>
+              <div class="text-sm">${_esc(s.constitution)}</div>
+            </div>
+            <div class="bg-muted p-2 rounded text-center">
+              <div class="text-xs text-muted-foreground">出身</div>
+              <div class="text-sm">${_esc(s.origin)}</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-sm text-muted-foreground mb-2">属性</div>
+            <div class="bg-card border border-border rounded">
+              <div class="grid grid-cols-3 gap-0 text-xs">
+                <div class="p-2 border-b border-r border-border text-muted-foreground">属性</div>
+                <div class="p-2 border-b border-r border-border text-muted-foreground">基础</div>
+                <div class="p-2 border-b border-border text-muted-foreground">当前</div>
+      `;
+
+      for (const [attr, baseValue] of Object.entries(s.attrsBase)) {
+        const currentValue = s.attrs[attr] || 0;
+        html += `
+                <div class="p-2 border-b border-r border-border">${_esc(attr)}</div>
+                <div class="p-2 border-b border-r border-border">${baseValue}</div>
+                <div class="p-2 border-b border-border">${currentValue}</div>
+        `;
+      }
+
+      html += `
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-sm text-muted-foreground mb-2">装备</div>
+            <div class="grid grid-cols-2 gap-2">
+      `;
+
+      s.equipSlots.forEach(slot => {
+        const equip = s.equipment[slot];
+        if (equip) {
+          const statsText = Object.entries(equip.stats || {}).map(([k, v]) => `${k}+${v}`).join(' ');
+          html += `
+            <div class="bg-card border border-border rounded p-3">
+              <div class="font-display mb-1" style="color: ${getRarityColor(equip.rarity)}">${_esc(equip.name)}</div>
+              <div class="text-xs text-muted-foreground mb-2">${_esc(statsText)}</div>
+              <button class="w-full py-1 text-xs bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded" onclick="unequipItem('${slot}')">卸下</button>
+            </div>
+          `;
+        } else {
+          html += `
+            <div class="bg-card border border-border rounded p-3">
+              <div class="text-sm text-muted-foreground">${_esc(slot)}: 空</div>
+            </div>
+          `;
+        }
+      });
+
+      html += `
+            </div>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    async function unequipItem(slot) {
+      if (isLoading) return;
+      setLoading(true);
+
+      try {
+        const result = await api.item('unequip', null, slot);
+        if (result.ok) {
+          gameState = result.state;
+          updateSidebar();
+          renderCharacterPanel(document.getElementById('panel-content'));
+          showToast('已卸下装备', 'success');
+        } else {
+          showToast(result.error || '卸下失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    function renderInventoryPanel(container) {
+      if (!gameState) return;
+      const s = gameState;
+
+      let html = `
+        <div class="space-y-4">
+          <div>
+            <div class="text-sm text-muted-foreground mb-2">装备栏</div>
+            <div class="space-y-2">
+      `;
+
+      s.equipSlots.forEach(slot => {
+        const equip = s.equipment[slot];
+        if (equip) {
+          html += `
+            <div class="bg-card border border-border rounded p-3 flex justify-between items-center">
+              <div>
+                <div class="font-display" style="color: ${getRarityColor(equip.rarity)}">${_esc(equip.name)}</div>
+                <div class="text-xs text-muted-foreground">${_esc(slot)}</div>
+              </div>
+              <button class="px-3 py-1 text-xs bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded" onclick="unequipItem('${slot}')">卸下</button>
+            </div>
+          `;
+        } else {
+          html += `
+            <div class="bg-card border border-border rounded p-3 text-sm text-muted-foreground">
+              ${_esc(slot)}: 空
+            </div>
+          `;
+        }
+      });
+
+      html += `
+            </div>
+          </div>
+
+          <div>
+            <div class="text-sm text-muted-foreground mb-2">物品</div>
+            <div class="space-y-2">
+      `;
+
+      if (s.items && s.items.length > 0) {
+        s.items.forEach(item => {
+          html += `
+            <div class="bg-card border border-border rounded p-3">
+              <div class="flex justify-between items-start mb-1">
+                <div class="font-display" style="color: ${getRarityColor(item.rarity)}">${_esc(item.name)}</div>
+                <div class="text-xs bg-muted px-2 py-1 rounded">${_esc(item.type)} ${item.count > 1 ? 'x' + item.count : ''}</div>
+              </div>
+              <div class="text-xs text-muted-foreground mb-2">${_esc(item.desc || '')}</div>
+              <div class="flex gap-2">
+          `;
+
+          if (item.usable) {
+            html += `<button class="flex-1 py-1 text-xs bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded" onclick="useItem(${item.id})">使用</button>`;
+          }
+          if (item.slot) {
+            html += `<button class="flex-1 py-1 text-xs bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded" onclick="equipItem(${item.id})">装备</button>`;
+          }
+          html += `
+                <button class="flex-1 py-1 text-xs bg-state-error hover:bg-state-error/80 rounded" onclick="dropItem(${item.id})">丢弃</button>
+              </div>
+            </div>
+          `;
+        });
+      } else {
+        html += `<div class="text-sm text-muted-foreground">背包空空如也</div>`;
+      }
+
+      html += `
+            </div>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    async function useItem(itemId) {
+      if (isLoading) return;
+      setLoading(true);
+
+      try {
+        const result = await api.item('use', itemId, null);
+        if (result.ok) {
+          gameState = result.state;
+          gameScene = result.scene || gameScene;
+          gameBattle = result.battle || gameBattle;
+          updateSidebar();
+          renderInventoryPanel(document.getElementById('panel-content'));
+          showToast(result.message || '使用成功', 'success');
+
+          // 如果战斗结束，切回探索
+          if (gameBattle && gameBattle.enemy.hp <= 0) {
+            gameBattle = null;
+            showArea('explore-area');
+            renderExplore();
+          }
+        } else {
+          showToast(result.error || '使用失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    async function equipItem(itemId) {
+      if (isLoading) return;
+      setLoading(true);
+
+      try {
+        const result = await api.item('equip', itemId, null);
+        if (result.ok) {
+          gameState = result.state;
+          updateSidebar();
+          renderInventoryPanel(document.getElementById('panel-content'));
+          showToast('装备成功', 'success');
+        } else {
+          showToast(result.error || '装备失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    async function dropItem(itemId) {
+      if (!confirm('确定要丢弃这个物品吗？')) return;
+      if (isLoading) return;
+      setLoading(true);
+
+      try {
+        const result = await api.item('drop', itemId, null);
+        if (result.ok) {
+          gameState = result.state;
+          updateSidebar();
+          renderInventoryPanel(document.getElementById('panel-content'));
+          showToast('已丢弃物品', 'success');
+        } else {
+          showToast(result.error || '丢弃失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    function renderGongfaPanel(container) {
+      if (!gameState) return;
+      const s = gameState;
+
+      let html = `
+        <div class="space-y-4">
+          <div class="bg-muted p-3 rounded text-center">
+            <div class="text-sm text-muted-foreground">心法槽 ${s.gongfa.heartSlots} | 术法槽 ${s.gongfa.skillSlots}</div>
+          </div>
+
+          <div>
+            <div class="text-sm text-muted-foreground mb-2">已装备心法</div>
+            <div class="space-y-2">
+      `;
+
+      s.gongfa.equipped_heart.forEach(g => {
+        if (g) {
+          html += `
+            <div class="bg-card border border-border rounded p-3 flex justify-between items-center">
+              <div class="font-display">${_esc(g.name)}</div>
+              <button class="px-3 py-1 text-xs bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded" onclick="unequipGongfa('heart', 0)">卸下</button>
+            </div>
+          `;
+        } else {
+          html += `<div class="bg-card border border-border rounded p-3 text-sm text-muted-foreground">空</div>`;
+        }
+      });
+
+      html += `
+            </div>
+          </div>
+
+          <div>
+            <div class="text-sm text-muted-foreground mb-2">已装备术法</div>
+            <div class="space-y-2">
+      `;
+
+      s.gongfa.equipped_skill.forEach((g, idx) => {
+        if (g) {
+          html += `
+            <div class="bg-card border border-border rounded p-3 flex justify-between items-center">
+              <div class="font-display">${_esc(g.name)}</div>
+              <button class="px-3 py-1 text-xs bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded" onclick="unequipGongfa('skill', ${idx})">卸下</button>
+            </div>
+          `;
+        } else {
+          html += `<div class="bg-card border border-border rounded p-3 text-sm text-muted-foreground">槽位 ${idx + 1}: 空</div>`;
+        }
+      });
+
+      html += `
+            </div>
+          </div>
+
+          <div>
+            <div class="text-sm text-muted-foreground mb-2">已学功法</div>
+            <div class="space-y-3">
+      `;
+
+      const heartMethods = s.gongfa.learned.filter(g => g.kind === '心法');
+      const skillMethods = s.gongfa.learned.filter(g => g.kind === '术法');
+
+      // 心法
+      if (heartMethods.length > 0) {
+        html += `<div class="text-xs text-muted-foreground">心法</div>`;
+        heartMethods.forEach(g => {
+          const isEquipped = s.gongfa.equipped_heart.some(e => e && e.id === g.id);
+          html += `
+            <div class="bg-card border border-border rounded p-3">
+              <div class="flex justify-between items-start mb-1">
+                <div>
+                  <div class="font-display">${_esc(g.name)} <span class="text-xs bg-muted px-1 rounded">${g.grade}</span></div>
+                  <div class="text-xs text-muted-foreground">${_esc(g.desc || '')}</div>
+                </div>
+                ${isEquipped ? '<span class="text-xs text-state-success">已装备</span>' : ''}
+              </div>
+              ${!isEquipped ? `<button class="w-full py-1 text-xs bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded" onclick="equipGongfa(${g.id}, 'heart', 0)">装备</button>` : ''}
+            </div>
+          `;
+        });
+      }
+
+      // 术法
+      if (skillMethods.length > 0) {
+        html += `<div class="text-xs text-muted-foreground mt-2">术法</div>`;
+        skillMethods.forEach(g => {
+          const equippedIdx = s.gongfa.equipped_skill.findIndex(e => e && e.id === g.id);
+          const isEquipped = equippedIdx !== -1;
+          const battleInfo = g.battle ? ` 伤害:${g.battle.damage} 耗灵:${g.battle.qiCost} ${g.battle.affix || ''}` : '';
+          html += `
+            <div class="bg-card border border-border rounded p-3">
+              <div class="flex justify-between items-start mb-1">
+                <div>
+                  <div class="font-display">${_esc(g.name)} <span class="text-xs bg-muted px-1 rounded">${g.grade}</span></div>
+                  <div class="text-xs text-muted-foreground">${_esc(g.desc || '')}${_esc(battleInfo)}</div>
+                </div>
+                ${isEquipped ? '<span class="text-xs text-state-success">已装备</span>' : ''}
+              </div>
+              ${!isEquipped ? `
+                <div class="flex gap-2 mt-2">
+                  ${s.gongfa.equipped_skill.map((e, idx) => !e ? `<button class="flex-1 py-1 text-xs bg-muted hover:bg-muted-foreground hover:text-primary-foreground rounded" onclick="equipGongfa(${g.id}, 'skill', ${idx})">槽位${idx+1}</button>` : '').join('')}
+                </div>
+              ` : ''}
+            </div>
+          `;
+        });
+      }
+
+      html += `
+            </div>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    async function equipGongfa(gongfaId, kind, slotIndex) {
+      if (isLoading) return;
+      setLoading(true);
+
+      try {
+        const result = await api.item('gongfa_equip', gongfaId, slotIndex);
+        if (result.ok) {
+          gameState = result.state;
+          updateSidebar();
+          renderGongfaPanel(document.getElementById('panel-content'));
+          showToast('装备成功', 'success');
+        } else {
+          showToast(result.error || '装备失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    async function unequipGongfa(kind, slotIndex) {
+      if (isLoading) return;
+      setLoading(true);
+
+      try {
+        const result = await api.item('gongfa_unequip', null, slotIndex);
+        if (result.ok) {
+          gameState = result.state;
+          updateSidebar();
+          renderGongfaPanel(document.getElementById('panel-content'));
+          showToast('已卸下功法', 'success');
+        } else {
+          showToast(result.error || '卸下失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    function renderSectPanel(container) {
+      if (!gameState) return;
+      const s = gameState;
+
+      // 未入宗
+      if (!s.sect || !s.sect.name) {
+        if (!allSectsData) {
+          container.innerHTML = '<div class="text-muted-foreground">正在加载宗门信息...</div>';
+          return;
+        }
+
+        let html = `
+          <div class="text-sm text-muted-foreground mb-4">选择宗门加入</div>
+          <div class="space-y-3">
+        `;
+
+        allSectsData.sects.forEach(sect => {
+          html += `
+            <div class="sect-card bg-card border border-border rounded p-4" style="border-left: 4px solid ${sect.culture.color}" onclick="joinSect('${sect.id}')">
+              <div class="font-display text-lg mb-1">${_esc(sect.name)} <span class="text-xs bg-muted px-2 py-1 rounded">${_esc(sect.alignment)}</span></div>
+              <div class="text-sm text-muted-foreground mb-2">${_esc(sect.desc)}</div>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div>修炼加成: +${sect.specialty.cultBonus}%</div>
+                <div>战斗加成: +${sect.specialty.battleBonus}%</div>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+        container.innerHTML = html;
+        return;
+      }
+
+      // 已入宗
+      const sectInfo = s.sectInfo;
+      let html = `
+        <div class="space-y-4">
+          <div class="bg-card border border-border rounded p-4" style="border-left: 4px solid ${sectInfo.culture.color}">
+            <div class="font-display text-lg text-primary mb-1">${_esc(sectInfo.name)}</div>
+            <div class="text-sm mb-2">${_esc(sectInfo.alignment)} · ${sectInfo.culture.mountain} · ${_esc(sectInfo.culture.discipleTitle)}</div>
+            <div class="text-sm text-muted-foreground">${_esc(sectInfo.desc)}</div>
+          </div>
+
+          <div class="bg-muted p-3 rounded text-center">
+            <div class="text-sm text-muted-foreground">贡献值</div>
+            <div class="font-display text-xl">${s.sect.contribution}</div>
+          </div>
+
+          <div>
+            <div class="text-sm text-muted-foreground mb-2">宗门加成</div>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="bg-card border border-border rounded p-2 text-center">
+                <div class="text-xs text-muted-foreground">修炼</div>
+                <div class="font-display text-state-success">+${sectInfo.specialty.cultBonus}%</div>
+              </div>
+              <div class="bg-card border border-border rounded p-2 text-center">
+                <div class="text-xs text-muted-foreground">战斗</div>
+                <div class="font-display text-state-warning">+${sectInfo.specialty.battleBonus}%</div>
+              </div>
+              <div class="bg-card border border-border rounded p-2 text-center">
+                <div class="text-xs text-muted-foreground">炼制</div>
+                <div class="font-display text-state-info">+${sectInfo.specialty.craftBonus}%</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-sm text-muted-foreground mb-2">宗门行动</div>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="py-2 bg-card border border-border rounded hover:border-primary" onclick="sectAction('zongmen_mission')">任务殿</button>
+              <button class="py-2 bg-card border border-border rounded hover:border-primary" onclick="sectAction('zongmen_library')">藏经阁</button>
+              <button class="py-2 bg-card border border-border rounded hover:border-primary" onclick="sectAction('zongmen_alchemy')">炼丹房</button>
+              <button class="py-2 bg-card border border-border rounded hover:border-primary" onclick="sectAction('zongmen_arena')">演武场</button>
+            </div>
+          </div>
+
+          <button class="w-full py-2 bg-state-error text-white rounded hover:bg-state-error/80" onclick="leaveSect()">离开宗门</button>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    async function joinSect(sectId) {
+      if (isLoading) return;
+      setLoading(true);
+
+      try {
+        const result = await api.action({ next: sectId });
+        if (result.ok) {
+          gameState = result.state;
+          gameScene = result.scene;
+          gameBattle = result.battle || null;
+          updateSidebar();
+          renderSectPanel(document.getElementById('panel-content'));
+          showToast('成功加入宗门', 'success');
+
+          if (gameBattle) {
+            showArea('battle-area');
+            renderBattle();
+          } else {
+            showArea('explore-area');
+            renderExplore();
+          }
+        } else {
+          showToast(result.error || '加入宗门失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    async function sectAction(action) {
+      if (isLoading) return;
+      closePanel();
+      setLoading(true);
+
+      try {
+        const result = await api.action({ next: action });
+        if (result.ok) {
+          gameState = result.state;
+          gameScene = result.scene;
+          gameBattle = result.battle || null;
+          updateSidebar();
+          showToast('行动开始', 'success');
+
+          if (gameBattle) {
+            showArea('battle-area');
+            renderBattle();
+          } else {
+            showArea('explore-area');
+            renderExplore();
+          }
+        } else {
+          showToast(result.error || '行动失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    async function leaveSect() {
+      if (!confirm('确定要离开宗门吗？')) return;
+      if (isLoading) return;
+      setLoading(true);
+
+      try {
+        const result = await api.action({ action: 'leave_sect' });
+        if (result.ok) {
+          gameState = result.state;
+          gameScene = result.scene;
+          updateSidebar();
+          renderSectPanel(document.getElementById('panel-content'));
+          showToast('已离开宗门', 'success');
+        } else {
+          showToast(result.error || '离开宗门失败', 'error');
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    function renderLogPanel(container) {
+      if (!gameState) return;
+      const s = gameState;
+
+      let html = `<div class="space-y-2">`;
+
+      if (s.log && s.log.length > 0) {
+        s.log.slice().reverse().forEach((log, idx) => {
+          const logIdx = s.log.length - idx;
+          html += `
+            <div class="bg-card border border-border rounded p-2 text-sm">
+              <span class="text-muted-foreground">#${logIdx}</span> ${_esc(log)}
+            </div>
+          `;
+        });
+      } else {
+        html += `<div class="text-sm text-muted-foreground">暂无日志</div>`;
+      }
+
+      html += `</div>`;
+      container.innerHTML = html;
+    }
+
+    // ==================== 存档读档 ====================
+    function openSaveModal(mode) {
+      isSaveMode = mode;
+      document.getElementById('save-modal-title').textContent = mode === 'save' ? '存档' : '读档';
+      document.getElementById('save-modal').classList.remove('hidden');
+      loadSavesList();
+    }
+
+    function closeSaveModal() {
+      document.getElementById('save-modal').classList.add('hidden');
+    }
+
+    async function loadSavesList() {
+      try {
+        const result = await api.saves();
+        if (result.saves) {
+          renderSaveSlots(result.saves);
+        }
+      } catch (e) {
+        showToast('加载存档列表失败', 'error');
+      }
+    }
+
+    function renderSaveSlots(saves) {
+      const container = document.getElementById('save-slots');
+      let html = '';
+
+      saves.forEach(save => {
+        if (save.empty) {
+          if (isSaveMode) {
+            html += `
+              <div class="bg-card border border-border rounded p-4 cursor-pointer hover:border-primary" onclick="handleSaveSlot(${save.slot})">
+                <div class="font-display text-lg text-muted-foreground">存档 ${save.slot}</div>
+                <div class="text-sm text-muted-foreground">空</div>
+              </div>
+            `;
+          } else {
+            html += `
+              <div class="bg-muted border border-border rounded p-4 opacity-50">
+                <div class="font-display text-lg text-muted-foreground">存档 ${save.slot}</div>
+                <div class="text-sm text-muted-foreground">空</div>
+              </div>
+            `;
+          }
+        } else {
+          html += `
+            <div class="bg-card border border-border rounded p-4 cursor-pointer hover:border-primary" onclick="handleSaveSlot(${save.slot})">
+              <div class="flex justify-between items-center mb-2">
+                <div class="font-display text-lg text-primary">${_esc(save.name)}</div>
+                <div class="text-sm bg-muted px-2 py-1 rounded">${_esc(save.realm)}</div>
+              </div>
+              <div class="text-sm text-muted-foreground">${_esc(save.scene || '未知场景')}</div>
+            </div>
+          `;
+        }
+      });
+
+      container.innerHTML = html;
+    }
+
+    async function handleSaveSlot(slot) {
+      if (isLoading) return;
+      setLoading(true);
+
+      try {
+        if (isSaveMode) {
+          const result = await api.save(slot);
+          if (result.ok) {
+            showToast('存档成功', 'success');
+            closeSaveModal();
+          } else {
+            showToast(result.error || '存档失败', 'error');
+          }
+        } else {
+          const result = await api.load(slot);
+          if (result.ok) {
+            gameState = result.state;
+            gameScene = result.scene;
+            gameBattle = null;
+            updateSidebar();
+            showArea('explore-area');
+            renderExplore();
+            enableGameButtons();
+            closeSaveModal();
+            showToast('读档成功', 'success');
+          } else {
+            showToast(result.error || '读档失败', 'error');
+          }
+        }
+      } catch (e) {
+        showToast('网络错误: ' + e.message, 'error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // ==================== 启用游戏按钮 ====================
+    function enableGameButtons() {
+      document.querySelectorAll('.panel-btn').forEach(btn => {
+        btn.disabled = false;
+      });
+      document.getElementById('btn-save').disabled = false;
+      document.getElementById('btn-load').disabled = false;
+    }
+
+    // ==================== 初始化 ====================
+    async function init() {
+      setLoading(true);
+      try {
+        // 检查后端连接
+        const pingResult = await api.ping();
+        if (!pingResult || !pingResult.pong) {
+          document.getElementById('loading-area').innerHTML = `
+            <div class="text-center">
+              <div class="text-state-error text-xl mb-4">无法连接服务器</div>
+              <div class="text-muted-foreground">请确保 server.py 正在运行</div>
+            </div>
+          `;
+          return;
+        }
+
+        // 加载游戏数据
+        const [createResult, sectsResult] = await Promise.all([
+          api.createData(),
+          api.allSects()
+        ]);
+
+        if (createResult.ok) {
+          createData = createResult;
+        } else {
+          showToast('加载创建数据失败', 'error');
+          return;
+        }
+
+        if (sectsResult.ok) {
+          allSectsData = sectsResult;
+        } else {
+          showToast('加载宗门数据失败', 'error');
+          return;
+        }
+
+        // 检查是否有存档
+        const savesResult = await api.saves();
+        const hasSave = savesResult.saves && savesResult.saves.some(s => !s.empty);
+
+        showArea('create-area');
+        initCreateArea();
+
+        if (hasSave) {
+          document.getElementById('btn-continue-game').classList.remove('hidden');
+          document.getElementById('btn-continue-game').onclick = () => {
+            openSaveModal('load');
+          };
+        }
+
+      } catch (e) {
+        document.getElementById('loading-area').innerHTML = `
+          <div class="text-center">
+            <div class="text-state-error text-xl mb-4">初始化失败</div>
+            <div class="text-muted-foreground">${e.message}</div>
+          </div>
+        `;
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // ==================== 事件绑定 ====================
+    document.addEventListener('DOMContentLoaded', () => {
+      // 创角事件
+      document.getElementById('btn-random-name').onclick = () => {
+        document.getElementById('player-name').value = generateRandomName();
+      };
+      document.getElementById('btn-divine').onclick = divine;
+      document.getElementById('btn-start-game').onclick = startGame;
+
+      // 面板按钮
+      document.querySelectorAll('.panel-btn').forEach(btn => {
+        btn.onclick = () => {
+          const panelId = btn.dataset.panel;
+          openPanel(panelId);
+        };
+      });
+
+      // 存档读档
+      document.getElementById('btn-save').onclick = () => openSaveModal('save');
+      document.getElementById('btn-load').onclick = () => openSaveModal('load');
+
+      // 初始化
+      init();
+    });
+  </script>
+</body>
+</html>

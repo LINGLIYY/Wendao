@@ -1,0 +1,45 @@
+/* 修仙问道 — Brand Design Tokens */
+
+:root {
+  /* ---- Core ---- */
+  --xian-background: #0c0e14;
+  --xian-foreground: #d8d3c4;
+  --xian-card: #151821;
+  --xian-card-foreground: #d8d3c4;
+  --xian-popover: #1a1e28;
+  --xian-popover-foreground: #d8d3c4;
+  --xian-primary: #c9a96e;
+  --xian-primary-foreground: #0c0e14;
+  --xian-muted: #1e2230;
+  --xian-muted-foreground: #8a8578;
+  --xian-border: #282d3a;
+  --xian-input: #1a1e28;
+  --xian-ring: #c9a96e;
+  --xian-radius-sm: 4px;
+  --xian-radius-md: 8px;
+  --xian-radius-lg: 12px;
+
+  /* ---- State ---- */
+  --state-success: #7ec9a0;
+  --state-warning: #e8c97a;
+  --state-error: #c96a5e;
+  --state-info: #7ab8ff;
+
+  /* ---- Rarity ---- */
+  --rarity-common: #d8d3c4;
+  --rarity-ling: #7ab8ff;
+  --rarity-xuan: #b48aff;
+  --rarity-xian: #ff6b9d;
+
+  /* ---- Surface Layers ---- */
+  --surface-base: #0c0e14;
+  --surface-raised: #151821;
+  --surface-overlay: #1a1e28;
+  --surface-float: #1e2230;
+
+  /* ---- Typography ---- */
+  --font-display: "Noto Serif SC", "SimSun", serif;
+  --font-body: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+}
+
+/* ---- Semantic Fallbacks (for Tailwind resolution) ---- */

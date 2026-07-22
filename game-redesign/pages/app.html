@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修仙问道</title>
+    <style id="theme-vars">
+:root {
+  --xian-background: #0c0e14;
+  --xian-foreground: #d8d3c4;
+  --xian-card: #151821;
+  --xian-card-foreground: #d8d3c4;
+  --xian-popover: #1a1e28;
+  --xian-popover-foreground: #d8d3c4;
+  --xian-primary: #c9a96e;
+  --xian-primary-foreground: #0c0e14;
+  --xian-muted: #1e2230;
+  --xian-muted-foreground: #8a8578;
+  --xian-border: #282d3a;
+  --xian-input: #1a1e28;
+  --xian-ring: #c9a96e;
+  --xian-radius-sm: 4px;
+  --xian-radius-md: 8px;
+  --xian-radius-lg: 12px;
+  --state-success: #7ec9a0;
+  --state-warning: #e8c97a;
+  --state-error: #c96a5e;
+  --state-info: #7ab8ff;
+  --rarity-common: #d8d3c4;
+  --rarity-ling: #7ab8ff;
+  --rarity-xuan: #b48aff;
+  --rarity-xian: #ff6b9d;
+  --surface-base: #0c0e14;
+  --surface-raised: #151821;
+  --surface-overlay: #1a1e28;
+  --surface-float: #1e2230;
+  --font-display: "Noto Serif SC", "SimSun", serif;
+  --font-body: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--xian-background);
+    --color-foreground: var(--xian-foreground);
+    --color-card: var(--xian-card);
+    --color-card-foreground: var(--xian-card-foreground);
+    --color-popover: var(--xian-popover);
+    --color-popover-foreground: var(--xian-popover-foreground);
+    --color-primary: var(--xian-primary);
+    --color-primary-foreground: var(--xian-primary-foreground);
+    --color-muted: var(--xian-muted);
+    --color-muted-foreground: var(--xian-muted-foreground);
+    --color-border: var(--xian-border);
+    --color-input: var(--xian-input);
+    --color-ring: var(--xian-ring);
+    --radius-sm: var(--xian-radius-sm);
+    --radius-md: var(--xian-radius-md);
+    --radius-lg: var(--xian-radius-lg);
+  }
+  @layer base {
+    body { background: var(--xian-background); color: var(--xian-foreground); font-family: var(--font-body); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--xian-background); }
+      .text-background { color: var(--xian-background); }
+      .border-background { border-color: var(--xian-background); }
+      .bg-foreground { background-color: var(--xian-foreground); }
+      .text-foreground { color: var(--xian-foreground); }
+      .border-foreground { border-color: var(--xian-foreground); }
+      .bg-card { background-color: var(--xian-card); }
+      .text-card { color: var(--xian-card); }
+      .border-card { border-color: var(--xian-card); }
+      .bg-card-foreground { background-color: var(--xian-card-foreground); }
+      .text-card-foreground { color: var(--xian-card-foreground); }
+      .border-card-foreground { border-color: var(--xian-card-foreground); }
+      .bg-popover { background-color: var(--xian-popover); }
+      .text-popover { color: var(--xian-popover); }
+      .border-popover { border-color: var(--xian-popover); }
+      .bg-popover-foreground { background-color: var(--xian-popover-foreground); }
+      .text-popover-foreground { color: var(--xian-popover-foreground); }
+      .border-popover-foreground { border-color: var(--xian-popover-foreground); }
+      .bg-primary { background-color: var(--xian-primary); }
+      .text-primary { color: var(--xian-primary); }
+      .border-primary { border-color: var(--xian-primary); }
+      .bg-primary-foreground { background-color: var(--xian-primary-foreground); }
+      .text-primary-foreground { color: var(--xian-primary-foreground); }
+      .border-primary-foreground { border-color: var(--xian-primary-foreground); }
+      .bg-muted { background-color: var(--xian-muted); }
+      .text-muted { color: var(--xian-muted); }
+      .border-muted { border-color: var(--xian-muted); }
+      .bg-muted-foreground { background-color: var(--xian-muted-foreground); }
+      .text-muted-foreground { color: var(--xian-muted-foreground); }
+      .border-muted-foreground { border-color: var(--xian-muted-foreground); }
+      .bg-border { background-color: var(--xian-border); }
+      .text-border { color: var(--xian-border); }
+      .border-border { border-color: var(--xian-border); }
+      .bg-input { background-color: var(--xian-input); }
+      .text-input { color: var(--xian-input); }
+      .border-input { border-color: var(--xian-input); }
+      .bg-ring { background-color: var(--xian-ring); }
+      .text-ring { color: var(--xian-ring); }
+      .border-ring { border-color: var(--xian-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="h-screen overflow-hidden antialiased">
+    <main class="flex flex-col h-screen">
+
+      <!-- ===== TOP BAR ===== -->
+      <header class="bg-card border-b border-border h-12 flex items-center justify-between px-4 shrink-0 z-30">
+        <div class="flex items-center gap-2">
+          <h1 style="font-family: var(--font-display)" class="text-primary text-lg font-semibold tracking-wide">修仙问道</h1>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="handleSave()" class="w-8 h-8 flex items-center justify-center bg-card border border-border rounded-md text-muted-foreground hover:text-primary transition-colors cursor-pointer" aria-label="存档">
+            <i data-lucide="save" class="w-[18px] h-[18px]"></i>
+          </button>
+          <button onclick="handleLoad()" class="w-8 h-8 flex items-center justify-center bg-card border border-border rounded-md text-muted-foreground hover:text-primary transition-colors cursor-pointer" aria-label="读档">
+            <i data-lucide="folder-open" class="w-[18px] h-[18px]"></i>
+          </button>
+        </div>
+        <div class="flex items-center gap-1">
+          <button onclick="togglePanel('panel-char')" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-primary transition-colors cursor-pointer" aria-label="人物">
+            <i data-lucide="user" class="w-[18px] h-[18px]"></i>
+          </button>
+          <button onclick="togglePanel('panel-bag')" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-primary transition-colors cursor-pointer" aria-label="背包">
+            <i data-lucide="backpack" class="w-[18px] h-[18px]"></i>
+          </button>
+          <button onclick="togglePanel('panel-gongfa')" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-primary transition-colors cursor-pointer" aria-label="功法">
+            <i data-lucide="scroll-text" class="w-[18px] h-[18px]"></i>
+          </button>
+          <button onclick="togglePanel('panel-log')" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-primary transition-colors cursor-pointer" aria-label="日志">
+            <i data-lucide="list" class="w-[18px] h-[18px]"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- ===== BODY ===== -->
+      <div class="flex flex-1 min-h-0">
+
+        <!-- ===== LEFT SIDEBAR ===== -->
+        <aside id="sidebar" class="hidden lg:flex flex-col w-[260px] shrink-0 bg-card border-r border-border overflow-y-auto">
+          <div class="p-4 flex flex-col flex-1">
+            <div class="mb-1">
+              <span id="sidebar-name" style="font-family: var(--font-display)" class="text-lg font-semibold text-primary">--</span>
+            </div>
+            <span id="sidebar-realm" class="inline-block bg-muted text-primary text-xs px-2 py-0.5 rounded w-fit">--</span>
+            <div class="border-b border-border my-3"></div>
+            <div class="flex flex-col gap-2 text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-muted-foreground">天数</span>
+                <span id="sidebar-days" class="text-foreground font-semibold">--</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted-foreground">灵石</span>
+                <span id="sidebar-gold" class="text-foreground font-semibold">--</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-muted-foreground">修为</span>
+                <span id="sidebar-exp-pct" class="text-foreground font-semibold">--</span>
+              </div>
+              <div class="w-full h-1.5 bg-muted rounded-full overflow-hidden">
+                <div id="sidebar-exp-bar" class="h-full rounded-full bg-primary" style="width: 0%"></div>
+              </div>
+            </div>
+            <div class="border-b border-border my-3"></div>
+            <span class="text-xs text-muted-foreground tracking-widest uppercase mb-2">属性</span>
+            <div id="sidebar-attrs" class="grid grid-cols-3 gap-y-2 gap-x-1">
+              <div class="flex flex-col items-center"><span class="text-xs text-muted-foreground">灵力</span><span class="text-sm font-semibold text-foreground">--</span></div>
+              <div class="flex flex-col items-center"><span class="text-xs text-muted-foreground">体质</span><span class="text-sm font-semibold text-foreground">--</span></div>
+              <div class="flex flex-col items-center"><span class="text-xs text-muted-foreground">神识</span><span class="text-sm font-semibold text-foreground">--</span></div>
+              <div class="flex flex-col items-center"><span class="text-xs text-muted-foreground">悟性</span><span class="text-sm font-semibold text-foreground">--</span></div>
+              <div class="flex flex-col items-center"><span class="text-xs text-muted-foreground">根骨</span><span class="text-sm font-semibold text-foreground">--</span></div>
+              <div class="flex flex-col items-center"><span class="text-xs text-muted-foreground">气运</span><span class="text-sm font-semibold text-foreground">--</span></div>
+            </div>
+            <div class="border-b border-border my-3"></div>
+            <div id="sidebar-tags" class="flex flex-wrap gap-1.5">
+              <span class="bg-muted text-muted-foreground text-xs px-2 py-0.5 rounded">--</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <section class="flex-1 min-w-0 overflow-y-auto" data-scroll-region="primary">
+
+          <!-- ========== STATE A: 创角 (state-create) ========== -->
+          <div data-state="create" class="max-w-lg mx-auto px-6 py-10">
+            <h2 style="font-family: var(--font-display)" class="text-2xl text-primary font-semibold">踏入仙途</h2>
+            <div class="w-12 h-0.5 bg-primary mt-2 mb-8"></div>
+
+            <!-- 道号输入 -->
+            <div class="flex items-center gap-3 mb-8">
+              <label class="text-sm text-muted-foreground shrink-0" style="font-family: var(--font-display)">道号</label>
+              <input
+                id="input-name"
+                type="text"
+                placeholder="输入你的道号"
+                class="flex-1 bg-card border border-border rounded-lg px-4 py-2.5 text-base text-foreground text-center placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors"
+              />
+              <button onclick="handleRandomName()" class="shrink-0 text-xs text-primary border border-border rounded-md px-3 py-2.5 hover:bg-muted transition-colors cursor-pointer" style="font-family: var(--font-display)">随机</button>
+            </div>
+
+            <!-- 天命区 -->
+            <div class="flex flex-col gap-1 mb-5">
+              <h3 style="font-family: var(--font-display)" class="text-base font-semibold text-primary">天命</h3>
+              <p class="text-xs text-muted-foreground">灵根、体质、出身皆由天定</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-5 mb-6">
+              <div class="flex items-center justify-between mb-4">
+                <button onclick="handleDivine()" class="flex items-center gap-2 bg-muted border border-border rounded-lg px-5 py-2.5 text-primary cursor-pointer hover:border-primary transition-colors">
+                  <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  <span class="text-sm font-medium" style="font-family: var(--font-display)">占卜天命</span>
+                </button>
+                <span id="divine-remain" class="text-xs text-muted-foreground">剩余 <span class="text-primary font-semibold">3</span> 次</span>
+              </div>
+
+              <!-- 占卜结果区域（初始隐藏） -->
+              <div id="divine-result" style="display:none" class="flex flex-col gap-0">
+                <div class="flex items-center gap-3 border-b border-border py-3">
+                  <span class="text-xs text-muted-foreground w-10 text-right shrink-0" style="font-family: var(--font-display)">灵根</span>
+                  <span id="res-linggen-name" class="text-sm font-semibold text-foreground" style="font-family: var(--font-display)">--</span>
+                  <span id="res-linggen-desc" class="text-xs text-muted-foreground">--</span>
+                </div>
+                <div class="flex items-center gap-3 border-b border-border py-3">
+                  <span class="text-xs text-muted-foreground w-10 text-right shrink-0" style="font-family: var(--font-display)">体质</span>
+                  <span id="res-tizhi-name" class="text-sm font-semibold text-foreground" style="font-family: var(--font-display)">--</span>
+                  <span id="res-tizhi-desc" class="text-xs text-muted-foreground">--</span>
+                </div>
+                <div class="flex items-center gap-3 py-3">
+                  <span class="text-xs text-muted-foreground w-10 text-right shrink-0" style="font-family: var(--font-display)">出身</span>
+                  <span id="res-chushen-name" class="text-sm font-semibold text-foreground" style="font-family: var(--font-display)">--</span>
+                  <span id="res-chushen-desc" class="text-xs text-muted-foreground">--</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mt-3 pt-3 border-t border-border">
+                <button id="btn-re-divine" onclick="handleReDivine()" style="display:none" class="text-xs text-muted-foreground hover:text-primary cursor-pointer transition-colors">重新占卜</button>
+                <span class="text-xs text-muted-foreground">已用 <span id="divine-used" class="text-foreground">0</span> / 3</span>
+              </div>
+            </div>
+
+            <!-- 开始修仙 -->
+            <button onclick="handleStart()" class="w-full bg-primary text-primary-foreground rounded-lg py-3 text-base font-semibold cursor-pointer hover:opacity-90 transition-opacity">
+              开始修仙
+            </button>
+          </div>
+
+          <!-- ========== STATE B: 探索叙事 (state-explore) ========== -->
+          <div data-state="explore" style="display:none" class="max-w-2xl mx-auto px-6 py-8 lg:px-8 lg:py-10">
+            <div class="mb-6">
+              <h2 id="explore-title" style="font-family: var(--font-display)" class="text-xl text-primary font-semibold">青石峰 — 晨练</h2>
+              <div class="w-10 h-0.5 bg-primary mt-2"></div>
+            </div>
+            <div id="explore-text" class="text-base leading-relaxed mb-8" style="white-space: pre-wrap">晨光熹微，灵气在青石峰上如丝如缕地流动。你盘膝坐在一块青石之上，感受着天地间若有若无的灵气缓缓汇入经脉。远处，一只仙鹤振翅掠过云海，留下一声悠长的清鸣。
+
+你缓缓睁开双眼，体内灵力已运行了三十六个周天。经过数月的苦修，你对这方天地有了更深的感悟。青石峰上的灵泉今日泛着微光，似乎比往日更加清澈。
+
+山风拂过，带来远处同门弟子晨练的剑鸣之声。你的修为虽已初窥门径，但前路漫漫，大道无垠。此刻，你需要做出选择。</div>
+            <div id="explore-choices" class="flex flex-col gap-3">
+              <button onclick="handleAction(0)" class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer">在灵泉边打坐修炼</button>
+              <button onclick="handleAction(1)" class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer">前往藏经阁查阅功法</button>
+              <button onclick="handleAction(2)" class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer">下山前往坊市采买</button>
+              <button onclick="handleAction(3)" class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer">回洞府闭关悟道</button>
+            </div>
+          </div>
+
+          <!-- ========== STATE C: 战斗 (state-battle) ========== -->
+          <div data-state="battle" style="display:none" class="max-w-2xl mx-auto px-6 py-8 lg:px-8 lg:py-10">
+            <div class="text-center mb-8">
+              <h2 id="battle-title" style="font-family: var(--font-display)" class="text-xl text-primary font-semibold">遭遇妖兽</h2>
+              <div class="w-10 h-0.5 bg-primary mx-auto mt-2"></div>
+              <p id="battle-round" class="text-sm text-muted-foreground mt-3">第三回合</p>
+            </div>
+
+            <!-- 双方卡片 -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <!-- 玩家卡 -->
+              <div class="bg-card border border-border rounded-lg p-5">
+                <div class="mb-3">
+                  <span id="battle-player-name" class="text-foreground font-semibold">云无涯</span>
+                  <span id="battle-player-realm" class="block text-xs text-muted-foreground mt-0.5">练气期</span>
+                </div>
+                <div class="flex items-center justify-between text-xs text-muted-foreground mb-1.5">
+                  <span>气血</span>
+                  <span id="battle-player-hp-text">168 / 240</span>
+                </div>
+                <div class="w-full h-3 bg-muted rounded-full overflow-hidden">
+                  <div id="battle-player-hp-bar" class="h-full rounded-full bg-primary" style="width: 70%"></div>
+                </div>
+                <span id="battle-player-status" class="block text-xs mt-2" style="color: var(--state-success)">灵力充裕</span>
+              </div>
+              <!-- 敌人卡 -->
+              <div class="bg-card border border-border rounded-lg p-5">
+                <div class="mb-3">
+                  <span id="battle-enemy-name" class="font-semibold" style="color: var(--state-error)">赤焰蟒</span>
+                  <span id="battle-enemy-realm" class="block text-xs text-muted-foreground mt-0.5">妖兽</span>
+                </div>
+                <div class="flex items-center justify-between text-xs text-muted-foreground mb-1.5">
+                  <span>气血</span>
+                  <span id="battle-enemy-hp-text">84 / 240</span>
+                </div>
+                <div class="w-full h-3 bg-muted rounded-full overflow-hidden">
+                  <div id="battle-enemy-hp-bar" class="h-full rounded-full" style="width: 35%; background: var(--state-error)"></div>
+                </div>
+                <span id="battle-enemy-status" class="block text-xs mt-2" style="color: var(--state-error)">身受重伤</span>
+              </div>
+            </div>
+
+            <!-- 战斗记录 -->
+            <div class="bg-card border border-border rounded-lg p-4 mt-6">
+              <h3 class="text-sm text-muted-foreground mb-3">战斗记录</h3>
+              <div id="battle-log" class="text-sm leading-relaxed">
+                <div class="border-b border-border py-2">你运转心法，一掌拍出 — 赤焰蟒受到 <span class="font-semibold" style="color: var(--state-error)">45</span> 点伤害</div>
+                <div class="border-b border-border py-2">赤焰蟒猛然甩尾 — 你受到 <span class="font-semibold" style="color: var(--state-error)">22</span> 点伤害</div>
+                <div class="border-b border-border py-2">你灵力涌动，青锋剑斩出一道剑气 — 赤焰蟒受到 <span class="font-semibold" style="color: var(--state-error)">58</span> 点伤害</div>
+                <div class="border-b border-border py-2"><span style="color: var(--state-error)">赤焰蟒吐出烈焰</span> — 你受到 <span class="font-semibold" style="color: var(--state-error)">30</span> 点伤害</div>
+                <div class="py-2">你借势后撤，调息片刻</div>
+              </div>
+            </div>
+
+            <!-- 战斗按钮 2x2 网格 -->
+            <div id="battle-actions" class="grid grid-cols-2 gap-3 mt-6">
+              <button onclick="handleBattleAction('attack')" class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer flex items-center gap-3">
+                <i data-lucide="sword" class="w-5 h-5 text-primary shrink-0"></i>
+                <span class="font-medium">全力攻击</span>
+              </button>
+              <button onclick="handleBattleAction('defend')" class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer flex items-center gap-3">
+                <i data-lucide="shield" class="w-5 h-5 text-primary shrink-0"></i>
+                <span class="font-medium">运转心法</span>
+              </button>
+              <button onclick="handleBattleAction('pill')" class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer flex items-center gap-3">
+                <i data-lucide="flask-round" class="w-5 h-5 text-primary shrink-0"></i>
+                <span class="font-medium">使用丹药 <span class="text-muted-foreground text-sm">(x3)</span></span>
+              </button>
+              <button onclick="handleBattleAction('flee')" class="bg-card border border-border rounded-lg px-5 py-4 text-left text-muted-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer flex items-center gap-3">
+                <i data-lucide="log-out" class="w-5 h-5 shrink-0"></i>
+                <span class="font-medium">尝试逃跑</span>
+              </button>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </main>
+
+    <!-- ===== RIGHT PANEL: 人物详情 ===== -->
+    <div id="panel-char" class="fixed right-0 top-12 bottom-0 w-[380px] max-w-full bg-popover border-l border-border shadow-lg transform translate-x-full transition-transform duration-300 z-40 overflow-y-auto">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-4">
+          <h3 style="font-family: var(--font-display)" class="text-lg font-semibold text-primary">人物详情</h3>
+          <button onclick="togglePanel('panel-char')" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-foreground transition-colors cursor-pointer" aria-label="关闭">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <!-- 标签区 -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span id="pc-realm" class="bg-muted text-primary text-xs px-2.5 py-1 rounded">练气期</span>
+          <span id="pc-linggen" class="bg-muted text-muted-foreground text-xs px-2.5 py-1 rounded">双灵根（水·木）</span>
+          <span id="pc-tizhi" class="bg-muted text-muted-foreground text-xs px-2.5 py-1 rounded">灵韵体质</span>
+          <span id="pc-chushen" class="bg-muted text-muted-foreground text-xs px-2.5 py-1 rounded">农家子弟</span>
+        </div>
+        <!-- 属性表 -->
+        <h4 class="text-sm text-muted-foreground mb-2">属性</h4>
+        <div class="bg-card border border-border rounded-lg overflow-hidden mb-6">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-border text-muted-foreground text-xs">
+                <th class="text-left px-3 py-2 font-medium">属性</th>
+                <th class="text-right px-3 py-2 font-medium">基础</th>
+                <th class="text-right px-3 py-2 font-medium">当前</th>
+              </tr>
+            </thead>
+            <tbody id="pc-attrs-tbody">
+              <tr class="border-b border-border"><td class="px-3 py-2 text-foreground">灵力</td><td class="px-3 py-2 text-right text-muted-foreground">45</td><td class="px-3 py-2 text-right text-foreground font-semibold">45</td></tr>
+              <tr class="border-b border-border"><td class="px-3 py-2 text-foreground">体质</td><td class="px-3 py-2 text-right text-muted-foreground">28</td><td class="px-3 py-2 text-right text-foreground font-semibold">28</td></tr>
+              <tr class="border-b border-border"><td class="px-3 py-2 text-foreground">神识</td><td class="px-3 py-2 text-right text-muted-foreground">32</td><td class="px-3 py-2 text-right text-foreground font-semibold">32</td></tr>
+              <tr class="border-b border-border"><td class="px-3 py-2 text-foreground">悟性</td><td class="px-3 py-2 text-right text-muted-foreground">38</td><td class="px-3 py-2 text-right text-foreground font-semibold">38</td></tr>
+              <tr class="border-b border-border"><td class="px-3 py-2 text-foreground">根骨</td><td class="px-3 py-2 text-right text-muted-foreground">25</td><td class="px-3 py-2 text-right text-foreground font-semibold">25</td></tr>
+              <tr><td class="px-3 py-2 text-foreground">气运</td><td class="px-3 py-2 text-right text-muted-foreground">30</td><td class="px-3 py-2 text-right text-foreground font-semibold">30</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- 装备区 -->
+        <h4 class="text-sm text-muted-foreground mb-2">装备</h4>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-card border border-border rounded-lg p-3">
+            <span class="text-xs text-muted-foreground block mb-1">武器</span>
+            <span id="pc-equip-weapon" class="text-sm font-medium" style="color: var(--rarity-ling)">青锋剑</span>
+          </div>
+          <div class="bg-card border border-border rounded-lg p-3">
+            <span class="text-xs text-muted-foreground block mb-1">防具</span>
+            <span id="pc-equip-armor" class="text-sm font-medium text-muted-foreground">未装备</span>
+          </div>
+          <div class="bg-card border border-border rounded-lg p-3">
+            <span class="text-xs text-muted-foreground block mb-1">饰品</span>
+            <span id="pc-equip-accessory" class="text-sm font-medium text-muted-foreground">未装备</span>
+          </div>
+          <div class="bg-card border border-border rounded-lg p-3">
+            <span class="text-xs text-muted-foreground block mb-1">法宝</span>
+            <span id="pc-equip-treasure" class="text-sm font-medium text-muted-foreground">未装备</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== RIGHT PANEL: 背包 ===== -->
+    <div id="panel-bag" class="fixed right-0 top-12 bottom-0 w-[380px] max-w-full bg-popover border-l border-border shadow-lg transform translate-x-full transition-transform duration-300 z-40 overflow-y-auto">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-4">
+          <h3 style="font-family: var(--font-display)" class="text-lg font-semibold text-primary">背包</h3>
+          <button onclick="togglePanel('panel-bag')" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-foreground transition-colors cursor-pointer" aria-label="关闭">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <div id="bag-list" class="flex flex-col gap-3">
+          <!-- 示例物品 -->
+          <div class="bg-card border border-border rounded-lg p-3">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-sm font-medium" style="color: var(--rarity-ling)">回灵丹</span>
+              <span class="text-xs text-muted-foreground">丹药 x3</span>
+            </div>
+            <p class="text-xs text-muted-foreground mb-2">服用后恢复 50 点灵力</p>
+            <button onclick="handleItemUse('pill_001')" class="text-xs text-primary hover:underline cursor-pointer">使用</button>
+          </div>
+          <div class="bg-card border border-border rounded-lg p-3">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-sm font-medium" style="color: var(--rarity-xuan)">青锋剑</span>
+              <span class="text-xs text-muted-foreground">武器</span>
+            </div>
+            <p class="text-xs text-muted-foreground mb-2">灵阶飞剑，攻击 +35</p>
+            <button onclick="handleItemEquip('weapon_001', 'weapon')" class="text-xs text-primary hover:underline cursor-pointer">装备</button>
+          </div>
+          <div class="bg-card border border-border rounded-lg p-3">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-sm font-medium" style="color: var(--rarity-common)">辟谷丹</span>
+              <span class="text-xs text-muted-foreground">丹药 x5</span>
+            </div>
+            <p class="text-xs text-muted-foreground mb-2">服用后三日无需进食</p>
+            <button onclick="handleItemUse('pill_002')" class="text-xs text-primary hover:underline cursor-pointer">使用</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== RIGHT PANEL: 功法 ===== -->
+    <div id="panel-gongfa" class="fixed right-0 top-12 bottom-0 w-[380px] max-w-full bg-popover border-l border-border shadow-lg transform translate-x-full transition-transform duration-300 z-40 overflow-y-auto">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-4">
+          <h3 style="font-family: var(--font-display)" class="text-lg font-semibold text-primary">功法</h3>
+          <button onclick="togglePanel('panel-gongfa')" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-foreground transition-colors cursor-pointer" aria-label="关闭">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <div id="gongfa-list" class="flex flex-col gap-3">
+          <div class="bg-card border border-primary rounded-lg p-3">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-sm font-medium text-primary">清心诀</span>
+              <span class="text-xs bg-primary text-primary-foreground px-1.5 py-0.5 rounded">修炼中</span>
+            </div>
+            <p class="text-xs text-muted-foreground">基础心法，调和灵气，稳固根基。修炼速度 +10%</p>
+          </div>
+          <div class="bg-card border border-border rounded-lg p-3">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-sm font-medium" style="color: var(--rarity-ling)">水月剑经</span>
+            </div>
+            <p class="text-xs text-muted-foreground">灵阶剑法，以水之柔韧化剑气。需水灵根方可修炼</p>
+            <button class="text-xs text-primary hover:underline cursor-pointer mt-1">切换修炼</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== RIGHT PANEL: 日志 ===== -->
+    <div id="panel-log" class="fixed right-0 top-12 bottom-0 w-[380px] max-w-full bg-popover border-l border-border shadow-lg transform translate-x-full transition-transform duration-300 z-40 overflow-y-auto">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-4">
+          <h3 style="font-family: var(--font-display)" class="text-lg font-semibold text-primary">日志</h3>
+          <button onclick="togglePanel('panel-log')" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-foreground transition-colors cursor-pointer" aria-label="关闭">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <div id="log-list" class="flex flex-col gap-0">
+          <div class="border-b border-border py-2.5">
+            <span class="text-xs text-muted-foreground">第 42 天</span>
+            <p class="text-sm text-foreground">在青石峰晨练，修为微增</p>
+          </div>
+          <div class="border-b border-border py-2.5">
+            <span class="text-xs text-muted-foreground">第 41 天</span>
+            <p class="text-sm text-foreground">击败赤焰蟒，获得妖丹一枚</p>
+          </div>
+          <div class="border-b border-border py-2.5">
+            <span class="text-xs text-muted-foreground">第 40 天</span>
+            <p class="text-sm text-foreground">从坊市购入回灵丹 x3</p>
+          </div>
+          <div class="border-b border-border py-2.5">
+            <span class="text-xs text-muted-foreground">第 39 天</span>
+            <p class="text-sm text-foreground">在藏经阁参悟《水月剑经》</p>
+          </div>
+          <div class="py-2.5">
+            <span class="text-xs text-muted-foreground">第 38 天</span>
+            <p class="text-sm text-foreground">成功突破至练气期三层</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 遮罩层（面板打开时） ===== -->
+    <div id="panel-overlay" class="fixed inset-0 top-12 bg-black/40 z-30 hidden" onclick="closeAllPanels()"></div>
+
+    <!-- ===== 存档/读档模态框 ===== -->
+    <div id="modal-save-load" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 hidden">
+      <div class="bg-popover border border-border rounded-lg w-full max-w-md mx-4 p-6 shadow-xl">
+        <div class="flex items-center justify-between mb-5">
+          <h3 id="modal-title" style="font-family: var(--font-display)" class="text-lg font-semibold text-primary">存档</h3>
+          <button onclick="closeModal()" class="w-8 h-8 flex items-center justify-center rounded text-muted-foreground hover:text-foreground transition-colors cursor-pointer" aria-label="关闭">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <div id="modal-slots" class="flex flex-col gap-3 mb-5">
+          <button onclick="handleSlotAction(1)" class="bg-card border border-border rounded-lg px-4 py-3 text-left hover:border-primary transition-colors cursor-pointer flex items-center justify-between">
+            <div>
+              <span class="text-sm font-medium text-foreground">槽位 1</span>
+              <span class="text-xs text-muted-foreground block mt-0.5">空</span>
+            </div>
+            <span class="text-xs text-muted-foreground">--</span>
+          </button>
+          <button onclick="handleSlotAction(2)" class="bg-card border border-border rounded-lg px-4 py-3 text-left hover:border-primary transition-colors cursor-pointer flex items-center justify-between">
+            <div>
+              <span class="text-sm font-medium text-foreground">槽位 2</span>
+              <span class="text-xs text-muted-foreground block mt-0.5">空</span>
+            </div>
+            <span class="text-xs text-muted-foreground">--</span>
+          </button>
+          <button onclick="handleSlotAction(3)" class="bg-card border border-border rounded-lg px-4 py-3 text-left hover:border-primary transition-colors cursor-pointer flex items-center justify-between">
+            <div>
+              <span class="text-sm font-medium text-foreground">槽位 3</span>
+              <span class="text-xs text-muted-foreground block mt-0.5">空</span>
+            </div>
+            <span class="text-xs text-muted-foreground">--</span>
+          </button>
+        </div>
+        <button onclick="closeModal()" class="w-full bg-card border border-border rounded-lg py-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">取消</button>
+      </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+// ===== 后端 API 接口层 =====
+class GameAPI {
+  constructor() {
+    this.baseHeaders = { 'Content-Type': 'application/json' };
+  }
+  async call(method, path, body) {
+    const opts = { method, headers: this.baseHeaders };
+    if (body !== undefined) opts.body = JSON.stringify(body);
+    const r = await fetch(path, opts);
+    const data = await r.json();
+    if (!r.ok && !data.error) data.error = 'HTTP ' + r.status;
+    return data;
+  }
+  // 创角
+  createData()  { return this.call('GET', '/api/create-data'); }
+  newGame(cd)   { return this.call('POST', '/api/new-game', cd); }
+  // 游戏操作
+  action(choice) { return this.call('POST', '/api/action', choice); }
+  // 物品
+  item(op, id, slot) { return this.call('POST', '/api/item', { op, id, slot }); }
+  // 存档
+  save(slot) { return this.call('POST', '/api/save', { slot }); }
+  load(slot) { return this.call('POST', '/api/load', { slot }); }
+  saves()    { return this.call('GET', '/api/saves'); }
+  // 宗门
+  allSects() { return this.call('GET', '/api/all-sects'); }
+  // 心跳
+  ping()     { return this.call('GET', '/api/ping'); }
+}
+
+const api = new GameAPI();
+
+// ===== 全局状态 =====
+let currentState = 'create'; // 'create' | 'explore' | 'battle'
+let divineCount = 0;
+const MAX_DIVINE = 3;
+let divineResult = null; // { linggen: {name,desc}, tizhi: {name,desc}, chushen: {name,desc} }
+let gameState = null;    // 从后端获取的完整游戏状态
+let battleState = null;  // 战斗状态
+let openPanel = null;    // 当前打开的面板 id
+let modalMode = null;    // 'save' | 'load' | null
+
+// ===== 示例数据：天命选项池 =====
+const SAMPLE_LINGGEN = [
+  { name: '双灵根', desc: '水 · 木', fullName: '双灵根（水·木）' },
+  { name: '单灵根', desc: '金', fullName: '单灵根（金）' },
+  { name: '三灵根', desc: '火 · 土 · 风', fullName: '三灵根（火·土·风）' },
+  { name: '天灵根', desc: '雷', fullName: '天灵根（雷）' },
+  { name: '异灵根', desc: '冰', fullName: '异灵根（冰）' }
+];
+const SAMPLE_TIZHI = [
+  { name: '灵韵体质', desc: '灵气亲和，修炼事半功倍' },
+  { name: '剑心通明', desc: '天生剑骨，剑道悟性极高' },
+  { name: '玄阴之体', desc: '阴寒之力充沛，适合修炼水冰功法' },
+  { name: '不坏金身', desc: '肉身坚韧，抗击打能力极强' },
+  { name: '天道残躯', desc: '先天不足，修炼艰难但突破时威力倍增' }
+];
+const SAMPLE_CHUSHEN = [
+  { name: '农家子弟', desc: '出身寒微，心志坚韧' },
+  { name: '书香门第', desc: '幼读诗书，悟性超群' },
+  { name: '武林世家', desc: '自幼习武，根基扎实' },
+  { name: '商贾之子', desc: '家境殷实，灵石充裕' },
+  { name: '孤儿', desc: '无依无靠，独自求生' }
+];
+const RANDOM_NAMES = [
+  '云无涯', '李青莲', '苏墨尘', '叶知秋', '沈清河',
+  '林逸风', '陈玄机', '萧寒霜', '楚天歌', '白子画',
+  '顾长歌', '柳如烟', '赵无极', '周星河', '方寸心'
+];
+
+// ===== 状态切换 =====
+function switchState(newState) {
+  currentState = newState;
+  document.querySelectorAll('[data-state]').forEach(el => {
+    el.style.display = el.dataset.state === newState ? '' : 'none';
+  });
+  // 侧边栏：创角时隐藏
+  const sidebar = document.getElementById('sidebar');
+  if (sidebar) sidebar.style.display = newState === 'create' ? 'none' : '';
+  // 滚动到顶部
+  const scrollRegion = document.querySelector('[data-scroll-region="primary"]');
+  if (scrollRegion) scrollRegion.scrollTop = 0;
+}
+
+// ===== 创角逻辑 =====
+
+// 随机道号
+function handleRandomName() {
+  const name = RANDOM_NAMES[Math.floor(Math.random() * RANDOM_NAMES.length)];
+  document.getElementById('input-name').value = name;
+}
+
+// 占卜天命
+async function handleDivine() {
+  if (divineCount >= MAX_DIVINE) return;
+  // TODO: API — const createData = await api.createData();
+  // 期望返回: { linggen_pool: [...], tizhi_pool: [...], chushen_pool: [...] }
+  // 前端可从池中随机选取，或后端直接返回结果
+  divineCount++;
+  // 前端随机选取（示例）
+  const lg = SAMPLE_LINGGEN[Math.floor(Math.random() * SAMPLE_LINGGEN.length)];
+  const tz = SAMPLE_TIZHI[Math.floor(Math.random() * SAMPLE_TIZHI.length)];
+  const cs = SAMPLE_CHUSHEN[Math.floor(Math.random() * SAMPLE_CHUSHEN.length)];
+  divineResult = {
+    linggen: { name: lg.name, desc: lg.desc, fullName: lg.fullName },
+    tizhi: { name: tz.name, desc: tz.desc },
+    chushen: { name: cs.name, desc: cs.desc }
+  };
+  updateDivineUI();
+}
+
+// 重新占卜
+async function handleReDivine() {
+  if (divineCount >= MAX_DIVINE) return;
+  // TODO: API — 同 handleDivine，调用 api.createData() 获取新数据
+  divineCount++;
+  const lg = SAMPLE_LINGGEN[Math.floor(Math.random() * SAMPLE_LINGGEN.length)];
+  const tz = SAMPLE_TIZHI[Math.floor(Math.random() * SAMPLE_TIZHI.length)];
+  const cs = SAMPLE_CHUSHEN[Math.floor(Math.random() * SAMPLE_CHUSHEN.length)];
+  divineResult = {
+    linggen: { name: lg.name, desc: lg.desc, fullName: lg.fullName },
+    tizhi: { name: tz.name, desc: tz.desc },
+    chushen: { name: cs.name, desc: cs.desc }
+  };
+  updateDivineUI();
+}
+
+// 更新占卜 UI
+function updateDivineUI() {
+  if (!divineResult) return;
+  document.getElementById('divine-result').style.display = '';
+  document.getElementById('btn-re-divine').style.display = divineCount < MAX_DIVINE ? '' : 'none';
+  document.getElementById('divine-remain').innerHTML = '剩余 <span class="text-primary font-semibold">' + (MAX_DIVINE - divineCount) + '</span> 次';
+  document.getElementById('divine-used').textContent = divineCount;
+  document.getElementById('res-linggen-name').textContent = divineResult.linggen.name;
+  document.getElementById('res-linggen-desc').textContent = divineResult.linggen.desc;
+  document.getElementById('res-tizhi-name').textContent = divineResult.tizhi.name;
+  document.getElementById('res-tizhi-desc').textContent = divineResult.tizhi.desc;
+  document.getElementById('res-chushen-name').textContent = divineResult.chushen.name;
+  document.getElementById('res-chushen-desc').textContent = divineResult.chushen.desc;
+}
+
+// 开始修仙
+async function handleStart() {
+  const name = document.getElementById('input-name').value.trim();
+  if (!name) {
+    document.getElementById('input-name').style.borderColor = 'var(--state-error)';
+    setTimeout(() => { document.getElementById('input-name').style.borderColor = ''; }, 1500);
+    return;
+  }
+  if (!divineResult) {
+    // 未占卜，自动占卜一次
+    await handleDivine();
+    if (!divineResult) return;
+  }
+  // TODO: API — const res = await api.newGame({ name, linggen: divineResult.linggen, tizhi: divineResult.tizhi, chushen: divineResult.chushen });
+  // 期望返回: gameState 完整游戏状态对象
+  // 示例：设置 gameState 为模拟数据
+  gameState = {
+    name: name,
+    realm: '练气期三层',
+    days: 42,
+    gold: 1280,
+    expPct: 67,
+    attrs: { lingli: 45, tizhi: 28, shenshi: 32, wuxing: 38, gengu: 25, qiyun: 30 },
+    linggen: divineResult.linggen.fullName || divineResult.linggen.name,
+    tizhi: divineResult.tizhi.name,
+    chushen: divineResult.chushen.name
+  };
+  updateSidebar(gameState);
+  switchState('explore');
+}
+
+// ===== 侧边栏更新 =====
+function updateSidebar(state) {
+  if (!state) return;
+  document.getElementById('sidebar-name').textContent = state.name || '--';
+  document.getElementById('sidebar-realm').textContent = state.realm || '--';
+  document.getElementById('sidebar-days').textContent = state.days || '--';
+  document.getElementById('sidebar-gold').textContent = (state.gold || 0).toLocaleString();
+  document.getElementById('sidebar-exp-pct').textContent = (state.expPct || 0) + '%';
+  document.getElementById('sidebar-exp-bar').style.width = (state.expPct || 0) + '%';
+  // 属性网格
+  if (state.attrs) {
+    const attrNames = ['灵力', '体质', '神识', '悟性', '根骨', '气运'];
+    const attrKeys = ['lingli', 'tizhi', 'shenshi', 'wuxing', 'gengu', 'qiyun'];
+    const container = document.getElementById('sidebar-attrs');
+    container.innerHTML = attrNames.map((n, i) =>
+      '<div class="flex flex-col items-center"><span class="text-xs text-muted-foreground">' + n + '</span><span class="text-sm font-semibold text-foreground">' + (state.attrs[attrKeys[i]] || '--') + '</span></div>'
+    ).join('');
+  }
+  // 标签
+  const tags = document.getElementById('sidebar-tags');
+  tags.innerHTML = [state.linggen, state.tizhi, state.chushen].filter(Boolean).map(t =>
+    '<span class="bg-muted text-muted-foreground text-xs px-2 py-0.5 rounded">' + t + '</span>'
+  ).join('');
+}
+
+// ===== 探索叙事逻辑 =====
+async function handleAction(choiceIndex) {
+  // TODO: API — const res = await api.action({ choice: choiceIndex });
+  // 期望返回:
+  //   { scene: { title, text, choices } } — 切换场景
+  //   { battle: { title, round, player, enemy, log } } — 进入战斗
+  //   { gameState: { ... } } — 更新后的全局状态
+  // 示例：模拟切换场景
+  const sampleScenes = [
+    {
+      title: '灵泉边 — 打坐修炼',
+      text: '你来到灵泉旁，盘膝而坐。清冽的泉水灵气浓郁，吸入体内如甘霖滋润干涸的经脉。一个时辰后，你感到修为有所精进，体内灵力更加充沛。
+
+远处传来几声鸟鸣，山间的宁静让你心境平和。你运转功法，将吸收的灵气慢慢炼化为己用，丹田中的灵力旋涡愈发凝实。
+
+当你再次睁开眼时，天色已近黄昏。灵泉的光芒渐渐暗淡，你站起身来，活动了一下僵硬的四肢，准备前往下一个地方。',
+      choices: ['继续修炼', '去藏经阁', '回洞府休息', '四处走动']
+    },
+    {
+      title: '藏经阁 — 查阅功法',
+      text: '藏经阁内灯火通明，一排排书架整齐排列。空气中弥漫着古旧书卷的气息。你沿着书架慢慢走过，指尖划过一卷卷泛黄的竹简和玉简。
+
+在一处不起眼的角落，你发现了一本蒙尘的古籍。拂去灰尘后，封面上隐约可见《天地元气论》四个字。翻开第一页，一股精纯的灵气从书页中涌出，令你精神一振。
+
+守阁的老修士远远看了你一眼，微微点头，似乎对你的机缘颇为赞许。你将古籍借出，准备回洞府细细研读。',
+      choices: ['借阅此书', '继续寻找', '询问守阁人', '离开藏经阁']
+    },
+    {
+      title: '坊市 — 采买灵物',
+      text: '坊市热闹非凡，各色摊位沿街排列。丹药铺、法器店、灵兽阁……空气中飘散着草药的清香。你慢慢穿行在人群中，打量着各色货物。
+
+一家丹药铺前，掌柜正在热情招揽顾客。货架上陈列着各色丹药，从最普通的辟谷丹到珍贵的筑基丹，应有尽有。你注意到一瓶散发着淡蓝色光泽的回灵丹，品质上乘。
+
+另一边的法器摊上，一把古朴的短剑引起了你的注意。虽然品相不佳，但剑身上隐隐流转的灵光说明它并非凡品。',
+      choices: ['购买回灵丹', '查看那把短剑', '继续逛逛', '离开坊市']
+    },
+    {
+      title: '洞府 — 闭关悟道',
+      text: '你回到洞府，将石门关好，布下简单的禁制。洞内灵气虽不如灵泉浓郁，但胜在安静清幽，最适合潜心修行。
+
+你盘坐于蒲团之上，闭目凝神。脑海中，今日在灵泉吸收的灵气开始缓缓流转，沿着经脉运行周天。你仔细感悟着天地间的法则，隐约触碰到了一丝突破的契机。
+
+夜深了，洞外传来风声呼啸。你的意识沉入内心深处，在那片混沌之中，似乎有什么东西在等待着你。',
+      choices: ['尝试突破', '稳固修为', '出关活动', '继续闭关']
+    }
+  ];
+  const scene = sampleScenes[choiceIndex % sampleScenes.length];
+  // 更新探索 UI
+  document.getElementById('explore-title').textContent = scene.title;
+  document.getElementById('explore-text').textContent = scene.text;
+  const choicesEl = document.getElementById('explore-choices');
+  choicesEl.innerHTML = scene.choices.map((c, i) =>
+    '<button onclick="handleAction(' + (choiceIndex * 4 + i) % 4 + ')" class="bg-card border border-border rounded-lg px-5 py-4 text-left text-foreground hover:border-primary hover:bg-muted transition-colors cursor-pointer">' + c + '</button>'
+  ).join('');
+  // TODO: 根据后端返回更新 gameState，如有变化则调用 updateSidebar()
+}
+
+// ===== 战斗逻辑 =====
+async function handleBattleAction(actionType) {
+  // TODO: API — const res = await api.action({ choice: actionType });
+  // 期望返回: { battle: { round, player: {name,realm,hp,maxHp,status}, enemy: {name,type,hp,maxHp,status}, log: [...], ended, victory } }
+  // 示例：模拟战斗结果
+  if (actionType === 'flee') {
+    switchState('explore');
+    return;
+  }
+  // 模拟战斗更新
+  const roundEl = document.getElementById('battle-round');
+  const roundNum = parseInt(roundEl.textContent.replace(/[^0-9]/g, '')) + 1;
+  roundEl.textContent = '第 ' + roundNum + ' 回合';
+  // 模拟日志
+  const logMessages = {
+    attack: '你凝聚全身灵力，一剑刺出 — 赤焰蟒受到 <span class="font-semibold" style="color: var(--state-error)">' + (30 + Math.floor(Math.random() * 30)) + '</span> 点伤害',
+    defend: '你运转心法，灵力护体形成护盾 — 抵挡了赤焰蟒的攻击',
+    pill: '你取出回灵丹服下 — 灵力恢复了 <span class="font-semibold" style="color: var(--state-success)">50</span> 点'
+  };
+  const logEl = document.getElementById('battle-log');
+  const newLog = document.createElement('div');
+  newLog.className = 'border-b border-border py-2';
+  newLog.innerHTML = logMessages[actionType] || '你采取了行动';
+  logEl.appendChild(newLog);
+  // 敌人反击
+  const enemyLog = document.createElement('div');
+  enemyLog.className = 'border-b border-border py-2';
+  const dmg = 10 + Math.floor(Math.random() * 25);
+  enemyLog.innerHTML = '赤焰蟒发起反击 — 你受到 <span class="font-semibold" style="color: var(--state-error)">' + dmg + '</span> 点伤害';
+  logEl.appendChild(enemyLog);
+  // 滚动到底部
+  logEl.parentElement.scrollTop = logEl.parentElement.scrollHeight;
+  // TODO: 根据后端返回更新 HP 条、状态等
+  // 如果 res.battle.ended === true，则切换回 explore
+}
+
+// ===== 面板逻辑 =====
+function togglePanel(panelId) {
+  const panel = document.getElementById(panelId);
+  const overlay = document.getElementById('panel-overlay');
+  if (!panel) return;
+  if (openPanel === panelId) {
+    // 关闭当前面板
+    panel.classList.add('translate-x-full');
+    panel.classList.remove('translate-x-0');
+    overlay.classList.add('hidden');
+    openPanel = null;
+    return;
+  }
+  // 关闭旧面板
+  if (openPanel) {
+    const oldPanel = document.getElementById(openPanel);
+    if (oldPanel) {
+      oldPanel.classList.add('translate-x-full');
+      oldPanel.classList.remove('translate-x-0');
+    }
+  }
+  // 打开新面板
+  // TODO: API — 打开面板时可能需要拉取数据
+  // 例如背包: const data = await api.action({ choice: 'open_bag' });
+  panel.classList.remove('translate-x-full');
+  panel.classList.add('translate-x-0');
+  overlay.classList.remove('hidden');
+  openPanel = panelId;
+}
+
+function closeAllPanels() {
+ if (openPanel) {
+    const panel = document.getElementById(openPanel);
+    if (panel) {
+      panel.classList.add('translate-x-full');
+      panel.classList.remove('translate-x-0');
+    }
+    openPanel = null;
+  }
+  document.getElementById('panel-overlay').classList.add('hidden');
+}
+
+// ===== 物品操作 =====
+async function handleItemUse(itemId) {
+  // TODO: API — const res = await api.item('use', itemId);
+  // 期望返回: { success: true, gameState: { ... } }
+  // 使用后更新 UI
+}
+
+async function handleItemEquip(itemId, slot) {
+  // TODO: API — const res = await api.item('equip', itemId, slot);
+  // 期望返回: { success: true, gameState: { ... }, equip: { ... } }
+  // 装备后更新 UI
+}
+
+// ===== 存档/读档 =====
+let modalAction = 'save'; // 'save' | 'load'
+
+async function handleSave() {
+  modalAction = 'save';
+  document.getElementById('modal-title').textContent = '存档';
+  // TODO: API — const list = await api.saves();
+  // 期望返回: { saves: [ { slot: 1, time: '...', name: '...' }, ... ] }
+  // 根据返回填充槽位
+  showModal();
+}
+
+async function handleLoad() {
+  modalAction = 'load';
+  document.getElementById('modal-title').textContent = '读档';
+  // TODO: API — const list = await api.saves();
+  // 期望返回: { saves: [ { slot: 1, time: '...', name: '...' }, ... ] }
+  showModal();
+}
+
+function showModal() {
+  document.getElementById('modal-save-load').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('modal-save-load').classList.add('hidden');
+}
+
+async function handleSlotAction(slot) {
+  if (modalAction === 'save') {
+    // TODO: API — const res = await api.save(slot);
+    // 期望返回: { success: true, time: '...' }
+    closeModal();
+  } else {
+    // TODO: API — const res = await api.load(slot);
+    // 期望返回: { gameState: { ... }, scene: { ... } } 或 { error: '空存档' }
+    // 加载成功后：
+    //   gameState = res.gameState;
+    //   updateSidebar(gameState);
+    //   如果 res.battle 存在，switchState('battle') 并更新战斗 UI
+    //   否则 switchState('explore') 并更新探索 UI
+    closeModal();
+  }
+}
+
+// ===== 初始化 =====
+async function init() {
+  // TODO: API — const saves = await api.saves();
+  // 期望返回: { saves: [ ... ] }
+  // 如果有存档，可以提示读档；否则显示创角
+  switchState('create');
+  // 初始化 Lucide 图标
+  if (window.lucide) lucide.createIcons();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
